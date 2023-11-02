@@ -8,16 +8,18 @@
         <form action="" method="post" enctype="multipart/form-data">
             <div>
                 <label for="title"></label>
-                <input type="text" name="title" id="title" placeholder="TITLE" required/>
+                <input type="text" name="title" id="title" placeholder="TITLE" />
             </div>
+            <p class="text-danger"> {{ errors['title'] }} </p>
             <div>
                 <label for="reference"></label>
-                <input type="text" name="reference" id="reference" placeholder="PART REFERENCE" required/>
+                <input type="text" name="reference" id="reference" placeholder="PART REFERENCE" />
             </div>
+            <p class="text-danger"> {{ errors['reference'] }} </p>
             <div class="select" id="select">
                 <div>
                     <label for="category"></label>
-                    <select name="category" id="category" required>
+                    <select name="category" id="category" >
                         <option value="">CATEGORY</option>
                         <option value="Accessories">Accessories</option>
                         <option value="Brakes">Brakes</option>
@@ -30,9 +32,10 @@
                         <option value="Transmission">Transmission</option>
                     </select>    
                 </div>
+                <p class="text-danger"> {{ errors['category'] }} </p>
                 <div>
                     <label for="wear"></label>
-                    <select name="wear" id="wear" required>
+                    <select name="wear" id="wear" >
                         <option value="">WEAR STATE</option>
                         <option value="New">New</option>
                         <option value="Good">Good</option>
@@ -40,9 +43,10 @@
                         <option value="to fix">To fix</option>
                     </select>
                 </div>
+                <p class="text-danger"> {{ errors['wear'] }} </p>
                 <div>
                     <label for="brand"></label>
-                    <select name="brand" id="brand" required>
+                    <select name="brand" id="brand" >
                         <option value="">BRAND</option>
                         <option value="Shimano">Shimano</option>
                         <option value="Hutchinson">Hutchinson</option>
@@ -54,9 +58,10 @@
                         <option value="Other">Other</option>
                     </select>
                 </div>
+                <p class="text-danger"> {{ errors['brand'] }} </p>
                 <div>
                     <label for="location"></label>
-                    <select name="location" id="location" required>
+                    <select name="location" id="location" data-rel="form-sample-phone" >
                         <option value="">LOCATION</option>
                         <option value="Auvergne">Auvergne</option>
                         <option value="Rhône-Alpes">Rhône-Alpes</option>
@@ -79,20 +84,18 @@
                         <option value="Undefined">Undefined</option>
                     </select>
                 </div>
+                <p class="text-danger"> {{ errors['location'] }} </p>
             </div>
                 <label for="description"></label>
-                <textarea name="description" id="description" placeholder="DESCRIPTION" required></textarea>
+                <textarea name="description" id="description" placeholder="DESCRIPTION" ></textarea>
             </div>
-            <div class="alert alert-danger" role="alert" id="alert">
-                {% for error in errors %}
-                    {{ error }}
-                {% endfor %}
-            </div>
+            <p class="text-danger"> {{ errors['description'] }} </p>
                 <label for="file" id="labelFile">
                 <div id="textFile"><img src="assets/images/add_picture_icon.png" alt="add_icon" id="addIcon"/></div>
-                <input type="file" name="file" id="file" multiple required/>
+                <input type="file" name="file" id="file" multiple />
                 </label>
             </div>
+            <p class="text-danger"> {{ errors['file'] }} </p>
             <div>
                 <input type="submit" id="give" value="GIVE !"/>
             </div>

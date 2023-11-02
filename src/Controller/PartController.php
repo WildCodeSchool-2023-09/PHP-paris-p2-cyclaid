@@ -19,43 +19,43 @@ class PartController extends AbstractController
             $data = array_map('trim', $_POST);
             $data = array_map('htmlentities', $data);
             if (empty($data['title'])) {
-                $errors[] = "A title is required";
+                $errors['title'] = "A title is required";
             }
             if (strlen($data['title']) > 250) {
-                $errors[] = "The title is too long. Max 250 characters";
+                $errors['title'] = "The title is too long. Max 250 characters";
             }
             if (empty($data['reference'])) {
-                $errors[] = "A reference is required";
+                $errors['reference'] = "A reference is required";
             }
             if (strlen($data['reference']) > 100) {
-                $errors[] = "The reference is too long. Max 100 characters";
+                $errors['reference'] = "The reference is too long. Max 100 characters";
             }
             if (empty($data['category'])) {
-                $errors[] = "A category is required";
+                $errors['catagory'] = "A category is required";
             }
             if (empty($data['wear'])) {
-                $errors[] = "A wear state is required";
+                $errors['category'] = "A wear state is required";
             }
             if (empty($data['brand'])) {
-                $errors[] = "A brand is required";
+                $errors['brand'] = "A brand is required";
             }
             if (empty($data['location'])) {
-                $errors[] = "A location is required";
+                $errors['location'] = "A location is required";
             }
             if (empty($data['description'])) {
-                $errors[] = "A description is required";
+                $errors['description'] = "A description is required";
             }
             if (strlen($data['description']) > 2000) {
-                $errors[] = "The description is too long. Max 2000 characters";
+                $errors['description'] = "The description is too long. Max 2000 characters";
             }
             if (empty($data['file'])) {
-                $errors[] = "A photo is required";
+                $errors['file'] = "A photo is required";
             }
             if ((!in_array($extension, $authorizedExtensions))) {
-                $errors[] = 'Please select a type image Jpg, Png, jpeg or webp !';
+                $errors['file'] = 'Please select a type image Jpg, Png, jpeg or webp !';
             }
             if (file_exists($_FILES['file']['tmp_name']) && filesize($_FILES['file']['tmp_name']) > $maxFileSize) {
-                $errors[] = "Your file size has to be less than 10 mega !";
+                $errors['file'] = "Your file size has to be less than 10 mega !";
             }
             if (empty($errors)) {
                 move_uploaded_file($_FILES['file']['tmp_name'], $uploadFile);
