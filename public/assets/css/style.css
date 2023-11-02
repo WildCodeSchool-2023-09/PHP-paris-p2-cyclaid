@@ -74,13 +74,12 @@ body {
     align-items: center;
     margin: 0.2rem;
 }
-/* .text-danger {
+
+.text-danger {
     font-size: 0.7rem;
     font-family: PostNoBillsColomboLight;
     color: red;
-    justify-content: flex-start;
-    z-index: 2;
-} */
+}
 #title, #reference, #category, #wear, #brand, #location, #description {
     background-color: #F4E8E8;
     border-radius: 0.3rem;
