@@ -13,7 +13,17 @@
 </head>
 
 <body>
-    {% block content %}{% endblock %}
+    {% block content %}
+    
+    <nav>{% block nav %}{% endblock %}</nav>
+    
+
+
+
+
+
+
+    {% endblock %}
     {% block javascript %}{% endblock %}
 </body>
 </html>

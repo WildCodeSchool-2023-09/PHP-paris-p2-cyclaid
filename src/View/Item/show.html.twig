@@ -1,12 +1,16 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h1>Item {{ item.title }}</h1>
-    <p>{{ item.id }}. {{ item.title }}</p>
-    <a href="/items/edit?id={{ item.id }}">Edit</a>
-    <form action="/items/delete" method="POST">
-        <input type="hidden" name="id" value="{{ item.id }}">
-        <button>Delete</button>
-    </form>
-    <a href="/items">Back</a>
+
+    {% block nav %} 
+        <nav class="itemnav"> {{ item.title }} </nav>
+    {% endblock %}
+
+    <h1 id="itemInfo">
+        <div>{{item.date}}</div>
+        <div id="itemInfoId">AD id : {{item.id}}</div>
+    </h1>
+
+    <div><img src='..\..\public\assets\images\image1.png'>
+
 {% endblock %}
