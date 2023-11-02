@@ -1,3 +1,32 @@
+@font-face {
+    font-family: PostNoBillsColomboBold;
+    src: url('../fonts/postnobillscolombo-bold.ttf');
+  }
+
+@font-face {
+    font-family: PostNoBillsColomboExtraBold;
+    src: url('../fonts/postnobillscolombo-extrabold.ttf');
+}
+
+@font-face {
+    font-family: PostNoBillsColomboLight;
+    src: url('../fonts/postnobillscolombo-light.ttf');
+}
+
+@font-face {
+    font-family: PostNoBillsColomboMedium;
+    src: url('../fonts/postnobillscolombo-light.ttf');
+}
+
+@font-face {
+    font-family: PostNoBillsColomboRegular;
+    src: url('../fonts/postnobillscolombo-regular.ttf');
+}
+
+@font-face {
+    font-family: PostNoBillsColomboSemiBold;
+    src: url('../fonts/postnobillscolombo-semibold.ttf');
+}
 * {
     margin: 0;
     padding: 0;
@@ -8,8 +37,7 @@ body {
     color: #DFA68C;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-  
+    justify-content: center; 
 }
 
 #alert {
@@ -23,7 +51,8 @@ body {
     text-align: center;
     height: 3.483rem;
     width: 100%;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-family: PostNoBillsColomboExtraBold;
 }
 
 .row {
@@ -33,15 +62,16 @@ body {
 
 .title {
     font-size: 2rem;
-    margin: 1rem;
+    margin-bottom: 1rem;
+    font-family: PostNoBillsColomboExtraBold;
 }
 
 .select {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    margin: 0.5rem;
+    margin: 0.2rem;
 }
 
 #title, #reference, #category, #wear, #brand, #location, #description {
@@ -52,6 +82,7 @@ body {
     border: unset;
     box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25) inset;
     color: #524D4D;
+    font-family: PostNoBillsColomboMedium;
 }
 
 #title, #reference{
@@ -59,12 +90,12 @@ body {
 }
 
 #category {
-    width: 89%;
-    margin-left: -0.6rem;
+    width: 85%;
 }
 
 #wear {
-    width: 99%;
+    width: 90%;
+    margin-right: 0.6rem;
 }
 
 #brand {
@@ -73,15 +104,17 @@ body {
 }
 
 #location {
-    width: 89%;
-    margin-right: -1.1rem;
+    width: 85%;
+    margin-right: -0.8rem;
 }
+
 
 #description {
     width: 17rem;
     height: 8rem;
     text-align: center;
     font-size: 1.8rem;
+    font-family: PostNoBillsColomboSemiBold;
 }
 
 input[type="file"] {
@@ -152,6 +185,7 @@ input[type="file"] {
     color: white;
     font-size: 1.2rem;
     text-shadow: 0.2px 0.2px 1px black;
+    font-family: PostNoBillsColomboBold;
 }
 
 #footer {

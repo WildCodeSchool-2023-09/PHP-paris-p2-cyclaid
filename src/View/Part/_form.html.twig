@@ -8,16 +8,16 @@
         <form action="" method="post" enctype="multipart/form-data">
             <div>
                 <label for="title"></label>
-                <input type="text" name="title" id="title" placeholder="TITLE"/>
+                <input type="text" name="title" id="title" placeholder="TITLE" required/>
             </div>
             <div>
                 <label for="reference"></label>
-                <input type="text" name="reference" id="reference" placeholder="PART REFERENCE"/>
+                <input type="text" name="reference" id="reference" placeholder="PART REFERENCE" required/>
             </div>
             <div class="select" id="select">
                 <div>
                     <label for="category"></label>
-                    <select name="category" id="category">
+                    <select name="category" id="category" required>
                         <option value="">CATEGORY</option>
                         <option value="Accessories">Accessories</option>
                         <option value="Brakes">Brakes</option>
@@ -32,7 +32,7 @@
                 </div>
                 <div>
                     <label for="wear"></label>
-                    <select name="wear" id="wear">
+                    <select name="wear" id="wear" required>
                         <option value="">WEAR STATE</option>
                         <option value="New">New</option>
                         <option value="Good">Good</option>
@@ -42,7 +42,7 @@
                 </div>
                 <div>
                     <label for="brand"></label>
-                    <select name="brand" id="brand">
+                    <select name="brand" id="brand" required>
                         <option value="">BRAND</option>
                         <option value="Shimano">Shimano</option>
                         <option value="Hutchinson">Hutchinson</option>
@@ -56,7 +56,7 @@
                 </div>
                 <div>
                     <label for="location"></label>
-                    <select name="location" id="location">
+                    <select name="location" id="location" required>
                         <option value="">LOCATION</option>
                         <option value="Auvergne">Auvergne</option>
                         <option value="Rhône-Alpes">Rhône-Alpes</option>
@@ -81,7 +81,7 @@
                 </div>
             </div>
                 <label for="description"></label>
-                <textarea name="description" id="description" placeholder="DESCRIPTION"></textarea>
+                <textarea name="description" id="description" placeholder="DESCRIPTION" required></textarea>
             </div>
             <div class="alert alert-danger" role="alert" id="alert">
                 {% for error in errors %}
@@ -90,7 +90,7 @@
             </div>
                 <label for="file" id="labelFile">
                 <div id="textFile"><img src="assets/images/add_picture_icon.png" alt="add_icon" id="addIcon"/></div>
-                <input type="file" name="file" id="file" multiple/>
+                <input type="file" name="file" id="file" multiple required/>
                 </label>
             </div>
             <div>
