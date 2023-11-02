@@ -1,7 +1,7 @@
 @font-face {
     font-family: PostNoBillsColomboBold;
     src: url('../fonts/postnobillscolombo-bold.ttf');
-  }
+}
 
 @font-face {
     font-family: PostNoBillsColomboExtraBold;
@@ -27,6 +27,7 @@
     font-family: PostNoBillsColomboSemiBold;
     src: url('../fonts/postnobillscolombo-semibold.ttf');
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -108,12 +109,12 @@ body {
     margin-right: -0.8rem;
 }
 
-
 #description {
     width: 17rem;
     height: 8rem;
     text-align: center;
-    font-size: 1.8rem;
+    align-items: center;
+    font-size: 1.4rem;
     font-family: PostNoBillsColomboSemiBold;
 }
 
@@ -138,7 +139,7 @@ input[type="file"] {
     background: #F4E8E8;
     box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25) inset;
     border-radius: 5px;
-  }
+}
 
 #textFile.dragover {
     background-color: #aaa;
