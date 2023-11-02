@@ -66,6 +66,6 @@ class PartController extends AbstractController
                 }
             }
         }
-        echo $this->twig->render('Part\index.html.twig', ['errors' => $errors]);
+        echo $this->twig->render('Part\_form.html.twig', ['errors' => $errors]);
     }
 }
