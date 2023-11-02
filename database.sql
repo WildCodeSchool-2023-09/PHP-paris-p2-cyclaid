@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `user` (
-  `id` INT NOT NULL AUTO INCREMENT PRIMARY KEY,
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `firstname` VARCHAR(100) NOT NULL,
   `lastname` VARCHAR(100) NOT NULL,
   `city` VARCHAR(150) NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE `user` (
 --
 
 CREATE TABLE `transaction` (
-  `id` INT NOT NULL AUTO INCREMENT PRIMARY KEY,
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `is_taken` BOOLEAN DEFAULT false,
   `created_at` DATE NOT NULL,
   `updated_at` DATE NULL,
@@ -59,7 +59,7 @@ CREATE TABLE `transaction` (
 --
 
 CREATE TABLE `post` (
-  `id` INT NOT NULL AUTO INCREMENT PRIMARY KEY,
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `title` VARCHAR(150) NOT NULL,
   `creation_date` DATE NOT NULL,
   `description` TEXT,
@@ -83,7 +83,7 @@ CREATE TABLE `post_picture` (
 --
 
 CREATE TABLE `part` (
-  `id` INT NOT NULL AUTO INCREMENT PRIMARY KEY,
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `label` VARCHAR(150) NOT NULL,
   `reference` VARCHAR(255) NOT NULL,
   `brand_id` INT NOT NULL,
@@ -95,7 +95,7 @@ CREATE TABLE `part` (
 --
 
 CREATE TABLE `category` (
-  `id` INT NOT NULL AUTO INCREMENT PRIMARY KEY,
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `label` VARCHAR(150) NOT NULL
 );
 
@@ -104,6 +104,39 @@ CREATE TABLE `category` (
 --
 
 CREATE TABLE `brand` (
-  `id` INT NOT NULL AUTO INCREMENT PRIMARY KEY,
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `label` VARCHAR(100) NOT NULL
 );
+
+--
+-- Insertion de valeurs dans les tables
+--
+
+--
+-- Insertion des catégories dans la table `category`
+--
+
+INSERT INTO `category` (`label`) VALUES
+('Accessories'),
+('Brakes'),
+('Cables and sheaths'),
+('Frames'),
+('Saddles'),
+('Tools'),
+('Fork and steering'),
+('Wheels and tires'),
+('Transmission');
+
+--
+-- Insertion des marques de vélos dans la table `brand`
+--
+
+INSERT INTO `brand` (`label`) VALUES
+('Shimano'),
+('Hutchinson'),
+('Brooks'),
+('Continental'),
+('Schwalbe'),
+('Magura'),
+('Brompton'),
+('Other');
