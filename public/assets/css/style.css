@@ -1,3 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: #E6E6E6;
+}
+
 body {
-    color: #f76c6c;
+    color: #DFA68C;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  
+}
+
+#alert {
+    color: red;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    height: 3.483rem;
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.row {
+    text-align: center;
+    width: 100%;
+}
+
+.title {
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+.select {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem;
+}
+
+#title, #reference, #category, #wear, #brand, #location, #description {
+    background-color: #F4E8E8;
+    border-radius: 0.3rem;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem;
+    border: unset;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25) inset;
+    color: #524D4D;
+}
+
+#title, #reference{
+    width: 75%;
+}
+
+#category {
+    width: 89%;
+    margin-left: -0.6rem;
+}
+
+#wear {
+    width: 99%;
+}
+
+#brand {
+    width: 119%;
+    margin-left: 0.2rem;
+}
+
+#location {
+    width: 89%;
+    margin-right: -1.1rem;
+}
+
+#description {
+    width: 17rem;
+    height: 8rem;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+input[type="file"] {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+#textFile {
+    position: absolute;
+    top: 0;
+    bottom: 0.75rem;
+    left: -2.2rem;
+    width: 15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F4E8E8;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25) inset;
+    border-radius: 5px;
+  }
+
+#textFile.dragover {
+    background-color: #aaa;
+}
+
+#labelFile {
+    display: inline-block;
+    position: relative;
+    height: 10%;
+    width: 50%;
+}
+
+#addIcon {
+    height: 1.5rem;
+    background-color: unset;
+}
+
+#give {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    
+    margin: auto;
+    width: 50%;
+    height: 2rem;
+
+    border: 1px solid black;
+    border-radius: 0.5rem;
+
+    box-shadow: 1px 1px 5px black;
+
+    position: fixed;
+    bottom: 1.2rem;
+    left: 0;
+    right: 0;
+
+    background-color: #208A24;
+
+    text-align: center;
+    text-decoration: none;
+
+    color: white;
+    font-size: 1.2rem;
+    text-shadow: 0.2px 0.2px 1px black;
+}
+
+#footer {
+    height: 2.177rem;
+    width: 100%;
+    position: fixed;
+    bottom: 0rem;
+    left: 0;
+    right: 0;
 }
