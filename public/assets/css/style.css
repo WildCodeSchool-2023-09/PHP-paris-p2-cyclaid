@@ -1,3 +1,39 @@
-body {
-    color: #f76c6c;
+body{
+    height: 100%;
+    width: 100%;
+}
+
+nav{
+    display: block;
+    width: 100%;
+    height: 9%;
+
+    background-color: #152905; /*replace with vars*/
+    color: #DFA68C; /*replace with vars*/
+
+    /* Add font-family once it is required */
+}
+
+
+.itemnav{
+    display: flex;
+    height: 3.483rem;
+    
+    font-weight: bold;
+
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+#itemInfo{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: #4D5737; /*replace with vars*/
+    font-size: 0.5rem;
+}
+
+#itemInfoId{
+text-align: right;
 }
