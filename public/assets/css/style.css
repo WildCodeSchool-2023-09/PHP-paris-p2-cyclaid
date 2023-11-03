@@ -33,3 +33,26 @@
     padding: 0;
     background-color: #E6E6E6;
 }
+
+#navbar_add_form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    height: 3.483rem;
+    width: 100%;
+    font-size: 2rem;
+    font-family: PostNoBillsColomboExtraBold;
+    color: #DFA68C;
+    background-color: #152905;
+}
+
+#footer {
+    height: 2.177rem;
+    width: 100%;
+    position: fixed;
+    bottom: 0rem;
+    left: 0;
+    right: 0;
+    background-color: #152905;
+}

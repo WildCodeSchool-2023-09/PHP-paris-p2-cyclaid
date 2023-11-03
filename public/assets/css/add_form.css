@@ -5,24 +5,11 @@
     justify-content: center; 
 }
 
-#navbar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
-    height: 3.483rem;
-    width: 100%;
-    font-size: 2rem;
-    font-family: PostNoBillsColomboExtraBold;
-    color: #DFA68C;
-}
 
-.row {
-    text-align: center;
-    width: 100%;
-}
 
 .title {
+    text-align: center;
+    width: 100%;
     font-size: 2rem;
     margin-bottom: 1rem;
     font-family: PostNoBillsColomboExtraBold;
@@ -41,6 +28,7 @@
     font-family: PostNoBillsColomboLight;
     color: red;
 }
+
 #title, #reference, #category, #wear, #brand, #location, #description {
     background-color: #F4E8E8;
     border-radius: 0.3rem;
@@ -49,40 +37,41 @@
     border: unset;
     box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25) inset;
     color: #524D4D;
-    font-family: PostNoBillsColomboMedium;
+    font-family: PostNoBillsColomboBold;
 }
 
 #title, #reference{
     width: 75%;
+    margin-left: 2rem;
 }
 
 #category {
-    width: 77%;
-    margin-left: 0.4rem;
+    width: 69%;
+    margin-left: 1.5rem;
 }
 
 #wear {
-    width: 95%;
-    margin-right: 0.6rem;
+    width: 85%;
+    margin-right: 1.9rem;
 }
 
 #brand {
-    width: 100%;
-    margin-left: 1rem;
+    width:98%;
+    margin-left: 1.03rem;
 }
 
 #location {
-    width: 97%;
-    margin-right: -1.2rem;
+    width: 108%;
+    margin-right: -2.2rem;
 }
 
 #description {
-    width: 17rem;
+    width: 15rem;
     height: 8rem;
     text-align: center;
     align-items: center;
     font-size: 1.4rem;
-    font-family: PostNoBillsColomboSemiBold;
+    margin-left: 2rem;
 }
 
 input[type="file"] {
@@ -96,19 +85,18 @@ input[type="file"] {
 }
 
 #textFile {
-    /* position: absolute; */
     top: 0;
     bottom: 0.75rem;
     left: -2.2rem;
-    width: 15rem;
-    height: 2.5rem;
+    width: 16rem;
+    height: 3.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     background: #F4E8E8;
     box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25) inset;
     border-radius: 5px;
-    margin-left: -2.4rem;
+    margin-left: 1.9rem;
 }
 
 #textFile.dragover {
@@ -159,11 +147,3 @@ input[type="file"] {
     font-family: PostNoBillsColomboBold;
 }
 
-#footer {
-    height: 2.177rem;
-    width: 100%;
-    position: fixed;
-    bottom: 0rem;
-    left: 0;
-    right: 0;
-}
