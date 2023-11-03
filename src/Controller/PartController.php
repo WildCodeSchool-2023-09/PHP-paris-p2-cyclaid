@@ -6,7 +6,7 @@ use App\Model\PartManager;
 
 class PartController extends AbstractController
 {
-    public function addPart()
+    public function add()
     {
         $errors = [];
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -62,7 +62,7 @@ class PartController extends AbstractController
                 $data = $_POST;
                 $partsManager = new PartManager();
                 if ($partsManager->insert($data)) {
-                    return $this->addPart();
+                    return $this->add();
                 }
             }
         }
