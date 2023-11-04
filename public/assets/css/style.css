@@ -15,7 +15,7 @@ nav{
 }
 
 
-.itemnav{
+.postnav{
     display: flex;
     height: 3.483rem;
     
@@ -26,7 +26,7 @@ nav{
     justify-content: center;
 }
 
-#itemInfo{
+#postInfo{
     display: flex;
     justify-content: space-between;
     font-weight: bold;
@@ -34,6 +34,6 @@ nav{
     font-size: 0.5rem;
 }
 
-#itemInfoId{
+#postInfoId{
 text-align: right;
 }

@@ -12,4 +12,11 @@ class PostController extends AbstractController
         $post = $postManager->showPost($id);
         return $this->twig->render('Post/show.html.twig', ['post' => $post]);
     }
+
+    public function showAll()
+    {
+        $postManager = new PostManager();
+        $PostsList = $postManager->showAllPosts();
+        return $this->twig->render('Home/index.html.twig', ['PostsList' => $PostsList]);
+    }
 }

@@ -1,6 +1,18 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h1>Hello Wilder !</h1>
-    <p>Find a complete CRUD example on <a href="/items">/items</a> page.</p>
+    <h1>Page test Cyclaid</h1>
+
+    <p>Liste des pages : </p>
+
+    {% for post in PostsList %}
+
+            <li><a href="/Post/show?id={{ post.id }}"> - {{ post.id }} {{ post.title }}</a></li>
+
+        {% else %}
+
+            <li>Nothing to display</li>
+
+    {% endfor %}
+
 {% endblock %}

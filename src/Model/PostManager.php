@@ -18,4 +18,12 @@ class PostManager extends AbstractManager
         $post = $statement->fetch(PDO::FETCH_ASSOC);
         return $post;
     }
+
+    public function showAllPosts(): array
+    {
+        $query = 'SELECT * FROM ' . self::TABLE;
+        $statement = $this->pdo->query($query);
+        $PostsList = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $PostsList;
+    }
 }

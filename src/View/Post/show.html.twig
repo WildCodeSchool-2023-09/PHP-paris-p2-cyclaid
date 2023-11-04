@@ -3,12 +3,12 @@
 {% block content %}
 
     {% block nav %} 
-        <nav class="itemnav"> {{ item.title }} </nav>
+        <nav class="postnav"> {{ post.title }} </nav>
     {% endblock %}
 
     <h1 id="itemInfo">
-        <div>{{item.date}}</div>
-        <div id="itemInfoId">AD id : {{item.id}}</div>
+        <div>{{post.date}}</div>
+        <div id="postInfoId">AD id : {{post.id}}</div>
     </h1>
 
 {# Carousel : à modifier et débugger #}
