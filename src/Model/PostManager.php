@@ -10,7 +10,7 @@ class PostManager extends AbstractManager
 
     public function showPost(int $id)
     {
-        $query = 'SELECT * FROM' . self::TABLE . 'JOIN post_picture ON post_picture.picture.id WHERE id=:id';
+        $query = 'SELECT * FROM ' . self::TABLE . ' WHERE id=:id';
         $statement = $this->pdo->prepare($query);
         $statement->bindValue(':id', $id, PDO::PARAM_INT);
         $statement->execute();
