@@ -7,7 +7,7 @@ use App\Model\AbstractManager;
 class PartManager extends AbstractManager
 {
     public const TABLE = 'post';
-    public const CATEGORY = ['Accesories', 'Brakes', 'Cables and sheaths', 'Frames', 'Saddles',
+    public const CATEGORY = ['Accessories', 'Brakes', 'Cables and sheaths', 'Frames', 'Saddles',
                              'Tools', 'Forks and steering', 'Wheels and tires', 'Transmission'];
     public const WEAR = ['New', 'Good', 'Used', 'To fix'];
     public const BRAND = ['Shimano', 'Hutchinson', 'Brooks', 'Continental', 'Schwalbe', 'Magura', 'Brompton', 'Other'];
@@ -18,7 +18,8 @@ class PartManager extends AbstractManager
 
     public function insert(array $data)
     {
-        $query = "INSERT INTO post (title, reference, category, wear, brand, location, description, file) ";
+        $query = "INSERT INTO post (title, reference, " . static::CATEGORY . ", " . static::WEAR . " ";
+        $query .= ", " . static::BRAND . ", " . static::LOCATION . ", " . "description, file) ";
         $query .= " VALUES (:title, :reference, :category, :wear, :brand, :location, :description, :file);";
         $statement = $this->pdo->prepare($query);
         $statement->bindValue(':title', $data['title']);
