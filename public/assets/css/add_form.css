@@ -5,9 +5,7 @@
     justify-content: center; 
 }
 
-
-
-.title {
+.title_logo {
     text-align: center;
     width: 100%;
     font-size: 2rem;
@@ -29,7 +27,7 @@
     color: red;
 }
 
-#title, #reference, #category, #wear, #brand, #location, #description {
+#title_select, #reference_select, #category_select, #wear_select, #brand_select, #location_select, #description_select {
     background-color: #F4E8E8;
     border-radius: 0.3rem;
     margin-bottom: 1.5rem;
@@ -40,32 +38,32 @@
     font-family: PostNoBillsColomboBold;
 }
 
-#title, #reference{
+#title_select, #reference_select{
     width: 75%;
     margin-left: 2rem;
 }
 
-#category {
+#category_select {
     width: 69%;
     margin-left: 1.5rem;
 }
 
-#wear {
+#wear_select {
     width: 85%;
     margin-right: 1.9rem;
 }
 
-#brand {
+#brand_select {
     width:98%;
     margin-left: 1.03rem;
 }
 
-#location {
+#location_select {
     width: 108%;
     margin-right: -2.2rem;
 }
 
-#description {
+#description_select {
     width: 15rem;
     height: 8rem;
     text-align: center;
@@ -84,7 +82,7 @@ input[type="file"] {
     color: #DFA68C;
 }
 
-#textFile {
+#textFile_select {
     top: 0;
     bottom: 0.75rem;
     left: -2.2rem;
@@ -99,23 +97,23 @@ input[type="file"] {
     margin-left: 1.9rem;
 }
 
-#textFile.dragover {
+#textFile_select.dragover {
     background-color: #aaa;
 }
 
-#labelFile {
+#labelFile_select {
     display: inline-block;
     position: relative;
     height: 10%;
     width: 50%;
 }
 
-#addIcon {
+#addIcon_select {
     height: 1.5rem;
     background-color: unset;
 }
 
-#give {
+#cta_form_add_give {
     z-index: 2;
     display: flex;
     justify-content: center;
