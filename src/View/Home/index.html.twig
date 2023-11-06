@@ -1,7 +1,10 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h1>Page test Cyclaid</h1>
+
+{% block nav %}
+    {{ parent()}}
+{% endblock %}
 
     <p>Liste des pages : </p>
 
