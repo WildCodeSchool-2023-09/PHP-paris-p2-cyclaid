@@ -19,8 +19,6 @@ class PartController extends AbstractController
             $uploadDir = 'uploads/';
             $uploadFile = $uploadDir . uniqid() . basename($_FILES['file']['name']);
             $extension = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
-            $authorizedExtensions = self::EXTENSIONS;
-            $maxFileSize = self::MAX_FILE_SIZE;
 
             $data = array_map('trim', $_POST);
             $data = array_map('htmlentities', $data);
@@ -57,10 +55,10 @@ class PartController extends AbstractController
             if (empty($data['file'])) {
                 $errors['file'] = "A photo is required";
             }
-            if ((!in_array($extension, $authorizedExtensions))) {
+            if ((!in_array($extension, self::EXTENSIONS))) {
                 $errors['file'] = 'Please select a type image Jpg, Png, jpeg or webp !';
             }
-            if (file_exists($_FILES['file']['tmp_name']) && filesize($_FILES['file']['tmp_name']) > $maxFileSize) {
+            if (file_exists($_FILES['file']['tmp_name']) && filesize($_FILES['file']['tmp_name']) > self::MAX_FILE_SIZE) {
                 $errors['file'] = "Your file size has to be less than 10 mega !";
             }
             if (empty($errors)) {
