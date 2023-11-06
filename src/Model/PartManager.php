@@ -18,19 +18,29 @@ class PartManager extends AbstractManager
 
     public function insert(array $data)
     {
-        $query = "INSERT INTO post (title, reference, " . static::CATEGORY . ", " . static::WEAR . " ";
-        $query .= ", " . static::BRAND . ", " . static::LOCATION . ", " . "description, file) ";
-        $query .= " VALUES (:title, :reference, :category, :wear, :brand, :location, :description, :file);";
+        $query = "SELECT id FROM category WHERE label LIKE :category;";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue(':category', $data['category']);
+        $statement->execute();
+        $categoryId = $statement->fetch(\PDO::FETCH_ASSOC);
+
+        $query = "SELECT id FROM brand WHERE label LIKE :brand;";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue(':brand', $data['brand']);
+        $statement->execute();
+        $brandId = $statement->fetch(\PDO::FETCH_ASSOC);
+
+        $query = "INSERT INTO post (title, reference, description, wear_status, brand_id, category_id) ";
+        $query .= " VALUES (:title, :reference, :description, :wear, :category_id, :brand_id);";
         $statement = $this->pdo->prepare($query);
         $statement->bindValue(':title', $data['title']);
         $statement->bindValue(':reference', $data['reference']);
-        $statement->bindValue(':category', $data['category']);
-        $statement->bindValue(':wear', $data['wear']);
-        $statement->bindValue(':brand', $data['brand']);
-        $statement->bindValue(':location', $data['location']);
         $statement->bindValue(':description', $data['description']);
-        $statement->bindValue(':file', $data['file']);
+        $statement->bindValue(':wear', $data['wear']);
+        $statement->bindValue(':brand_id', $brandId);
+        $statement->bindValue(':category_id', $categoryId);
         $statement->execute();
+
         return(int)$this->pdo->lastinsertid();
     }
 }
