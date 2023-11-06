@@ -26,9 +26,11 @@
                         <label for="category"></label>
                         <select name="category" id="category_select" required>
                             <option value="">CATEGORY</option>
+                        {% filter trim|lower|striptags %}
                         {% for category in constant('App\\Model\\PartManager::CATEGORY') %}
                             <option value="{{ category }}">{{ category }}</option>
                         {% endfor %}
+                        {% endfilter %}
                         </select>    
                     </div>
                     <p class="text-danger"> {{ errors['category'] }} </p>
@@ -36,9 +38,11 @@
                         <label for="wear"></label>
                         <select name="wear" id="wear_select" required>
                             <option value="">WEAR STATE</option>
+                        {% filter trim|lower|striptags %}
                         {% for wear in constant('App\\Model\\PartManager::WEAR') %}
                             <option value="{{ wear }}">{{ wear }}</option>
                         {% endfor %}
+                        {% endfilter %}
                         </select>
                     </div>
                     <p class="text-danger"> {{ errors['wear'] }} </p>
@@ -46,9 +50,11 @@
                         <label for="brand"></label>
                         <select name="brand" id="brand_select" required>
                             <option value="">BRAND</option>
+                        {% filter trim|lower|striptags %}
                         {% for brand in constant('App\\Model\\PartManager::BRAND') %}
                             <option value="{{ brand }}">{{ brand }}</option>
                         {% endfor %}
+                        {% endfilter %}
                         </select>
                     </div>
                     <p class="text-danger"> {{ errors['brand'] }} </p>
@@ -56,9 +62,11 @@
                         <label for="location"></label>
                         <select name="location" id="location_select" data-rel="form-sample-phone" required>
                             <option value="">LOCATION</option>
+                        {% filter trim|lower|striptags %}
                         {% for location in constant('App\\Model\\PartManager::LOCATION') %}
                             <option value="{{ location }}">{{ location }}</option>
                         {% endfor %}
+                        {% endfilter %}
                         </select>
                     </div>
                     <p class="text-danger"> {{ errors['location'] }} </p>
