@@ -82,7 +82,7 @@ input[type="file"] {
     color: #DFA68C;
 }
 
-#textFile_select {
+#text_file_select {
     top: 0;
     bottom: 0.75rem;
     left: -2.2rem;
@@ -97,18 +97,18 @@ input[type="file"] {
     margin-left: 1.9rem;
 }
 
-#textFile_select.dragover {
+#text_file_select.dragover {
     background-color: #aaa;
 }
 
-#labelFile_select {
+#label_file_select {
     display: inline-block;
     position: relative;
     height: 10%;
     width: 50%;
 }
 
-#addIcon_select {
+#add_icon_select {
     height: 1.5rem;
     background-color: unset;
 }

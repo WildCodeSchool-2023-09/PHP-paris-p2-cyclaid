@@ -26,15 +26,9 @@
                         <label for="category"></label>
                         <select name="category" id="category_select" required>
                             <option value="">CATEGORY</option>
-                            <option value="Accessories">Accessories</option>
-                            <option value="Brakes">Brakes</option>
-                            <option value="Cables and sheaths">Cables and sheaths</option>
-                            <option value="Frames">Frames</option>
-                            <option value="Saddles">Saddles</option>
-                            <option value="Tools">Tools</option>
-                            <option value="Fork and steering">Fork and steering</option>
-                            <option value="Wheels and tires">Wheels and tires</option>
-                            <option value="Transmission">Transmission</option>
+                        {% for category in constant('App\\Model\\PartManager::CATEGORY') %}
+                            <option value="{{ category }}">{{ category }}</option>
+                        {% endfor %}
                         </select>    
                     </div>
                     <p class="text-danger"> {{ errors['category'] }} </p>
@@ -42,10 +36,9 @@
                         <label for="wear"></label>
                         <select name="wear" id="wear_select" required>
                             <option value="">WEAR STATE</option>
-                            <option value="New">New</option>
-                            <option value="Good">Good</option>
-                            <option value="Used">Used</option>
-                            <option value="to fix">To fix</option>
+                        {% for wear in constant('App\\Model\\PartManager::WEAR') %}
+                            <option value="{{ wear }}">{{ wear }}</option>
+                        {% endfor %}
                         </select>
                     </div>
                     <p class="text-danger"> {{ errors['wear'] }} </p>
@@ -53,14 +46,9 @@
                         <label for="brand"></label>
                         <select name="brand" id="brand_select" required>
                             <option value="">BRAND</option>
-                            <option value="Shimano">Shimano</option>
-                            <option value="Hutchinson">Hutchinson</option>
-                            <option value="Brooks">Brooks</option>
-                            <option value="Continental">Continental</option>
-                            <option value="Schwalbe">Schwalbe</option>
-                            <option value="Magura">Magura</option>
-                            <option value="Brompton">Brompton</option>
-                            <option value="Other">Other</option>
+                        {% for brand in constant('App\\Model\\PartManager::BRAND') %}
+                            <option value="{{ brand }}">{{ brand }}</option>
+                        {% endfor %}
                         </select>
                     </div>
                     <p class="text-danger"> {{ errors['brand'] }} </p>
@@ -68,25 +56,9 @@
                         <label for="location"></label>
                         <select name="location" id="location_select" data-rel="form-sample-phone" required>
                             <option value="">LOCATION</option>
-                            <option value="Auvergne">Auvergne</option>
-                            <option value="Rhône-Alpes">Rhône-Alpes</option>
-                            <option value="Bourgogne-">Bourgogne</option>
-                            <option value="Franche-Comté">Franche-Comté</option>
-                            <option value="Bretagne">Bretagne</option>
-                            <option value="Centre-">Centre</option>
-                            <option value="Val de Loire">Val de Loire</option>
-                            <option value="Corse">Corse</option>
-                            <option value="Grand Est">Grand Est</option>
-                            <option value="Hauts-de-France">Hauts-de-France</option>
-                            <option value="Ile-de-France">Ile-de-France</option>
-                            <option value="Normandie">Normandie</option>
-                            <option value="Nouvelle-Acquitaine">Nouvelle-Acquitaine</option>
-                            <option value="Occitanie">Occitanie</option>
-                            <option value="Pays de la Loire">Pays de la Loire</option>
-                            <option value="Provence">Provence</option>
-                            <option value="Alpes">Alpes</option>
-                            <option value="Côte d'Azur">Côte d'Azur</option>
-                            <option value="Undefined">Undefined</option>
+                        {% for location in constant('App\\Model\\PartManager::LOCATION') %}
+                            <option value="{{ location }}">{{ location }}</option>
+                        {% endfor %}
                         </select>
                     </div>
                     <p class="text-danger"> {{ errors['location'] }} </p>
@@ -97,8 +69,8 @@
                 </div>
                 <p class="text-danger"> {{ errors['description'] }} </p>
                 <div>
-                    <label for="file" id="labelFile_select">
-                    <div id="textFile_select"><img src="assets/images/add_picture_icon.png" alt="add_icon" id="addIcon_select"/></div>
+                    <label for="file" id="label_file_select">
+                    <div id="text_file_select"><img src="assets/images/add_picture_icon.png" alt="add_icon" id="add_icon_select"/></div>
                     <input type="file" name="file" id="file_select" multiple required/>
                     </label>
                 </div>

@@ -6,11 +6,12 @@ use App\Model\PartManager;
 
 class PartController extends AbstractController
 {
-    public const EXTENTIONS = ['jpg','png', 'jpeg', 'webp'];
+    public const EXTENSIONS = ['jpg','png', 'jpeg', 'webp'];
     public const MAX_FILE_SIZE = 10000000;
     public const MAX_LENGTH_DESCRIPTION = 2000;
     public const MAX_LENGTH_TITLE = 250;
     public const MAX_LENGTH_REFERENCE = 100;
+
     public function add()
     {
         $errors = [];
@@ -18,7 +19,7 @@ class PartController extends AbstractController
             $uploadDir = 'uploads/';
             $uploadFile = $uploadDir . uniqid() . basename($_FILES['file']['name']);
             $extension = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
-            $authorizedExtensions = self::EXTENTIONS;
+            $authorizedExtensions = self::EXTENSIONS;
             $maxFileSize = self::MAX_FILE_SIZE;
 
             $data = array_map('trim', $_POST);
@@ -35,16 +36,16 @@ class PartController extends AbstractController
             if (strlen($data['reference']) > self::MAX_LENGTH_REFERENCE) {
                 $errors['reference'] = "The reference is too long. Max 100 characters";
             }
-            if (empty($data['category'])) {
+            if (!in_array($data('category'), PartManager::CATEGORY)) {
                 $errors['catagory'] = "A category is required";
             }
-            if (empty($data['wear'])) {
-                $errors['category'] = "A wear state is required";
+            if (!in_array($data('wear'), PartManager::WEAR)) {
+                $errors['wear'] = "A wear state is required";
             }
-            if (empty($data['brand'])) {
+            if (!in_array($data('brand'), PartManager::BRAND)) {
                 $errors['brand'] = "A brand is required";
             }
-            if (empty($data['location'])) {
+            if (!in_array($data('location'), PartManager::LOCATION)) {
                 $errors['location'] = "A location is required";
             }
             if (empty($data['description'])) {
