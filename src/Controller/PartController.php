@@ -23,7 +23,7 @@ class PartController extends AbstractController
         $this->partManager = new PartManager();
         parent::__construct();
     }
-    public function add(): void
+    public function add(): string
     {
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $uploadDir = 'uploads/';
@@ -47,7 +47,7 @@ class PartController extends AbstractController
                 }
             }
         }
-        echo $this->twig->render('Part\_form.html.twig', [
+        return $this->twig->render('Part\_form.html.twig', [
             'errors' => $this->errors
         ]);
     }

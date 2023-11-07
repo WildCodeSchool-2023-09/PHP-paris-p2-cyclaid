@@ -87,7 +87,7 @@ input[type="file"] {
     bottom: 0.75rem;
     left: -2.2rem;
     width: 16rem;
-    height: 3.2rem;
+    height: 4.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -144,4 +144,3 @@ input[type="file"] {
     text-shadow: 0.2px 0.2px 1px black;
     font-family: PostNoBillsColomboBold;
 }
-
