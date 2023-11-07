@@ -1,7 +1,6 @@
 /* Commom Navbar */
 
 .navbar{
-
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -32,7 +31,7 @@
     text-align: center;
   }
   
-  .navbuttons{
+  .navButtons{
     align-items: center;
     text-align: center;
     justify-content: center;
@@ -64,8 +63,6 @@
     border-radius: 5%;
     height: 8vh;
   }
-  
-  /* part/view Header */
 
   .postnav{
       display: flex;
@@ -87,6 +84,6 @@
   }
   
   #postInfoId{
-  text-align: right;
+      text-align: right;
   }
   
