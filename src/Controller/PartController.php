@@ -22,11 +22,6 @@ class PartController extends AbstractController
 
             $data = array_map('trim', $_POST);
             $data = array_map('htmlentities', $data);
-            // foreach($data as $field) {
-            //     if(empty($field)) {
-            //         $errors[] = 'The field' . $field . 'must be fill !';
-            //     }
-            // }
             if (empty($data['title'])) {
                 $errors['title'] = "A title is required";
             }
@@ -72,6 +67,6 @@ class PartController extends AbstractController
                 }
             }
         }
-        echo $this->twig->render('Part\_form.html.twig', ['errors' => $errors]);
+        return $this->twig->render('Part\_form.html.twig', ['errors' => $errors]);
     }
 }
