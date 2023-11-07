@@ -7,7 +7,7 @@ use App\Model\PartManager;
 class PartController extends AbstractController
 {
     public const EXTENSIONS = ['jpg','png', 'jpeg', 'webp'];
-    public const MAX_FILE_SIZE = 10000000;
+    public const MAX_SIZE = 10000000;
     public const MAX_LENGTH_DESCRIPTION = 2000;
     public const MAX_LENGTH_TITLE = 250;
     public const MAX_LENGTH_REFERENCE = 100;
@@ -60,7 +60,7 @@ class PartController extends AbstractController
             if ((!in_array($extension, self::EXTENSIONS))) {
                 $errors['file'] = 'Please select a type image Jpg, Png, jpeg or webp !';
             }
-            if (file_exists($_FILES['file']['tmp_name']) && filesize($_FILES['file']['tmp_name']) > self::MAX_FILE_SIZE) {
+            if (file_exists($_FILES['file']['tmp_name']) && filesize($_FILES['file']['tmp_name']) > self::MAX_SIZE) {
                 $errors['file'] = "Your file size has to be less than 10 mega !";
             }
             if (empty($errors)) {
