@@ -26,8 +26,8 @@
                         <label for="category"></label>
                         <select name="category" id="category_select" required>
                             <option value="">CATEGORY</option>
-                        {% for category in constant('App\\Model\\PartManager::CATEGORY') %}
-                            <option value="{{ category }}">{{ category }}</option>
+                        {% for key_category, category in constant('App\\Model\\PartManager::CATEGORY') %}
+                            <option value="{{ key_category + 1 }}">{{ category }}</option>
                         {% endfor %}
                         </select>    
                     </div>
@@ -46,8 +46,8 @@
                         <label for="brand"></label>
                         <select name="brand" id="brand_select" required>
                             <option value="">BRAND</option>
-                        {% for brand in constant('App\\Model\\PartManager::BRAND') %}
-                            <option value="{{ brand }}">{{ brand }}</option>
+                        {% for key_brand, brand in constant('App\\Model\\PartManager::BRAND') %}
+                            <option value="{{ key_brand + 1 }}">{{ brand }}</option>
                         {% endfor %}
                         </select>
                     </div>
@@ -71,7 +71,7 @@
                 <div>
                     <label for="file" id="label_file_select">
                     <div id="text_file_select"><img src="assets/images/add_picture_icon.png" alt="add_icon" id="add_icon_select"/></div>
-                    <input type="file" name="file" id="file_select" multiple required/>
+                    <input type="file" name="file[]" id="file_select" multiple required/>
                     </label>
                 </div>
                 <p class="text-danger"> {{ errors['file'] }} </p>
