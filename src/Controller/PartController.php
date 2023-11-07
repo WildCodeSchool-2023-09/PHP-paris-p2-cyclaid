@@ -22,6 +22,11 @@ class PartController extends AbstractController
 
             $data = array_map('trim', $_POST);
             $data = array_map('htmlentities', $data);
+            // foreach($data as $field) {
+            //     if(empty($field)) {
+            //         $errors[] = 'The field' . $field . 'must be fill !';
+            //     }
+            // }
             if (empty($data['title'])) {
                 $errors['title'] = "A title is required";
             }
@@ -34,16 +39,16 @@ class PartController extends AbstractController
             if (strlen($data['reference']) > self::MAX_LENGTH_REFERENCE) {
                 $errors['reference'] = "The reference is too long. Max 100 characters";
             }
-            if (!in_array($data('category'), PartManager::CATEGORY)) {
+            if (!in_array($data['category'], PartManager::CATEGORY)) {
                 $errors['catagory'] = "A category is required";
             }
-            if (!in_array($data('wear'), PartManager::WEAR)) {
+            if (!in_array($data['wear'], PartManager::WEAR)) {
                 $errors['wear'] = "A wear state is required";
             }
-            if (!in_array($data('brand'), PartManager::BRAND)) {
+            if (!in_array($data['brand'], PartManager::BRAND)) {
                 $errors['brand'] = "A brand is required";
             }
-            if (!in_array($data('location'), PartManager::LOCATION)) {
+            if (!in_array($data['location'], PartManager::LOCATION)) {
                 $errors['location'] = "A location is required";
             }
             if (empty($data['description'])) {
@@ -51,9 +56,6 @@ class PartController extends AbstractController
             }
             if (strlen($data['description']) > self::MAX_LENGTH_DESCRIPTION) {
                 $errors['description'] = "The description is too long. Max 2000 characters";
-            }
-            if (empty($data['file'])) {
-                $errors['file'] = "A photo is required";
             }
             if ((!in_array($extension, self::EXTENSIONS))) {
                 $errors['file'] = 'Please select a type image Jpg, Png, jpeg or webp !';
