@@ -23,8 +23,6 @@
   
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  
-      /* Add font-family once it is required */
   }
   
   .navImage{
@@ -43,19 +41,28 @@
     color: var(--font-navbar-color);
     background-color: var(--header-footer-color);
   }
+
+  #navPostButton{
+    width: 50vh;
+  }
   
   #navPost{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     text-decoration: none;
     justify-content: center;
     text-justify: center;
-    color: var(--font-navbar-color);
-    background-color: var(--stroke-primary-color);
-    font-size: 1.6vh;
-    border-radius: 5%;
-
     align-items: center;
     text-align: center;
+
+    color: var(--font-navbar-color);
+    background-color: var(--stroke-primary-color);
+    font-family: PostNoBillsColomboExtraBold;
+    font-size: 2.1vh;
+    border-radius: 5%;
+    height: 8vh;
   }
   
   /* part/view Header */

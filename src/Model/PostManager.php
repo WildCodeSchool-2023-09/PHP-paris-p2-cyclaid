@@ -23,7 +23,7 @@ class PostManager extends AbstractManager
     {
         $query = 'SELECT * FROM ' . self::TABLE;
         $statement = $this->pdo->query($query);
-        $PostsList = $statement->fetchAll(PDO::FETCH_ASSOC);
-        return $PostsList;
+        $postsList = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $postsList;
     }
 }
