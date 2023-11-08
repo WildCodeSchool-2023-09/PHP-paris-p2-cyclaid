@@ -75,9 +75,9 @@ CREATE TABLE `post` (
 --
 
 CREATE TABLE `post_picture` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `post_id` INT NOT NULL,
   `picture` VARCHAR(255) NOT NULL,
-  PRIMARY KEY(`post_id`, `picture`)
 );
 
 --
