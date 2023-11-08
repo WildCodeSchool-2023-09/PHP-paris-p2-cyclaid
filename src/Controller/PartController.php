@@ -43,7 +43,7 @@ class PartController extends AbstractController
                     move_uploaded_file($_FILES['file']['tmp_name'][$i], $uploadFile);
                 }
                 if ($this->partManager->insert($data, $pictures)) {
-                    header('Location:/Home/index.html.twig');
+                    header('Location: /Home/index.html.twig');
                 }
             }
         }
