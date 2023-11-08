@@ -23,6 +23,7 @@ class PartManager extends AbstractManager
         $this->picturePartManager = new PicturePartManager();
         parent::__construct();
     }
+
     public function insert(array $data, array $pictures): int|false
     {
         $query = "INSERT INTO " . self::TABLE . " (title, reference, creation_date, description, ";
@@ -38,9 +39,10 @@ class PartManager extends AbstractManager
         $statement->execute();
 
         $postId = (int)$this->pdo->lastinsertid();
+
         if ($postId) {
             foreach ($pictures as $picture) {
-                $this->picturePartManager->insertPicture($picture, $postId);
+                $this->picturePartManager->insert($picture, $postId);
             }
             return $postId;
         } else {
