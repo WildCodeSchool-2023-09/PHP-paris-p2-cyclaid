@@ -71,9 +71,13 @@
                 <p class="text-danger"> {{ errors['description'] }} </p>
                 <div>
                     <label for="file" id="label_file_select">
-                    <div id="text_file_select"><img src="/assets/images/add_picture_icon.png" alt="add_icon" id="add_icon_select"/></div>
-                    <input type="file" name="file[]" id="file_select" multiple required/>
+                    <div id="text_file_select"><img src="/assets/images/add_picture_icon.png" alt="add_icon" id="add_icon_select"/>
+                    </div>
+                    <input type="file" name="file[]" id="file_select" onchange="previewPicture(this)" multiple required/>
                     </label>
+                    <div id="preview_pictures_field">
+                        <img src="#" alt="" id="image" style="">
+                    </div>
                 </div>
                 <p class="text-danger"> {{ errors['file'] }} </p>
                 <div>
@@ -85,3 +89,4 @@
 </div>
 <footer id="footer"></footer>
 {% endblock %}
+{% block javascript %}<script src="/assets/js/form.js"></script>{% endblock %}

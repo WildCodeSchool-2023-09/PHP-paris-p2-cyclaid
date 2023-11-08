@@ -15,7 +15,7 @@ class PartManager extends AbstractManager
     public const LOCATION = ['Auverge', 'Rhône-Alpes', 'Bourgogne', 'Franche-Comté',
                              'Bretagne', 'Centre', 'Val de Loire', 'Corse', 'Grand Est',
                              'Hauts de France', 'Ile de France', 'Normandie', 'Nouvelle Acquitaine',
-                             'Occitanie', 'Pays de la Loire', 'Provnce', 'Alpes', 'Côte d\'Azur', 'Undefined',];
+                             'Occitanie', 'Pays de la Loire', 'Provence', 'Alpes', 'Côte d\'Azur', 'Undefined',];
     private PicturePartManager $picturePartManager;
 
     public function __construct()
