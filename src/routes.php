@@ -9,4 +9,5 @@
 return [
     '' => ['HomeController', 'index',],
     'part/add' => ['PartController', 'add'],
+
 ];
