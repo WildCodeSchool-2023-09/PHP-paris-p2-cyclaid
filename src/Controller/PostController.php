@@ -21,7 +21,7 @@ class PostController extends AbstractController
         return $this->twig->render('Post/show.html.twig', ['post' => $post]);
     }
 
-    public function showAll()
+    public function index()
     {
         $postsList = $this->postManager->selectAll();
         return $this->twig->render('Home/index.html.twig', ['postsList' => $postsList]);
