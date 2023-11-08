@@ -16,7 +16,7 @@ class PartController extends AbstractController
     public const BRAND_MIN = 1;
     public const BRAND_MAX = 8;
     public array $errors = [];
-    public PartManager $partManager;
+    private PartManager $partManager;
 
     public function __construct()
     {
@@ -42,7 +42,7 @@ class PartController extends AbstractController
                     $uploadFile = $uploadDir . $pictures[$i];
                     move_uploaded_file($_FILES['file']['tmp_name'][$i], $uploadFile);
                 }
-                if ($this->partManager->insert($data)) {
+                if ($this->partManager->insert($data, $pictures)) {
                     header('Location:/Home/index.html.twig');
                 }
             }

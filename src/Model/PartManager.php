@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use App\Model\AbstractManager;
+use App\Model\PartPictureManager;
 
 class PartManager extends AbstractManager
 {
@@ -15,11 +16,18 @@ class PartManager extends AbstractManager
                              'Bretagne', 'Centre', 'Val de Loire', 'Corse', 'Grand Est',
                              'Hauts de France', 'Ile de France', 'Normandie', 'Nouvelle Acquitaine',
                              'Occitanie', 'Pays de la Loire', 'Provnce', 'Alpes', 'Côte d\'Azur', 'Undefined',];
+    private PicturePartManager $picturePartManager;
 
-    public function insert(array $data)
+    public function __construct()
     {
-        $query = "INSERT INTO " . self::TABLE . " (title, reference, description, wear_status, brand_id, category_id) ";
-        $query .= " VALUES (:title, :reference, :description, :wear, :category_id, :brand_id);";
+        $this->picturePartManager = new PicturePartManager();
+        parent::__construct();
+    }
+    public function insert(array $data, array $pictures): int|false
+    {
+        $query = "INSERT INTO " . self::TABLE . " (title, reference, creation_date, description, ";
+        $query .= "wear_status, user_id, brand_id, category_id) ";
+        $query .= " VALUES (:title, :reference, NOW(), :description, :wear, 1, :category_id, :brand_id);";
         $statement = $this->pdo->prepare($query);
         $statement->bindValue(':title', $data['title']);
         $statement->bindValue(':reference', $data['reference']);
@@ -29,6 +37,14 @@ class PartManager extends AbstractManager
         $statement->bindValue(':category_id', $data['category']);
         $statement->execute();
 
-        return(int)$this->pdo->lastinsertid();
+        $postId = (int)$this->pdo->lastinsertid();
+        if ($postId) {
+            foreach ($pictures as $picture) {
+                $this->picturePartManager->insertPicture($picture, $postId);
+            }
+            return $postId;
+        } else {
+            return false;
+        }
     }
 }
