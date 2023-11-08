@@ -61,11 +61,13 @@ CREATE TABLE `transaction` (
 CREATE TABLE `post` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `title` VARCHAR(150) NOT NULL,
+  `reference` VARCHAR(255) NOT NULL,
   `creation_date` DATE NOT NULL,
   `description` TEXT,
   `wear_status` VARCHAR(20) NOT NULL,
-  `part_id` INT NOT NULL,
-  `user_id` INT NOT NULL
+  `user_id` INT NOT NULL,
+  `brand_id` INT NOT NULL,
+  `category_id` INT NOT NULL
 );
 
 --
@@ -73,21 +75,9 @@ CREATE TABLE `post` (
 --
 
 CREATE TABLE `post_picture` (
-  `post_id` INT NOT NULL,
-  `picture` VARCHAR(255) NOT NULL,
-  PRIMARY KEY(`post_id`, `picture`)
-);
-
---
--- Structure de la table `part`
---
-
-CREATE TABLE `part` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `label` VARCHAR(150) NOT NULL,
-  `reference` VARCHAR(255) NOT NULL,
-  `brand_id` INT NOT NULL,
-  `category_id` INT NOT NULL
+  `post_id` INT NOT NULL,
+  `picture` VARCHAR(255) NOT NULL
 );
 
 --

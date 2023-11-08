@@ -1,0 +1,172 @@
+#form_add {
+    color: #DFA68C;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+}
+
+.title_logo {
+    text-align: center;
+    width: 100%;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-family: PostNoBillsColomboExtraBold;
+}
+
+.select {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0.2rem;
+}
+
+.text-danger {
+    font-size: 0.7rem;
+    font-family: PostNoBillsColomboRegular;
+    color: red;
+}
+
+#title_select, #reference_select, #category_select, #wear_select, #brand_select, #location_select, #description_select {
+    background-color: #F4E8E8;
+    border-radius: 0.3rem;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem;
+    border: unset;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25) inset;
+    color: #524D4D;
+    font-family: PostNoBillsColomboBold;
+}
+
+#title_select, #reference_select{
+    width: 75%;
+    margin-left: 2rem;
+}
+
+#category_select {
+    width: 69%;
+    margin-left: 1.5rem;
+}
+
+#wear_select {
+    width: 85%;
+    margin-right: 1.9rem;
+}
+
+#brand_select {
+    width:98%;
+    margin-left: 1.03rem;
+}
+
+#location_select {
+    width: 108%;
+    margin-right: -2.2rem;
+}
+
+#description_select {
+    width: 15rem;
+    height: 8rem;
+    text-align: center;
+    align-items: center;
+    font-size: 1.4rem;
+    margin-left: 2rem;
+}
+
+input[type="file"] {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    color: #DFA68C;
+}
+
+#text_file_select {
+    top: 0;
+    bottom: 0.75rem;
+    left: -2.2rem;
+    width: 16rem;
+    height: 4.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F4E8E8;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25) inset;
+    border-radius: 5px;
+    margin-left: 1.9rem;
+}
+
+#text_file_select.dragover {
+    background-color: #aaa;
+}
+
+#label_file_select {
+    display: inline-block;
+    position: relative;
+    height: 10%;
+    width: 50%;
+}
+
+#add_icon_select {
+    height: 1.5rem;
+    background-color: unset;
+}
+
+#preview_pictures_field {
+    background-color: #F4E8E8;
+    margin-top: 1rem;
+    margin-left: 3rem;
+    border-radius: 0.3rem;
+    margin-bottom: 4.5rem;
+    padding: 0.5rem;
+    border: unset;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25) inset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    width: 62%;
+}
+
+#image {
+    height: 4rem;
+    max-width: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left; 
+    align-items: flex-start;
+   
+}
+
+#cta_form_add_give {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    
+    margin: auto;
+    width: 50%;
+    height: 2rem;
+
+    border: 1px solid black;
+    border-radius: 0.5rem;
+
+    box-shadow: 1px 1px 5px black;
+
+    position: fixed;
+    bottom: 1.2rem;
+    left: 0;
+    right: 0;
+
+    background-color: #208A24;
+
+    text-align: center;
+    text-decoration: none;
+
+    color: white;
+    font-size: 1.2rem;
+    text-shadow: 0.2px 0.2px 1px black;
+    font-family: PostNoBillsColomboBold;
+}
