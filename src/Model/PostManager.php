@@ -6,5 +6,4 @@ use PDO;
 
 class PostManager extends AbstractManager
 {
-
 }
