@@ -1,3 +1,61 @@
+@font-face {
+    font-family: PostNoBillsColomboBold;
+    src: url('../fonts/postnobillscolombo-bold.ttf');
+}
+
+@font-face {
+    font-family: PostNoBillsColomboExtraBold;
+    src: url('../fonts/postnobillscolombo-extrabold.ttf');
+}
+
+@font-face {
+    font-family: PostNoBillsColomboLight;
+    src: url('../fonts/postnobillscolombo-light.ttf');
+}
+
+@font-face {
+    font-family: PostNoBillsColomboMedium;
+    src: url('../fonts/postnobillscolombo-light.ttf');
+}
+
+@font-face {
+    font-family: PostNoBillsColomboRegular;
+    src: url('../fonts/postnobillscolombo-regular.ttf');
+}
+
+@font-face {
+    font-family: PostNoBillsColomboSemiBold;
+    src: url('../fonts/postnobillscolombo-semibold.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    background-color: #E6E6E6;
+}
+
+#navbar_add_form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    height: 3.483rem;
+    width: 100%;
+    font-size: 2rem;
+    font-family: PostNoBillsColomboExtraBold;
+    color: #DFA68C;
+    background-color: #152905;
+}
+
+#footer {
+    height: 2.177rem;
+    width: 100%;
+    position: fixed;
+    bottom: 0rem;
+    left: 0;
+    right: 0;
+    background-color: #152905;
+}
 :root {
     --background-color: #e6e6e6;
     --background-card-color: #d9d9d9;
