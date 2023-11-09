@@ -1,5 +1,5 @@
 #form_add {
-    color: #DFA68C;
+    color: var(--font-navbar-color);
     display: flex;
     flex-wrap: wrap;
     justify-content: center; 
@@ -22,17 +22,17 @@
 .text-danger {
     font-size: 0.7rem;
     font-family: PostNoBillsColomboRegular;
-    color: red;
+    color: var(--font-text-color);
     text-align: center;
 }
 
 #title_select, #reference_select, #category_select, #wear_select, #brand_select, #location_select, #description_select {
-    background-color: #F4E8E8;
+    background-color: var(--background-form-input);
     border-radius: 0.3rem;
     padding: 0.5rem;
     border: unset;
-    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25) inset;
-    color: #524D4D;
+    box-shadow: 0px 1px 1px 0px var(--box-shadow) inset;
+    color: var(--font-form-input-color);
     font-family: PostNoBillsColomboBold;
 }
 
@@ -72,7 +72,7 @@ input[type="file"] {
     top: 0;
     bottom: 0;
     width: 100%;
-    color: #DFA68C;
+    color: var(--font-navbar-color);
 }
 
 #text_file_select {
@@ -84,8 +84,8 @@ input[type="file"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #F4E8E8;
-    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25) inset;
+    background: var(--background-form-input);
+    box-shadow: 0px 1px 1px 0px var(--box-shadow) inset;
     border-radius: 5px;
     margin-left: 1.9rem;
     margin-right: 1.9rem;
@@ -108,14 +108,14 @@ input[type="file"] {
 }
 
 #preview_pictures_field {
-    background-color: #F4E8E8;
+    background-color: var(--background-form-input);
     margin-top: 1rem;
     margin-left: 3rem;
     border-radius: 0.3rem;
     margin-bottom: 4.5rem;
     padding: 0.5rem;
     border: unset;
-    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25) inset;
+    box-shadow: 0px 1px 1px 0px var(--box-shadow) inset;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -144,23 +144,23 @@ input[type="file"] {
     width: 50%;
     height: 2rem;
 
-    border: 1px solid black;
-    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--button-primary-corner-radius);
 
-    box-shadow: 1px 1px 5px black;
+    box-shadow: 1px 1px 5px var(--box-shadow);
 
     position: fixed;
     bottom: 1.2rem;
     left: 0;
     right: 0;
 
-    background-color: #208A24;
+    background-color: var(--background-color-cta);
 
     text-align: center;
     text-decoration: none;
 
-    color: white;
+    color: var(--font-text-color-cta);
     font-size: 1.2rem;
-    text-shadow: 0.2px 0.2px 1px black;
+    text-shadow: 0.2px 0.2px 1px var(--text-shadow);
     font-family: PostNoBillsColomboBold;
 }

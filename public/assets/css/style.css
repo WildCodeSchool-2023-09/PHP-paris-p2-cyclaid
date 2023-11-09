@@ -1,17 +1,25 @@
 :root {
   --background-color: #e6e6e6;
+  --background-form-input:#F4E8E8;
   --background-card-color: #d9d9d9;
   --header-footer-color: #152905;
+  --font-text-color:red;
   --font-navbar-color: #dfa68c;
   --font-title-primary-color: #133352;
   --font-text-color: #000000;
+  --font-form-input-color:#524D4D;
   --font-button-primary-color: #ffffff;
   --font-button-secondary-color: #1c3606;
   --stroke-primary-color: #234408;
   --stroke-secondary-color: #4d5737;
   --filter-drop-down-menu-color: #c4e1b7;
-  --button-primary-corner-radius: 50;
-  --button-secondary-corner-radius: 5;
+  --button-primary-corner-radius: 0.5rem;
+  --button-secondary-corner-radius: 5%;
+  --background-color-cta:#208A24;
+  --font-text-color-cta:white;
+  --text-shadow:rgba(0, 0, 0, 0.25);
+  --box-shadow: rgba(0, 0, 0, 0.25);
+  --border-color: black;
 }
 
 @font-face {
@@ -50,7 +58,7 @@
 }
 
 html {
-  background-color: #E6E6E6;
+  background-color: var(--background-color);
 }
 
 #navbar_add_form {
@@ -62,8 +70,8 @@ html {
     width: 100%;
     font-size: 2rem;
     font-family: PostNoBillsColomboExtraBold;
-    color: #DFA68C;
-    background-color: #152905;
+    color: var(--font-navbar-color);
+    background-color: var(--header-footer-color);
 }
 
 #footer {
@@ -73,7 +81,7 @@ html {
     bottom: 0rem;
     left: 0;
     right: 0;
-    background-color: #152905;
+    background-color: var(--header-footer-color);
 }
 
 
