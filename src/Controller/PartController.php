@@ -27,7 +27,7 @@ class PartController extends AbstractController
     public function add(): string
     {
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
-            $data = array_map('trim', array_map('htmlentities', $_POST));
+            $data = array_map('trim', $_POST);
 
             if ($this->checkIsEmpty($data)) {
                 $this->checkUploadErrors($_FILES['file']['name'], $_FILES['file']['tmp_name']);
@@ -102,6 +102,7 @@ class PartController extends AbstractController
         if (!in_array($data['brand'], range(self::BRAND_MIN, self::BRAND_MAX))) {
             $this->errors['brand'] = 'Invalid brand !';
         }
+
         if (!in_array($data['location'], PartManager::LOCATION)) {
             $this->errors['location'] = 'Invalid location !';
         }
