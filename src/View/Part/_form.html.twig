@@ -35,8 +35,8 @@
                         <label for="wear"></label>
                         <select name="wear" id="wear_select" required>
                             <option value="">WEAR STATE</option>
-                        {% for wear in constant('App\\Model\\PartManager::WEAR')|filter(trim, lower, striptags) %}
-                            <option value="{{ wear }}">{{ wear }}</option>
+                        {% for key, wear in constant('App\\Model\\PartManager::WEAR') %}
+                            <option value="{{ key }}">{{ wear }}</option>
                         {% endfor %}
                         
                         </select>
@@ -56,7 +56,7 @@
                         <label for="location"></label>
                         <select name="location" id="location_select" data-rel="form-sample-phone" required>
                             <option value="">LOCATION</option>
-                        {% for location in constant('App\\Model\\PartManager::LOCATION')|filter(trim, lower, striptags) %}
+                        {% for location in constant('App\\Model\\PartManager::LOCATION') %}
                             <option value="{{ location }}">{{ location }}</option>
                         {% endfor %}
                         </select>

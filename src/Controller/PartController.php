@@ -95,7 +95,7 @@ class PartController extends AbstractController
             $this->errors['category'] = 'Invalid category !';
         }
 
-        if (!in_array($data['wear'], PartManager::WEAR)) {
+        if (!array_key_exists($data['wear'], PartManager::WEAR)) {
             $this->errors['wear'] = 'Invalid wear !';
         }
 
