@@ -31,7 +31,6 @@
                         {% endfor %}
                         </select>    
                     </div>
-                    <p class="text-danger"> {{ errors['category'] }} </p>
                     <div>
                         <label for="wear"></label>
                         <select name="wear" id="wear_select" required>
@@ -42,6 +41,7 @@
                         
                         </select>
                     </div>
+                    <p class="text-danger"> {{ errors['category'] }} </p>
                     <p class="text-danger"> {{ errors['wear'] }} </p>
                     <div>
                         <label for="brand"></label>
@@ -52,7 +52,6 @@
                         {% endfor %}
                         </select>
                     </div>
-                    <p class="text-danger"> {{ errors['brand'] }} </p>
                     <div>
                         <label for="location"></label>
                         <select name="location" id="location_select" data-rel="form-sample-phone" required>
@@ -62,6 +61,7 @@
                         {% endfor %}
                         </select>
                     </div>
+                    <p class="text-danger"> {{ errors['brand'] }} </p>
                     <p class="text-danger"> {{ errors['location'] }} </p>
                 </div>
                 <div>
