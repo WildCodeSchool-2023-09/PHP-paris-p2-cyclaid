@@ -7,7 +7,6 @@
     <link rel="icon" href="/assets/images/favicon.png">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/navbar.css">
     {% block stylesheet %}{% endblock %}
 </head>
 
@@ -16,6 +15,7 @@
 {% block content %}
     
 {% block nav %}
+<link rel="stylesheet" href="/assets/css/navbar.css">
     <nav>
             <ul class = "navbar">
                 <li class = "navImage">
@@ -25,7 +25,7 @@
                 <a href="#"><img class = "navButtons" src="assets/images/icone_search.png"></a>
                 </li>
                 <li id = "navPostButton">
-                <a id="navPost" href="/part">POST YOUR PART</a>
+                <a id="navPost" href="/part/add">POST YOUR PART</a>
                 </li>
                 <li class = "navImage">
                 <a href="#"><img class = "navButtons" src="assets/images/icone_tuto.png"></a>

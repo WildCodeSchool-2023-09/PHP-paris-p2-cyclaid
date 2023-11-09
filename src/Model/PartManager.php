@@ -3,7 +3,7 @@
 namespace App\Model;
 
 use App\Model\AbstractManager;
-use App\Model\PartPictureManager;
+use App\Model\PicturePartManager;
 
 class PartManager extends AbstractManager
 {
