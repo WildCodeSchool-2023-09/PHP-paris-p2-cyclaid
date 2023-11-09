@@ -27,7 +27,7 @@ class PartController extends AbstractController
     public function add(): string
     {
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
-            $data = array_map('trim', array_map('htmlentities', $_POST));
+            $data = array_map('trim', $_POST);
 
             if ($this->checkIsEmpty($data)) {
                 $this->checkUploadErrors($_FILES['file']['name'], $_FILES['file']['tmp_name']);
@@ -95,7 +95,7 @@ class PartController extends AbstractController
             $this->errors['category'] = 'Invalid category !';
         }
 
-        if (!in_array($data['wear'], PartManager::WEAR)) {
+        if (!array_key_exists($data['wear'], PartManager::WEAR)) {
             $this->errors['wear'] = 'Invalid wear !';
         }
 
