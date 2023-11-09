@@ -130,7 +130,3 @@ INSERT INTO `brand` (`label`) VALUES
 ('Magura'),
 ('Brompton'),
 ('Other');
-
---
--- Insertion de deux post TEST pour effectuer... ben des tests.
---
