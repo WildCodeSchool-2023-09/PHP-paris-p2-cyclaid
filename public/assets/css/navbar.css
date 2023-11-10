@@ -16,17 +16,15 @@
   
     background-color: var(--header-footer-color);
     color: var(--font-navbar-color);
-  
-    height: 9vh;
+    height: 8vh;
     width: 100%;
   
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-shadow: 0px 4px 4px var(--text-shadow);
+    box-shadow: 0px 4px 4px var(--box-shadow);
   }
   
   .navImage{
     width: 80%;
-    height: 80%;
     align-items: center;
     text-align: center;
   }
@@ -60,8 +58,8 @@
     background-color: var(--stroke-primary-color);
     font-family: PostNoBillsColomboExtraBold;
     font-size: 2.1vh;
-    border-radius: 5%;
-    height: 8vh;
+    border-radius: var(--button-secondary-corner-radius);
+    height: 6.9vh; 
   }
 
   .postnav{

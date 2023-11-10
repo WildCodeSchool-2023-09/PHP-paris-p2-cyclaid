@@ -3,16 +3,29 @@
 namespace App\Model;
 
 use App\Model\AbstractManager;
-use App\Model\PartPictureManager;
+use App\Model\PicturePartManager;
 
 class PartManager extends AbstractManager
 {
     public const TABLE = 'post';
+    public const WEAR_NEW = 'new';
+    public const WEAR_GOOD = 'good';
+    public const WEAR_USED = 'used';
+    public const WEAR_TO_FIX = 'to-fix';
+
     public const CATEGORY = ['Accessories', 'Brakes', 'Cables and sheaths', 'Frames', 'Saddles',
                              'Tools', 'Forks and steering', 'Wheels and tires', 'Transmission',];
-    public const WEAR = ['New', 'Good', 'Used', 'To fix',];
+
+
+    public const WEAR = [
+        self::WEAR_NEW    => 'New',
+        self::WEAR_GOOD   => 'Good',
+        self::WEAR_USED   => 'Used',
+        self::WEAR_TO_FIX => 'To fix',
+    ];
+
     public const BRAND = ['Shimano', 'Hutchinson', 'Brooks', 'Continental', 'Schwalbe', 'Magura', 'Brompton', 'Other',];
-    public const LOCATION = ['Auverge', 'Rhône-Alpes', 'Bourgogne', 'Franche-Comté',
+    public const LOCATION = ['Auvergne', 'Rhône-Alpes', 'Bourgogne', 'Franche-Comté',
                              'Bretagne', 'Centre', 'Val de Loire', 'Corse', 'Grand Est',
                              'Hauts de France', 'Ile de France', 'Normandie', 'Nouvelle Acquitaine',
                              'Occitanie', 'Pays de la Loire', 'Provence', 'Alpes', 'Côte d\'Azur', 'Undefined',];

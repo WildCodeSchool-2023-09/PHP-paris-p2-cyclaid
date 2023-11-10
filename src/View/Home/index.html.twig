@@ -1,14 +1,51 @@
 {% extends 'layout.html.twig' %}
 
+
 {% block content %}
 
 {% block nav %}
-    {{ parent()}}
+
+{% include 'navbar.html.twig' %}
+   
 {% endblock %}
 
-    <p>Liste des pages : </p>
+        <h1 class="title">Cycl'aid</h1>
 
-<ul>
+{% block searchBar %}
+
+{% include 'searchbar.html.twig' %}
+    
+{% endblock %}
+
+<link rel="stylesheet" href="/assets/css/card.css">
+
+{# {% for post in postsList %} #}
+
+<div class = "cardContainer">
+    <img class = "cardImage" src = "assets/images/imageindextest.jfif">
+    <div class = "cardInfoContainer">
+        <img class = "cardIcon" src = "assets/images/state_icon.png">
+        <p class = "cardTitle"> Pedal look keo</p>
+        <p class ="cardDescription">Pédales automatiques les plus légères de leurs catégorie, les KEO 2 MAX vous garantissent du confort et de la puissance. Gloire à Anne Hidalgo d'avoir su apporter la vérité cycliste sur la Nécropôle. Aux armes mes frères ! que la volonté du grand pédalier soit faite !</p>
+            <div class = "cardFooterContainerLeft">
+                <img class = "cardIconLocation" src = "assets/images/location_icone.png">
+                <p class = "cardFooterInfos">Paris</p>
+            </div>
+            <div class ="cardFooterContainerRight">
+                <img class = "cardIconCalendar" src = "assets/images/calendar_icon.png">
+                <p class = "cardFooterInfos">10/11/2023</p>
+            </div>
+    </div>
+</div>
+
+{# {% else %}
+
+            <li>Nothing to display</li> #}
+
+    {# {% endfor %} #}
+
+
+{# <ul>
     {% for post in postsList %}
 
             <li><a href="/post/show?id={{ post.id }}"> - {{ post.id }} {{ post.title }}</a></li>
@@ -18,5 +55,5 @@
             <li>Nothing to display</li>
 
     {% endfor %}
-</ul>
+</ul> #}
 {% endblock %}

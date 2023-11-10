@@ -1,0 +1,96 @@
+body{
+    background-color: var(--background-color);
+    text-align: center;
+}
+
+button, input{
+    all:unset;
+}
+
+h1, #title {
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 3rem;
+    margin-top: 3.75rem;
+    font-family: PostNoBillsColomboExtraBold;
+    color: var( --font-title-primary-color);
+}
+
+#searchbarContainer{
+    display:inline-flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+
+    border-radius: 5px;
+    padding-top: 1.47%;
+    padding-bottom: 1.47%;
+
+    background-color: var(--search-primary-color);
+    
+    width: 94%;
+    height: 5.5%;
+}
+#searchInputContainer{
+    border-radius: 5px;
+    display: inline-flex;
+    margin-left: 2.4%;
+    justify-content: space-around;
+
+    width: 80%;
+    height: 66%;
+    background-color: var(--background-card-color);
+
+    text-align: center;
+}
+
+#separationBar{
+    display:block;
+    text-align: center;
+    color: var(--stroke-secondary-color);
+    padding-bottom: 1%;
+}
+
+#searchFilterButton{
+    background-color: #A5BE9A;
+    display: flex;
+    text-align: center;
+    width: 19%;
+    margin-top: 1px;
+    margin-bottom: 1px;
+
+    border-style: solid;
+    border-width: 2px;
+    border-color: #4D5737;
+    border-radius: 5px;
+}
+
+#searchFilterImage{
+    width: 26px;
+    height: 21px;
+    margin-left: 22%;
+}
+
+#search{
+
+    width: 17%;
+    height: 66%;
+    text-align: center;
+    line-height: 108%;
+    white-space: nowrap;
+
+    font-size: 0.62rem;
+    font-family: PostNoBillsColomboExtraBold;
+    background-color: var(--font-button-secondary-color);
+    color: blanchedalmond;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-right: 0.7%;
+    margin-left: 0.7%;
+
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    border-radius: 5px;
+}

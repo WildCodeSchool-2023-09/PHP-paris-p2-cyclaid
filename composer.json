@@ -11,7 +11,8 @@
     "require": {
         "twig/twig": "^3.5.1",
         "ext-pdo": "*",
-        "twbs/bootstrap": "^5.3"
+        "twbs/bootstrap": "^5.3",
+        "twbs/bootstrap-sass": "^3.4"
     },
     "require-dev": {
         "filp/whoops": "^2.15",

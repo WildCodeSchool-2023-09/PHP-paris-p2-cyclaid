@@ -1,0 +1,109 @@
+@font-face {
+    font-family: K2D-Regular;
+    src: url('../fonts/K2D-Regular.ttf');
+}
+@font-face {
+    font-family: Abel-Regular;
+    src: url('../fonts/Abel-Regular.ttf');
+}
+@font-face {
+    font-family: Inter-Regular;
+    src: url('../fonts/Inter-Regular.ttf');
+}
+
+.cardContainer{
+    display: flex;
+    margin-left: 4.3%;
+    margin-right: 4.3%;
+    margin-top : 8%;
+    width: 90.6%;
+    border-radius: 10px;
+    background-color: var(--background-card-color);
+    justify-content: space-around;
+}
+
+.cardImage{
+    width: 45%;
+    border-radius: 10px;
+    align-self: flex-start;
+}
+
+.cardInfoContainer{
+    height: 100%;
+    display : flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: baseline;
+    margin-top: 1%;
+}
+
+.cardIcon{
+    width: 8.8%;
+    height: 9%;
+    margin-left: 5%;
+}
+
+.cardTitle{
+    text-align: left;
+    font-family: K2D-Regular;
+    width: 80%;
+    height: 80%;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    color: var(--font-button-secondary-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    margin-top: 1%;
+}
+
+.cardDescription{
+    width: 75%;
+    height: 7vh;
+    font-family: Abel-Regular;
+    font-size: 0.625rem;
+
+    overflow: hidden;
+    margin-left: 5%;
+}
+
+.cardFooterContainerLeft{
+    width: 40%;
+    display: inline-flex;
+    align-items: last-baseline;
+    align-self: flex-start;
+}
+
+.cardIconLocation{
+    width: 30%;
+    height: 9%;
+    margin-left: 5%;
+}
+
+.cardFooterContainerRight{
+    width: 40%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-self: flex-start;
+    text-align: center;
+    margin-right: 5%;
+}
+
+.cardIconCalendar{
+    width: 25%;
+    height: 9%;
+    margin-left: 5%;
+}
+
+.cardFooterInfos{
+    font-family : Inter-Regular;
+    font-size: 0.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+    margin-top: 7%;
+}
+
