@@ -4,7 +4,7 @@ namespace App\Model;
 
 use App\Model\AbstractManager;
 
-class PicturePartManager extends AbstractManager
+class PostPictureManager extends AbstractManager
 {
     public const TABLE = 'post_picture';
 
