@@ -11,7 +11,7 @@ function createThumbnail(sFile) {
   
   }
 
-  function changeInputFil(oEvent){
+  function changeInputFile(oEvent){
     var oInputFile = oEvent.currentTarget,
         aFiles = oInputFile.files;
     document.getElementById('preview_pictures_field').innerHTML ='';
@@ -21,8 +21,8 @@ function createThumbnail(sFile) {
   }
   
   document.addEventListener('DOMContentLoaded',function(){
-   var aFileInput = document.forms['myForm'].querySelectorAll('[type=file]');
+   var aFileInput = document.forms['addPartForm'].querySelectorAll('[type=file]');
     for(var k = 0; k < aFileInput.length;k++){
-      aFileInput[k].addEventListener('change', changeInputFil, false);
+      aFileInput[k].addEventListener('change', changeInputFile, false);
     }
   });

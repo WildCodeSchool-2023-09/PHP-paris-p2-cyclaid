@@ -16,7 +16,6 @@ class PartManager extends AbstractManager
     public const CATEGORY = ['Accessories', 'Brakes', 'Cables and sheaths', 'Frames', 'Saddles',
                              'Tools', 'Forks and steering', 'Wheels and tires', 'Transmission',];
 
-
     public const WEAR = [
         self::WEAR_NEW    => 'New',
         self::WEAR_GOOD   => 'Good',
