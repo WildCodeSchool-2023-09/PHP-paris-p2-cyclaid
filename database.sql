@@ -134,8 +134,8 @@ INSERT INTO `brand` (`label`) VALUES
 --
 -- Insertion de deux post TEST pour effectuer... ben des tests.
 --
-INSERT INTO post (title, reference, creation_date, description, wear_status, user_id, brand_id, category_id) VALUES ('Test1', 'Ref1', NOW(), 'Il roule, et il roule vite !!! Il a des pédales, appelés Zinedine', 'New', 1, 4, 6);
-INSERT INTO post (title, reference, creation_date, description, wear_status, user_id, brand_id, category_id) VALUES ('Test2', 'Ref2', NOW(), 'Il roule, et il roule vite !!! Il a des pédales, appelés Zinedine', 'New', 1, 2, 3);
-INSERT INTO post (title, reference, creation_date, description, wear_status, user_id, brand_id, category_id) VALUES ('Test3', 'Ref3', NOW(), 'Il roule, et il roule vite !!! Il a des pédales, appelés Zinedine', 'Used', 2, 6, 6);
-INSERT INTO post (title, reference, creation_date, description, wear_status, user_id, brand_id, category_id) VALUES ('Test4', 'Ref4', NOW(), 'Il roule, et il roule vite !!! Il a des pédales, appelés Zinedine', 'New', 1, 4, 6);
-INSERT INTO post (title, reference, creation_date, description, wear_status, user_id, brand_id, category_id) VALUES ('Test5', 'Ref5', NOW(), 'Il roule, et il roule vite !!! Il a des pédales, appelés Zinedine', 'Good', 1, 4, 6);
+INSERT INTO post (title, reference, creation_date, description, wear_status, user_id, brand_id, category_id) VALUES ('Test1', 'Ref1', NOW(), 'Il roule, et il roule vite !!! Il a des pédales, appelés Zinedine', 'new', 1, 4, 6);
+INSERT INTO post (title, reference, creation_date, description, wear_status, user_id, brand_id, category_id) VALUES ('Test2-Titre allongé pour test', 'Ref2', NOW(), 'Il roule, et il roule vite !!! Il a des pédales, appelés Zinedine, je modifie légèrement le texte afin qu il soit plus long pour faire des tests. Gloire à la révolution', 'to-fix', 1, 2, 3);
+INSERT INTO post (title, reference, creation_date, description, wear_status, user_id, brand_id, category_id) VALUES ('Test3', 'Ref3', NOW(), 'Il roule, et il roule vite !!! Il a des pédales, appelés Zinedine', 'used', 2, 6, 6);
+INSERT INTO post (title, reference, creation_date, description, wear_status, user_id, brand_id, category_id) VALUES ('Test4', 'Ref4', NOW(), 'Il roule, et il roule vite !!! Il a des pédales, appelés Zinedine', 'new', 1, 4, 6);
+INSERT INTO post (title, reference, creation_date, description, wear_status, user_id, brand_id, category_id) VALUES ('Test5', 'Ref5', NOW(), 'Il roule, et il roule vite !!! Il a des pédales, appelés Zinedine', 'good', 1, 4, 6);

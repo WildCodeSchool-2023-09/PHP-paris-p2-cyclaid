@@ -1,0 +1,9 @@
+{% if post.wear_status == "new" %}
+    <img class = "cardIcon" src = "assets/images/state_icon_new.png">
+{% elseif post.wear_status == "good" %}
+    <img class = "cardIcon" src = "assets/images/state_icon_good.png">
+{% elseif post.wear_status == "used" %}
+    <img class = "cardIcon" src = "assets/images/state_icon_used.png">
+{% else %}
+    <img class = "cardIcon" src = "assets/images/state_icon_to_fix.png">
+{% endif %}
