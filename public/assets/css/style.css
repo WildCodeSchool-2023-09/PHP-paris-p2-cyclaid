@@ -1,3 +1,27 @@
+:root {
+  --background-color: #e6e6e6;
+  --background-form-input:#F4E8E8;
+  --background-card-color: #d9d9d9;
+  --header-footer-color: #152905;
+  --font-text-color:red;
+  --font-navbar-color: #dfa68c;
+  --font-title-primary-color: #133352;
+  --font-text-color: #000000;
+  --font-form-input-color:#524D4D;
+  --font-button-primary-color: #ffffff;
+  --font-button-secondary-color: #1c3606;
+  --stroke-primary-color: #234408;
+  --stroke-secondary-color: #4d5737;
+  --filter-drop-down-menu-color: #c4e1b7;
+  --button-primary-corner-radius: 0.5rem;
+  --button-secondary-corner-radius: 5%;
+  --background-color-cta:#208A24;
+  --font-text-color-cta:white;
+  --text-shadow:rgba(0, 0, 0, 0.25);
+  --box-shadow: rgba(0, 0, 0, 0.25);
+  --border-color: black;
+}
+
 @font-face {
     font-family: PostNoBillsColomboBold;
     src: url('../fonts/postnobillscolombo-bold.ttf');
@@ -31,7 +55,10 @@
 * {
     margin: 0;
     padding: 0;
-    background-color: #E6E6E6;
+}
+
+html {
+  background-color: var(--background-color);
 }
 
 #navbar_add_form {
@@ -43,8 +70,8 @@
     width: 100%;
     font-size: 2rem;
     font-family: PostNoBillsColomboExtraBold;
-    color: #DFA68C;
-    background-color: #152905;
+    color: var(--font-navbar-color);
+    background-color: var(--header-footer-color);
 }
 
 #footer {
@@ -54,52 +81,8 @@
     bottom: 0rem;
     left: 0;
     right: 0;
-    background-color: #152905;
-}
-:root {
-  --background-color: #e6e6e6;
-  --background-card-color: #d9d9d9;
-  --header-footer-color: #152905;
-  --font-navbar-color: #dfa68c;
-  --font-title-primary-color: #133352;
-  --font-text-color: #000000;
-  --font-button-primary-color: #ffffff;
-  --font-button-secondary-color: #1c3606;
-  --stroke-primary-color: #234408;
-  --stroke-secondary-color: #4d5737;
-  --filter-drop-down-menu-color: #c4e1b7;
-  --button-primary-corner-radius: 50;
-  --button-secondary-corner-radius: 5;
+    background-color: var(--header-footer-color);
 }
 
-@font-face {
-  font-family: PostNoBillsColomboBold;
-  src: url('../fonts/postnobillscolombo-bold.ttf');
-}
-
-@font-face {
-  font-family: PostNoBillsColomboExtraBold;
-  src: url('../fonts/postnobillscolombo-extrabold.ttf');
-}
-
-@font-face {
-  font-family: PostNoBillsColomboLight;
-  src: url('../fonts/postnobillscolombo-light.ttf');
-}
-
-@font-face {
-  font-family: PostNoBillsColomboMedium;
-  src: url('../fonts/postnobillscolombo-light.ttf');
-}
-
-@font-face {
-  font-family: PostNoBillsColomboRegular;
-  src: url('../fonts/postnobillscolombo-regular.ttf');
-}
-
-@font-face {
-  font-family: PostNoBillsColomboSemiBold;
-  src: url('../fonts/postnobillscolombo-semibold.ttf');
-}
 
 

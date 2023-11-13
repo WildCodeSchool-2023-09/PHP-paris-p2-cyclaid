@@ -1,5 +1,5 @@
 #form_add {
-    color: #DFA68C;
+    color: var(--font-navbar-color);
     display: flex;
     flex-wrap: wrap;
     justify-content: center; 
@@ -14,28 +14,30 @@
 }
 
 .select {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     margin: 0.2rem;
 }
 
 .text-danger {
     font-size: 0.7rem;
     font-family: PostNoBillsColomboRegular;
-    color: red;
+    color: var(--font-text-color);
+    text-align: center;
 }
 
 #title_select, #reference_select, #category_select, #wear_select, #brand_select, #location_select, #description_select {
-    background-color: #F4E8E8;
+    background-color: var(--background-form-input);
     border-radius: 0.3rem;
-    margin-bottom: 1.5rem;
     padding: 0.5rem;
     border: unset;
-    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25) inset;
-    color: #524D4D;
+    box-shadow: 0px 1px 1px 0px var(--box-shadow) inset;
+    color: var(--font-form-input-color);
     font-family: PostNoBillsColomboBold;
+}
+
+#reference_select, #category_select, #wear_select, #brand_select, #location_select, #description_select, #file {
+    margin-top: 1.5rem;
 }
 
 #title_select, #reference_select{
@@ -43,24 +45,14 @@
     margin-left: 2rem;
 }
 
-#category_select {
-    width: 69%;
-    margin-left: 1.5rem;
+#category_select, #brand_select {
+    width: 70%;
+    margin-left: 18%;
 }
 
-#wear_select {
-    width: 85%;
-    margin-right: 1.9rem;
-}
-
-#brand_select {
-    width:98%;
-    margin-left: 1.03rem;
-}
-
-#location_select {
-    width: 108%;
-    margin-right: -2.2rem;
+#wear_select, #location_select {
+    width: 70%;
+    margin-left: 11%;
 }
 
 #description_select {
@@ -70,6 +62,7 @@
     align-items: center;
     font-size: 1.4rem;
     margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 input[type="file"] {
@@ -79,7 +72,7 @@ input[type="file"] {
     top: 0;
     bottom: 0;
     width: 100%;
-    color: #DFA68C;
+    color: var(--font-navbar-color);
 }
 
 #text_file_select {
@@ -91,10 +84,11 @@ input[type="file"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #F4E8E8;
-    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25) inset;
+    background: var(--background-form-input);
+    box-shadow: 0px 1px 1px 0px var(--box-shadow) inset;
     border-radius: 5px;
     margin-left: 1.9rem;
+    margin-right: 1.9rem;
 }
 
 #text_file_select.dragover {
@@ -114,30 +108,24 @@ input[type="file"] {
 }
 
 #preview_pictures_field {
-    background-color: #F4E8E8;
+    background-color: var(--background-form-input);
     margin-top: 1rem;
     margin-left: 3rem;
     border-radius: 0.3rem;
     margin-bottom: 4.5rem;
     padding: 0.5rem;
     border: unset;
-    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25) inset;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 5rem;
+    box-shadow: 0px 1px 1px 0px var(--box-shadow) inset;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
     width: 62%;
 }
 
-#image {
-    height: 4rem;
-    max-width: 4rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left; 
-    align-items: flex-start;
-   
-}
+.imgPreview{
+    max-width: 95px;
+    max-height: 100%;
+  }
 
 #cta_form_add_give {
     z-index: 2;
@@ -150,23 +138,23 @@ input[type="file"] {
     width: 50%;
     height: 2rem;
 
-    border: 1px solid black;
-    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--button-primary-corner-radius);
 
-    box-shadow: 1px 1px 5px black;
+    box-shadow: 1px 1px 5px var(--box-shadow);
 
     position: fixed;
     bottom: 1.2rem;
     left: 0;
     right: 0;
 
-    background-color: #208A24;
+    background-color: var(--background-color-cta);
 
     text-align: center;
     text-decoration: none;
 
-    color: white;
+    color: var(--font-text-color-cta);
     font-size: 1.2rem;
-    text-shadow: 0.2px 0.2px 1px black;
+    text-shadow: 0.2px 0.2px 1px var(--text-shadow);
     font-family: PostNoBillsColomboBold;
 }

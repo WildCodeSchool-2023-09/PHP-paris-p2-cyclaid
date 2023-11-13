@@ -130,9 +130,3 @@ INSERT INTO `brand` (`label`) VALUES
 ('Magura'),
 ('Brompton'),
 ('Other');
-
---
--- Insertion de deux post TEST pour effectuer... ben des tests.
---
-INSERT INTO `post` (`id`, `title`, `creation_date`, `description`, `wear_status`, `part_id`, `user_id`) VALUES (NULL, 'Test', '2023-11-03', 'texte de description pour test', 'état test', '9999', '8888');
-INSERT INTO `post` (`id`, `title`, `creation_date`, `description`, `wear_status`, `part_id`, `user_id`) VALUES (NULL, 'Test2', '2023-11-04', 'texte de description pour test numéro 2', 'état test 2', '99992', '88882');
