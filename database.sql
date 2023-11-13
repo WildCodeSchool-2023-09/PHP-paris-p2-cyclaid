@@ -132,10 +132,18 @@ INSERT INTO `brand` (`label`) VALUES
 ('Other');
 
 --
--- Insertion de deux post TEST pour effectuer... ben des tests.
+-- Insertion de plusieurs post TEST pour effectuer... ben des tests.
 --
 INSERT INTO post (title, reference, creation_date, description, wear_status, user_id, brand_id, category_id) VALUES ('Test1', 'Ref1', NOW(), 'Il roule, et il roule vite !!! Il a des pédales, appelés Zinedine', 'new', 1, 4, 6);
-INSERT INTO post (title, reference, creation_date, description, wear_status, user_id, brand_id, category_id) VALUES ('Test2-Titre allongé pour test', 'Ref2', NOW(), 'Il roule, et il roule vite !!! Il a des pédales, appelés Zinedine, je modifie légèrement le texte afin qu il soit plus long pour faire des tests. Gloire à la révolution', 'to-fix', 1, 2, 3);
-INSERT INTO post (title, reference, creation_date, description, wear_status, user_id, brand_id, category_id) VALUES ('Test3', 'Ref3', NOW(), 'Il roule, et il roule vite !!! Il a des pédales, appelés Zinedine', 'used', 2, 6, 6);
-INSERT INTO post (title, reference, creation_date, description, wear_status, user_id, brand_id, category_id) VALUES ('Test4', 'Ref4', NOW(), 'Il roule, et il roule vite !!! Il a des pédales, appelés Zinedine', 'new', 1, 4, 6);
-INSERT INTO post (title, reference, creation_date, description, wear_status, user_id, brand_id, category_id) VALUES ('Test5', 'Ref5', NOW(), 'Il roule, et il roule vite !!! Il a des pédales, appelés Zinedine', 'good', 1, 4, 6);
+INSERT INTO post (title, reference, creation_date, description, wear_status, user_id, brand_id, category_id) VALUES ('Test2-Titre allongé pour test', 'Ref2', NOW(), 'Il roule, et il roule vite !!! Il a des pédales, appelés Zinedine, je modifie légèrement le texte afin qu il soit plus long pour faire des tests. Gloire à la révolution', 'to-fix', 2, 2, 3);
+INSERT INTO post (title, reference, creation_date, description, wear_status, user_id, brand_id, category_id) VALUES ('Test3', 'Ref3', NOW(), 'Il roule, et il roule vite !!! Il a des pédales, appelés Zinedine', 'used', 3, 6, 6);
+INSERT INTO post (title, reference, creation_date, description, wear_status, user_id, brand_id, category_id) VALUES ('Test4', 'Ref4', NOW(), 'Il roule, et il roule vite !!! Il a des pédales, appelés Zinedine', 'new', 4, 4, 6);
+INSERT INTO post (title, reference, creation_date, description, wear_status, user_id, brand_id, category_id) VALUES ('Test5', 'Ref5', NOW(), 'Il roule, et il roule vite !!! Il a des pédales, appelés Zinedine', 'good', 5, 4, 6);
+INSERT INTO post_picture (post_id, picture) VALUES ('1', 'test1.jfif');
+INSERT INTO post_picture (post_id, picture) VALUES ('2', 'test2.jfif');
+INSERT INTO post_picture (post_id, picture) VALUES ('3', 'test3.png');
+INSERT INTO post_picture (post_id, picture) VALUES ('4', 'test4.jfif');
+INSERT INTO user (id, city) VALUES ('1', 'Saint-Germain');
+INSERT INTO user (id, city) VALUES ('2', 'Paris');
+INSERT INTO user (id, city) VALUES ('3', 'Vladivostock');
+INSERT INTO user (id, city) VALUES ('4', 'Atlantide');

@@ -32,6 +32,7 @@ html {
     width: 133px;
     border-radius: 10px;
     align-self: flex-start;
+    align-self: center;
     height: 133px;
     object-fit: cover;
 }
@@ -45,10 +46,22 @@ html {
     margin-top: 1%;
 }
 
+.cardTopContainer{
+    width: 100%;
+    margin-top: 4px;
+    margin-left: 4px;
+    margin-right: 4px;
+    display: inline-flex;
+    align-self: flex-start;
+    justify-content: baseline;
+}
+
 .cardIcon{
-    width: 8.8%;
-    height: 9%;
+    margin-top: 4px;
     margin-left: 5%;
+    margin-right: 5%;
+    width: 14px;
+    height: 14px;
 }
 
 .cardTitle{
@@ -70,8 +83,9 @@ html {
 p.cardDescription{
     display: block;
     color: black;
-    width: 75%;
+    width: 90%;
     height: 4rem;
+    text-align: left;
     font-family: Abel-Regular;
     font-size: 0.625rem;
     margin-bottom: 9%;
@@ -90,25 +104,27 @@ p.cardDescription{
 }
 
 .cardIconLocation{
-    width: 30%;
-    height: 9%;
+    width: 14px;
     margin-left: 5%;
 }
 
 .cardFooterContainerRight{
     width: 40%;
     display: inline-flex;
-    justify-content: space-between;
+    justify-content: center;
     align-self: flex-start;
     text-align: center;
     margin-right: 5%;
     color: black;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
 }
 
 .cardIconCalendar{
-    width: 25%;
+    width: 14px;
     height: 9%;
-    margin-left: 5%;
+    margin-right: 5px;
 }
 
 .cardFooterInfos{
@@ -119,6 +135,9 @@ p.cardDescription{
     line-height: normal;
     text-align: center;
     margin-top: 7%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
 }
 
 #footerBlank{

@@ -22,20 +22,22 @@
 {% for post in postsList %}
 
     <a class = "cardContainer" href="/post/show?id={{ post.id }}">
-        {% include 'carIdmageSelect.html.twig' %}
-        <div class = "cardInfoContainer">
-            {% include 'cardWearIcon.html.twig' %}
-            <p class = "cardTitle">{{ post.title}}</p>
-            <p class ="cardDescription">{{ post.description }}</p>
-                <div class = "cardFooterContainerLeft">
-                    <img class = "cardIconLocation" src = "assets/images/location_icone.png">
-                    <p class = "cardFooterInfos">{{post.city}}</p>
+            {% include 'carIdmageSelect.html.twig' %}
+                <div class = "cardInfoContainer">
+                    <div class = "cardTopContainer">
+                        {% include 'cardWearIcon.html.twig' %}
+                        <p class = "cardTitle">{{ post.title}}</p>
+                    </div>
+                    <p class ="cardDescription">{{ post.description }}</p>
+                        <div class = "cardFooterContainerLeft">
+                            <img class = "cardIconLocation" src = "assets/images/location_icone.png">
+                            <p class = "cardFooterInfos">{{post.city}}</p>
+                        </div>
+                        <div class ="cardFooterContainerRight">
+                            <img class = "cardIconCalendar" src = "assets/images/calendar_icon.png">
+                            <p class = "cardFooterInfos">{{ post.creation_date }}</p>
+                        </div>
                 </div>
-                <div class ="cardFooterContainerRight">
-                    <img class = "cardIconCalendar" src = "assets/images/calendar_icon.png">
-                    <p class = "cardFooterInfos">{{ post.creation_date }}</p>
-                </div>
-        </div>
     </a>
 
     {% else %}
