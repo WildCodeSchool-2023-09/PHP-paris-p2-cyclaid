@@ -1,0 +1,23 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/connect.css">
+{% endblock %}
+
+{% block content %}
+
+{% block nav %}
+    {{ parent()}}
+{% endblock %}
+
+<section id="connection">
+    <button>
+        <a href="/user/login">Login</a>
+    </button>
+    <hr/>
+    <button>
+        <a href="/user/signin">Sign in</a>
+    </button>
+</section>
+
+{% endblock %}
