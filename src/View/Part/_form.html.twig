@@ -10,7 +10,7 @@
     </div>
     <div class="col-md-4 col-md-offset-6">
         <section id="form_add">
-            <form action="" method="post" enctype="multipart/form-data">
+            <form name="addPartForm" action="" method="post" enctype="multipart/form-data">
                 <div>
                     <label for="title"></label>
                     <input type="text" name="title" id="title_select" placeholder="TITLE" required/>
@@ -26,7 +26,7 @@
                         <label for="category"></label>
                         <select name="category" id="category_select" required>
                             <option value="">CATEGORY</option>
-                        {% for key_category, category in constant('App\\Model\\PartManager::CATEGORY') %}
+                        {% for key_category, category in constant('App\\Model\\PostManager::CATEGORY') %}
                             <option value="{{ key_category + 1 }}">{{ category }}</option>
                         {% endfor %}
                         </select>    
@@ -35,7 +35,8 @@
                         <label for="wear"></label>
                         <select name="wear" id="wear_select" required>
                             <option value="">WEAR STATE</option>
-                        {% for key, wear in constant('App\\Model\\PartManager::WEAR') %}
+
+                        {% for key, wear in constant('App\\Model\\PostManager::WEAR') %}
                             <option value="{{ key }}">{{ wear }}</option>
                         {% endfor %}
                         
@@ -47,7 +48,7 @@
                         <label for="brand"></label>
                         <select name="brand" id="brand_select" required>
                             <option value="">BRAND</option>
-                        {% for key_brand, brand in constant('App\\Model\\PartManager::BRAND') %}
+                        {% for key_brand, brand in constant('App\\Model\\PostManager::BRAND') %}
                             <option value="{{ key_brand + 1 }}">{{ brand }}</option>
                         {% endfor %}
                         </select>
@@ -56,7 +57,7 @@
                         <label for="location"></label>
                         <select name="location" id="location_select" data-rel="form-sample-phone" required>
                             <option value="">LOCATION</option>
-                        {% for location in constant('App\\Model\\PartManager::LOCATION') %}
+                        {% for location in constant('App\\Model\\PostManager::LOCATION') %}
                             <option value="{{ location }}">{{ location }}</option>
                         {% endfor %}
                         </select>
@@ -71,12 +72,12 @@
                 <p class="text-danger"> {{ errors['description'] }} </p>
                 <div id="file">
                     <label for="file" id="label_file_select">
-                    <div id="text_file_select"><img src="/assets/images/add_picture_icon.png" alt="add_icon" id="add_icon_select"/>
-                    </div>
-                    <input type="file" name="file[]" id="file_select" onchange="previewPicture(this)" multiple required/>
+                        <div id="text_file_select">
+                            <img src="/assets/images/add_picture_icon.png" alt="add_icon" id="add_icon_select"/>
+                        </div>
+                        <input type="file" name="file[]" id="file_select" multiple required/>
                     </label>
                     <div id="preview_pictures_field">
-                        <img src="#" alt="" id="image" style="">
                     </div>
                 </div>
                 <p class="text-danger"> {{ errors['file'] }} </p>
@@ -88,5 +89,5 @@
     </div>
 </div>
 <footer id="footer"></footer>
+<script src="/assets/js/form.js"></script>
 {% endblock %}
-{% block javascript %}<script src="/assets/js/form.js"></script>{% endblock %}

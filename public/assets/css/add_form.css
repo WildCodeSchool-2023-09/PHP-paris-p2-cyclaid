@@ -117,22 +117,16 @@ input[type="file"] {
     padding: 0.5rem;
     border: unset;
     box-shadow: 0px 1px 1px 0px var(--box-shadow) inset;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
     width: 62%;
 }
 
-#image {
-    height: 4rem;
-    max-width: 4rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left; 
-    align-items: flex-start;
-   
-}
+.imgPreview{
+    max-width: 95px;
+    max-height: 100%;
+  }
 
 #cta_form_add_give {
     z-index: 2;
