@@ -29,9 +29,11 @@ html {
 }
 
 .cardImage{
-    width: 45%;
+    width: 133px;
     border-radius: 10px;
     align-self: flex-start;
+    height: 133px;
+    object-fit: cover;
 }
 
 .cardInfoContainer{
@@ -69,7 +71,7 @@ p.cardDescription{
     display: block;
     color: black;
     width: 75%;
-    height: 10vh;
+    height: 4rem;
     font-family: Abel-Regular;
     font-size: 0.625rem;
     margin-bottom: 9%;
@@ -117,6 +119,10 @@ p.cardDescription{
     line-height: normal;
     text-align: center;
     margin-top: 7%;
+}
+
+#footerBlank{
+    height: 80px;
 }
 
 #footer {
