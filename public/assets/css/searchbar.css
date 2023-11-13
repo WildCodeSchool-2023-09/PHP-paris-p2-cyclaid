@@ -11,8 +11,8 @@ h1, #title {
     text-align: center;
     justify-content: center;
     width: 100%;
-    font-size: 3rem;
-    margin-top: 3.75rem;
+    font-size: 3.125rem;
+    margin-top: 1rem;
     font-family: PostNoBillsColomboExtraBold;
     color: var( --font-title-primary-color);
 }
