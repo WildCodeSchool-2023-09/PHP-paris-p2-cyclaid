@@ -61,4 +61,22 @@ class PostManager extends AbstractManager
             return false;
         }
     }
+
+    public function search()
+    {
+        $keywords = $_GET["keywords"];
+        $submit = $_GET["valider"];
+        if (isset($submit) && !empty(trim($keywords))) {
+            $words = explode(" ", trim($keywords));
+            $numberWord = count($words);
+            $keyword = [];
+            for ($i = 0; $i < $numberWord; $i++) {
+                $keyword[$i] = " title LIKE '%" . $words[$i] . "%'";
+            }
+            $query = "SELECT * FROM " . self::TABLE . " WHERE " . implode(" OR ", $keyword) . " ORDER BY id DESC";
+            $statement = $this->pdo->prepare($query);
+            $statement->execute();
+            $statement->fetchAll(\PDO::FETCH_ASSOC);
+        }
+    }
 }

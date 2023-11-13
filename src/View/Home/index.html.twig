@@ -6,6 +6,20 @@
     {{ parent()}}
 {% endblock %}
 
+{% block searchBar %}
+<form method="GET" action="">
+<div id ="searchbarContainer">
+    <div id = "searchInputContainer">
+        <input type="text" name="keywords" placeholder="Type your search...">
+        <div id ="separationBar">|</div>
+        <button id="searchFilterButton"><img id ="searchFilterImage" src="assets/images/icon_filters.png"></button>
+    </div>
+    <button name="submit" id = "search">SEARCH</button>
+</div>
+</form>
+
+{% endblock %}
+
     <p>Liste des pages : </p>
 
 <ul>
