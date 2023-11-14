@@ -144,16 +144,6 @@ p.cardDescription{
     height: 80px;
 }
 
-#footer {
-    height: 2.177rem;
-    width: 100%;
-    position: fixed;
-    bottom: 0rem;
-    left: 0;
-    right: 0;
-    background-color: var(--header-footer-color);
-}
-
 #ctaPost {
     z-index: 2;
     display: flex;

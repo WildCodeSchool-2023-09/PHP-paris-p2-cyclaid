@@ -47,7 +47,7 @@ class PostController extends AbstractController
                 }
             }
         }
-        return $this->twig->render('Part\_form.html.twig', [
+        return $this->twig->render('Post\_form.html.twig', [
             'errors' => $this->errors
         ]);
     }
