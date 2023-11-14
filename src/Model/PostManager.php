@@ -4,6 +4,7 @@ namespace App\Model;
 
 use App\Model\AbstractManager;
 use App\Model\PostPictureManager;
+use PDO;
 
 class PostManager extends AbstractManager
 {
@@ -62,6 +63,7 @@ class PostManager extends AbstractManager
         }
     }
 
+
     public function search()
     {
         $keywords = $_GET["keywords"];
@@ -78,5 +80,17 @@ class PostManager extends AbstractManager
             $statement->execute();
             $statement->fetchAll(\PDO::FETCH_ASSOC);
         }
+    }
+
+    public function index(string $orderBy = '', string $direction = 'ASC'): array
+    {
+        $query = 'SELECT * FROM ' . static::TABLE .
+            ' LEFT JOIN post_picture ON post.id = post_id 
+            LEFT JOIN user ON user.id = user_id';
+        if ($orderBy) {
+            $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
+        }
+
+        return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
     }
 }

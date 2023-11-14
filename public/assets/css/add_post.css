@@ -8,6 +8,7 @@
 .title_logo {
     text-align: center;
     width: 100%;
+    color: var(--font-title-primary-color);
     font-size: 2rem;
     margin-bottom: 1rem;
     font-family: PostNoBillsColomboExtraBold;
@@ -157,4 +158,27 @@ input[type="file"] {
     font-size: 1.2rem;
     text-shadow: 0.2px 0.2px 1px var(--text-shadow);
     font-family: PostNoBillsColomboBold;
+}
+
+#navbar_add_form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    height: 3.483rem;
+    width: 100%;
+    font-size: 2rem;
+    font-family: PostNoBillsColomboExtraBold;
+    color: var(--font-navbar-color);
+    background-color: var(--header-footer-color);
+}
+
+#footer {
+    height: 2.177rem;
+    width: 100%;
+    position: fixed;
+    bottom: 0rem;
+    left: 0;
+    right: 0;
+    background-color: var(--header-footer-color);
 }

@@ -1,0 +1,179 @@
+@font-face {
+    font-family: K2D-Regular;
+    src: url('../fonts/K2D-Regular.ttf');
+}
+@font-face {
+    font-family: Abel-Regular;
+    src: url('../fonts/Abel-Regular.ttf');
+}
+@font-face {
+    font-family: Inter-Regular;
+    src: url('../fonts/Inter-Regular.ttf');
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.cardContainer{
+    display: flex;
+    margin-left: 4.3%;
+    margin-right: 4.3%;
+    margin-top : 8%;
+    width: 90.6%;
+    border-radius: 10px;
+    background-color: var(--background-card-color);
+    justify-content: space-around;
+    text-decoration: none;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.cardImage{
+    width: 100px;
+    border-radius: 10px;
+    align-self: flex-start;
+    align-self: center;
+    height: 133px;
+    object-fit: cover;
+}
+
+.cardInfoContainer{
+    height: 100%;
+    display : flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: baseline;
+    margin-top: 1%;
+}
+
+.cardTopContainer{
+    width: 100%;
+    margin-top: 4px;
+    margin-left: 4px;
+    margin-right: 4px;
+    display: inline-flex;
+    align-self: flex-start;
+    justify-content: baseline;
+}
+
+.cardIcon{
+    margin-top: 4px;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 14px;
+    height: 14px;
+}
+
+.cardTitle{
+    text-align: left;
+    font-family: K2D-Regular;
+    width: 127px;
+    height: 80%;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    color: var(--font-button-secondary-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    margin-top: 1%;
+}
+
+p.cardDescription{
+    display: block;
+    color: black;
+    width: 90%;
+    height: 4rem;
+    text-align: left;
+    font-family: Abel-Regular;
+    font-size: 0.625rem;
+    margin-bottom: 9%;
+    margin-top: 2%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 5%;
+}
+
+.cardFooterContainerLeft{
+    width: 40%;
+    display: inline-flex;
+    align-items: last-baseline;
+    align-self: flex-start;
+    color: black;
+}
+
+.cardIconLocation{
+    width: 14px;
+    margin-left: 5%;
+}
+
+.cardFooterContainerRight{
+    width: 40%;
+    display: inline-flex;
+    justify-content: center;
+    align-self: flex-start;
+    text-align: center;
+    margin-right: 5%;
+    color: black;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+
+.cardIconCalendar{
+    width: 14px;
+    height: 9%;
+    margin-right: 5px;
+}
+
+.cardFooterInfos{
+    font-family : Inter-Regular;
+    font-size: 0.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+    margin-top: 7%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+
+#footerBlank{
+    height: 80px;
+}
+
+#ctaPost {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    
+    margin: auto;
+    margin-top: 10%;
+    width: 50%;
+    height: 2rem;
+
+    border: 1px solid var(--border-color);
+    border-radius: var(--button-primary-corner-radius);
+
+    box-shadow: 1px 1px 5px var(--box-shadow);
+
+    position: fixed;
+    bottom: 1.2rem;
+    left: 0;
+    right: 0;
+
+    background-color: #FCA311;
+
+    text-align: center;
+    text-decoration: none;
+
+    color: var(--font-text-color-cta);
+    font-size: 1.2rem;
+    text-shadow: 0.2px 0.2px 1px var(--text-shadow);
+    font-family: PostNoBillsColomboBold;
+}
+
