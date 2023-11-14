@@ -126,7 +126,7 @@ class PostController extends AbstractController
 
     public function index()
     {
-        $postsList = $this->postManager->selectAll();
+        $postsList = $this->postManager->index();
         return $this->twig->render('Home/index.html.twig', ['postsList' => $postsList]);
     }
 }

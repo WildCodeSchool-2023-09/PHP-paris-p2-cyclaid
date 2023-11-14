@@ -25,9 +25,7 @@ abstract class AbstractManager
      */
     public function selectAll(string $orderBy = '', string $direction = 'ASC'): array
     {
-        $query = 'SELECT * FROM ' . static::TABLE .
-            ' LEFT JOIN post_picture ON post.id = post_id 
-            LEFT JOIN user ON user.id = user_id';
+        $query = 'SELECT * FROM ' . static::TABLE;
         if ($orderBy) {
             $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
         }
@@ -42,7 +40,7 @@ abstract class AbstractManager
     {
         // prepared request
         $statement = $this->pdo->prepare("SELECT * FROM " . static::TABLE . " WHERE id=:id");
-        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->bindValue('id', $id, PDO::PARAM_INT);
         $statement->execute();
 
         return $statement->fetch();
@@ -55,7 +53,7 @@ abstract class AbstractManager
     {
         // prepared request
         $statement = $this->pdo->prepare("DELETE FROM " . static::TABLE . " WHERE id=:id");
-        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->bindValue('id', $id, PDO::PARAM_INT);
         $statement->execute();
     }
 }
