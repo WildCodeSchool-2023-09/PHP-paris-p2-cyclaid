@@ -1,11 +1,11 @@
 {% extends 'layout.html.twig' %}
 {% block stylesheet %}
-    <link rel="stylesheet" href="/assets/css/add_form.css">
+    <link rel="stylesheet" href="/assets/css/add_post.css">
 {% endblock %}
 {% block content %}
 <nav class="navbar fixed-top bg-body-tertiary" id="navbar_add_form">GIVE TO THE COMMUNITY</nav>
 <div class="row">
-    <div class="title_logo" id="logo" style="color: #133352">
+    <div class="title_logo" id="logo">
         <h1>Cycl'aid</h1>
     </div>
     <div class="col-md-4 col-md-offset-6">
@@ -35,6 +35,7 @@
                         <label for="wear"></label>
                         <select name="wear" id="wear_select" required>
                             <option value="">WEAR STATE</option>
+
                         {% for key, wear in constant('App\\Model\\PostManager::WEAR') %}
                             <option value="{{ key }}">{{ wear }}</option>
                         {% endfor %}
@@ -72,7 +73,7 @@
                 <div id="file">
                     <label for="file" id="label_file_select">
                         <div id="text_file_select">
-                            <img src="/assets/images/add_picture_icon.png" alt="add_icon" id="add_icon_select"/>
+                            <img src="/assets/images/icon_add_picture.png" alt="add_icon" id="add_icon_select"/>
                         </div>
                         <input type="file" name="file[]" id="file_select" multiple required/>
                     </label>

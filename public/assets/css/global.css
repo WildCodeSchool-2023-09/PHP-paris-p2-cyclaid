@@ -20,6 +20,7 @@
   --text-shadow:rgba(0, 0, 0, 0.25);
   --box-shadow: rgba(0, 0, 0, 0.25);
   --border-color: black;
+  --search-primary-color: #315F0A;
 }
 
 @font-face {
@@ -61,19 +62,6 @@ html {
   background-color: var(--background-color);
 }
 
-#navbar_add_form {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
-    height: 3.483rem;
-    width: 100%;
-    font-size: 2rem;
-    font-family: PostNoBillsColomboExtraBold;
-    color: var(--font-navbar-color);
-    background-color: var(--header-footer-color);
-}
-
 #footer {
     height: 2.177rem;
     width: 100%;
@@ -83,6 +71,4 @@ html {
     right: 0;
     background-color: var(--header-footer-color);
 }
-
-
 
