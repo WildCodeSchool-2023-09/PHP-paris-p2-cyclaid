@@ -78,7 +78,7 @@ class PostManager extends AbstractManager
             $query = "SELECT * FROM " . self::TABLE . " WHERE " . implode(" OR ", $keyword) . " ORDER BY id DESC";
             $statement = $this->pdo->prepare($query);
             $statement->execute();
-            $statement->fetchAll(\PDO::FETCH_ASSOC);
+            $statement->fetchAll(PDO::FETCH_ASSOC);
         }
     }
 

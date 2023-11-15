@@ -133,11 +133,6 @@ class PostController extends AbstractController
     public function search(): string
     {
         if ($_SERVER["REQUEST_METHOD"] === "GET") {
-            $searchPost = new postManager();
-            $searchPost = array_map('trim', $_GET);
-            $searchPost = $this->postManager->search();
-            if (isset($searchPost['title']) && !empty(trim($searchPost['title']))) {
-            }
         }
         return $this->twig->render('Home/index.html.twig');
     }
