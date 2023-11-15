@@ -63,7 +63,7 @@ class PostManager extends AbstractManager
         }
     }
 
-    public function index(string $orderBy = '', string $direction = 'ASC'): array
+    public function selectAll(string $orderBy = '', string $direction = 'ASC'): array
     {
         $query = 'SELECT * FROM ' . static::TABLE .
             ' LEFT JOIN post_picture ON post.id = post_id 
