@@ -1,11 +1,43 @@
-.popup {
+#flex1 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+#date>p {
+  color: red;
+ 
+}
+
+#id_post>p {
+  color: blue;
+
+  /* width: 74px;
+  height: 13px;
+  flex-shrink: 0;
+  color: #4D5737;
+  text-align: center;
+  font-family: PostNoBillsColomboExtraBold;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal; */
+}
+
+
+
+
+
+
+
+/* .popup {
     position: relative;
     display: inline-block;
     cursor: pointer;
-  }
+  } */
   
   /* The actual popup (appears on top) */
-  .popup .popuptext {
+  /* .popup .popuptext {
     visibility: hidden;
     width: 160px;
     background-color: #555;
@@ -19,9 +51,9 @@
     left: 50%;
     margin-left: -80px;
   }
-  
+   */
   /* Popup arrow */
-  .popup .popuptext::after {
+  /* .popup .popuptext::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -31,9 +63,9 @@
     border-style: solid;
     border-color: #555 transparent transparent transparent;
   }
-  
+   */
   /* Toggle this class when clicking on the popup container (hide and show the popup) */
-  .popup .show {
+  /* .popup .show {
     visibility: visible;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
@@ -44,8 +76,8 @@
     background: #D9D9D9;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     width: 20rem;
-  }
-  
+  } */
+/*   
   #get_part {
     display: flex;
     width: 189px;
@@ -58,8 +90,8 @@
     border-radius: 50px;
     background: #208A24;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
-  }
-  
+  } */
+/*   
   #description {
     width: 276px;
     height: 104px;
@@ -73,25 +105,10 @@
     font-weight: 800;
     line-height: normal;
   }
+   */
+
   
-  .carousel-indicators {
-    display: none;
-  }
-  
-  #id_post {
-    width: 74px;
-    height: 13px;
-    flex-shrink: 0;
-    color: #4D5737;
-    text-align: center;
-    font-family: Post No Bills Colombo ExtraBold;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
-  }
-  
-  
+/*   
   #postInfo {
     display: flex;
     justify-content: space-between;
@@ -103,8 +120,8 @@
   #postInfoId {
     text-align: right;
   }
-  
-  #id_post {
+   */
+  /* #id_post {
     width: 74px;
     height: 13px;
     flex-shrink: 0;
@@ -116,9 +133,9 @@
     font-weight: 800;
     line-height: normal;
   }
-  
+   */
   /* Add animation (fade in the popup) */
-  @-webkit-keyframes fadeIn {
+  /* @-webkit-keyframes fadeIn {
     from {
       opacity: 0;
     }
@@ -136,4 +153,4 @@
     to {
       opacity: 1;
     }
-  }
+  } */
