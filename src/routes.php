@@ -9,5 +9,6 @@
 return [
     '' => ['PostController', 'index', ['postsList']],
     'post/show' => ['PostController', 'show', ['id']],
+    'piece/show' => ['PieceController', 'show', ['id']],
     'post/add' => ['PostController', 'add'],
 ];
