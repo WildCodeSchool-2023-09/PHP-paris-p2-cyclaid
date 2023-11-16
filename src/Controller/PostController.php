@@ -131,6 +131,6 @@ class PostController extends AbstractController
         foreach ($postsList as $index => $index) {
             $postsList[$index]['fileexist'] = file_exists('uploads/' . $postsList[$index]['picture']);
         }
-        return $this->twig->render('Home/index.html.twig', ['postsList' => $postsList]);
+        return $this->twig->render('Index/index.html.twig', ['postsList' => $postsList]);
     }
 }
