@@ -43,7 +43,7 @@ class PostController extends AbstractController
                     move_uploaded_file($_FILES['file']['tmp_name'][$i], $uploadFile);
                 }
                 if ($this->postManager->insert($data, $pictures)) {
-                    header('Location: /');
+                    header('Location: /index/index');
                 }
             }
         }
