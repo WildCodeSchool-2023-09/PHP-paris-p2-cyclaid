@@ -1,8 +1,8 @@
-#form_add {
-    color: var(--font-navbar-color);
+#form_sign_in, #form_login {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .title_logo {
@@ -13,12 +13,6 @@
     font-family: PostNoBillsColomboExtraBold;
 }
 
-.select {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 0.2rem;
-}
-
 .text-danger {
     font-size: 1rem;
     font-family: PostNoBillsColomboRegular;
@@ -26,7 +20,7 @@
     text-align: center;
 }
 
-#title_select, #reference_select, #category_select, #wear_select, #brand_select, #location_select, #description_select {
+#firstname, #lastname, #city, #postal_code, #email, #password {
     background-color: var(--background-form-input);
     border-radius: 0.3rem;
     padding: 0.5rem;
@@ -34,35 +28,28 @@
     box-shadow: 0px 1px 1px 0px var(--box-shadow) inset;
     color: var(--font-form-input-color);
     font-family: PostNoBillsColomboBold;
-}
-
-#reference_select, #category_select, #wear_select, #brand_select, #location_select, #description_select, #file {
-    margin-top: 1.5rem;
-}
-
-#title_select, #reference_select{
     width: 75%;
     margin-left: 2rem;
 }
 
-#category_select, #brand_select {
-    width: 70%;
-    margin-left: 18%;
+#log_email, #log_password {
+    background-color: var(--background-form-input);
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    border: unset;
+    box-shadow: 0px 1px 1px 0px var(--box-shadow) inset;
+    color: var(--font-form-input-color);
+    font-family: PostNoBillsColomboBold;
+    font-size: 1.5rem;
+    width: 18rem;
 }
 
-#wear_select, #location_select {
-    width: 70%;
-    margin-left: 11%;
+#lastname, #city, #postal_code, #email, #password, #file {
+    margin-top: 1.5rem;
 }
 
-#description_select {
-    width: 15rem;
-    height: 8rem;
-    text-align: center;
-    align-items: center;
-    font-size: 1.4rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
+#log_email, #log_password {
+    margin-top: 6.5rem;
 }
 
 input[type="file"] {
@@ -122,12 +109,7 @@ input[type="file"] {
     width: 62%;
 }
 
-.imgPreview{
-    max-width: 95px;
-    max-height: 100%;
-  }
-
-#cta_form_add_give {
+#cta_form_sign_in {
     z-index: 2;
     display: flex;
     justify-content: center;

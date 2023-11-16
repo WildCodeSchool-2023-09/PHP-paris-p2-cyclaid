@@ -1,0 +1,70 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/signin.css">
+{% endblock %}
+
+{% block content %}
+
+{% block nav %}
+    {{ parent()}}
+{% endblock %}
+
+<div class="row">
+    <div class="title_logo" id="logo" style="color: #133352">
+        <h1>Cycl'aid</h1>
+    </div>
+    <div class="col-md-4 col-md-offset-6">
+        <section id="form_sign_in">
+            <form action="" method="post" enctype="multipart/form-data">
+                <div>
+                    <label for="firstname"></label>
+                    <input type="text" name="firstname" id="firstname" placeholder="FIRSTNAME" required/>
+                </div>
+                <p class="text-danger"> {{ errors['firstname'] }} </p>
+                <div>
+                    <label for="lastname"></label>
+                    <input type="text" name="lastname" id="lastname" placeholder="LASTNAME" required/>
+                </div>
+                <p class="text-danger"> {{ errors['lastname'] }} </p>
+                <div>
+                    <label for="city"></label>
+                    <input type="text" name="city" id="city" placeholder="CITY" required/>
+                </div>
+                <p class="text-danger"> {{ errors['city'] }} </p>
+                <div>
+                    <label for="postal_code"></label>
+                    <input type="text" name="postal_code" id="postal_code" placeholder="POSTAL_CODE" required/>
+                </div>
+                <p class="text-danger"> {{ errors['postal_code'] }} </p>
+                <div>
+                    <label for="email"></label>
+                    <input type="email" name="email" id="email" placeholder="EMAIL" required/>
+                </div>
+                <p class="text-danger"> {{ errors['email'] }} </p>
+                <div>
+                    <label for="password"></label>
+                    <input type="password" name="password" id="password" placeholder="PASSWORD" required/>
+                </div>
+                <p class="text-danger"> {{ errors['password'] }} </p>
+                <div id="file">
+                    <label for="file" id="label_file_select">
+                        <div id="text_file_select">
+                            <img src="/assets/images/add_picture_icon.png" alt="add_icon" id="add_icon_select"/>
+                        </div>
+                        <input type="file" name="file" id="file_select"/>
+                    </label>
+                    <div id="preview_pictures_field">
+                    </div>
+                </div>
+                <p class="text-danger"> {{ errors['file'] }} </p>
+                <div>
+                    <input type="submit" id="cta_form_sign_in" value="SIGN IN"/>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+<footer id="footer"></footer>
+
+{% endblock %}

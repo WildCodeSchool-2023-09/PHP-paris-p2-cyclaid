@@ -31,14 +31,30 @@
                     <a href="#"><img class = "navButtons" src="/assets/images/icone_tuto.png"></a>
                 </li>
                 <li class = "navImage">
-                    <a href="/user/connect"><img class = "navButtons" src="/assets/images/icone_user_profil.png"></a>
+                    <img id="connect" class = "navButtons" src="/assets/images/icone_user_profil.png">
                 </li>
             </ul>
         </nav>
+        <div id="to-connect">
+            <a href="/user/login" >LOGIN</a>
+            <a href="/user/signin" >SIGN IN</a>
+        </div>
+        <div id="to-deconnect">
+            <a href="/user/profile" >PROFILE</a>
+            <a href="/user/logout" >LOG OUT</a>
+        </div>
+
 {% endblock %}
 
 {% block javascript %}{% endblock %}
 {% endblock %}
+
+{% if user is empty %}
+    <script type="text/javascript" src="/assets/js/isNotLog.js"></script>
+{% else %}
+    <script type="text/javascript" src="/assets/js/isLog.js"></script>
+{% endif %}
+
 </body>
 </html>
 

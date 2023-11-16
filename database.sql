@@ -37,6 +37,7 @@ CREATE TABLE `user` (
   `city` VARCHAR(150) NOT NULL,
   `postal_code` CHAR(5) NOT NULL,
   `email_address` VARCHAR(255) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
   `profile_picture` VARCHAR(255) NULL,
   `coin` INT DEFAULT 0
 );

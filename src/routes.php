@@ -10,6 +10,8 @@ return [
     '' => ['PostController', 'index', ['postsList']],
     'post/show' => ['PostController', 'show', ['id']],
     'part/add' => ['PostController', 'add'],
-    'user/connect' => ['UserController', 'connect'],
     'user/signin' => ['UserController', 'signIn'],
+    'user/login' => ['UserController', 'login'],
+    'user/profile' => ['UserController', 'profile'],
+    'user/logout' => ['UserController', 'logout'],
 ];

@@ -1,0 +1,43 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/profile.css">
+{% endblock %}
+
+{% block content %}
+
+{% block nav %}
+    {{ parent()}}
+{% endblock %}
+
+<div class="row">
+    <div class="title_logo" id="logo" style="color: #133352">
+        <h1>Cycl'aid</h1>
+    </div>
+    <div class="col-md-4 col-md-offset-6">
+        <section id="profile">
+            <div id="profile-picture">
+            {% if user['profile-picture'] is not empty %}
+                <img id="profile" src="/assets/uploads/{{ user['profile-picture'] }}"></img>
+            {% endif %}
+            </div>
+            <div id="name-coin" >
+                <h1 id="name" >{{ user['firstname'] ~ ' ' ~ user['lastname'] }}</h1>
+                <div id="coin" >
+                    <p id="coin-number" >{{ user['coin'] }}</p>
+                    <img id="coin" src="/assets/images/icone_coin.png" ></img>
+                </div>
+            </div>
+            <div id="sections" >
+                <h2 id="my-bike" >MY BIKE</h2>
+                <h2 id="my-posts" >MY POSTS</h2>
+                <h2 id="my-wishes" >MY WISHES</h2>
+            </div>
+            <div id="section" >
+            </div>
+        </section>
+    </div>
+</div>
+<footer id="footer"></footer>
+
+{% endblock %}
