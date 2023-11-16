@@ -9,51 +9,68 @@
 {% include 'navbar.html.twig' %}
    
 {% endblock %}
-<div id="flex1">
+<div id="flex_container_1">
 	<div id='date'>
-		<p>{{ post['creation_date'] }}</p>
+		<p><img id="icon_calendar" src="../assets/images/icon_calendar.png"/> {{ post['creation_date'] }}</p>
 	</div>
 
 	<div id="id_post">
-		<p>{{ post['id_post'] }}</p>
+		<p>AD id : {{ post['id_post'] }}</p>
 	</div>
 </div>
 
-{# <div id="carousel-inner">
+<div id="flex_container_2">
 	{% for image in images %}
-		<div class="carousel-item active">
-			<img src={{image['picture']}} alt="Carrousel slide 1" class="d-block w-100">
+		<div>
+			<img src="{{post.picture}}" alt="image_1">
 		</div>
-		{% endfor %}
+	{% endfor %}
 	</div>
 </div>
-<!-- Contrôles -->
-<a id="carousel-control-prev" href="#demo" role="button" data-slide="prev">
-	<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-	<span class="sr-only">Précédent</span>
-</a>
-<a id="carousel-control-next" href="#demo" role="button" data-slide="next">
-	<span id="carousel-control-next-icon" aria-hidden="true"></span>
-	<span id="sr-only">Suivant</span>
-</a>
+<div id="flex_container_3">
+	{% for image in images %}
+		<div>
+			<img src= {{image['picture']}} alt="image_2">
+			<img src= {{image['picture']}} alt="image_3">
+			<img src= {{image['picture']}} alt="image_4">
+		</div>
+	{% endfor %}
 </div>
+
+<div id="flex_container_4">
+	<div id="information">
+		<div class="grid-container">
+			<div class="grid-item" id="grid_item_1">{{ post['user_id'] }}</div>
+			<div class="grid-item">{{ post['wear_status'] }}</div>
+			<div class="grid-item" id="grid_item_2">{{ post['category_id'] }}</div>
+			<div class="grid-item" id="grid_item_3">{{ post['brand_id'] }}</div>  
+			<div class="grid-item">{{ post['reference'] }}</div>
+			<div class="grid-item" id="grid_item_4">{{ post['location'] }}</div>		
+	</div>
 </div>
-<div id="information">
-<pre>
-<p>{{ post['wear_status'] }}    {{ post['user_id'] }}    {{ post['brand_id'] }} <br> {{ post['reference'] }}    {{ post['category_id'] }}</p>
-</pre>
+
+<div id="flex_container_5">
+	<div id="title">
+		<p>{{ post['title'] }}</p>
+	</div>
 </div>
-<div id="title">
-<p>{{ post['title'] }}</p>
+
+
+<div id="flex_container_6">
+	<div id="description">
+		<p>{{ post['description'] }}</p>
+	</div>
 </div>
-<div id="description">
-<p>{{ post['description'] }}</p>
+
+<div id="cta_view_part">
+	<div class="popup" id="popupTrigger">GET THE PART!
+		<span class="popuptext" id="myPopup">
+			<div id="background_text_popup">Thanks for your interest for this part ! The owner will contact you soon ! One token will be deducted from your account.
+			<a href="/" id="ctaGet">SEND MY REQUEST</a>
+			</div>
+		</span>
+	</div>
 </div>
-<div id="get_part">
-<div class="popup" id="popupTrigger">GIVE THE PART!
-<span class="popuptext" id="myPopup">Thanks for your interest for this part ! The owner will contact you soon ! One token will be deducted from your account.</span>
-</div>
-</div> #}
 
 <footer id="footer"></footer>
 {% block javascript %}<script src="/assets/js/piece.js"></script>{% endblock %}
