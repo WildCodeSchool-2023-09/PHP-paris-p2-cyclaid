@@ -35,6 +35,11 @@
   border-radius: 5%;
 }
 
+#flex_container_2 img {
+  height: 22rem;
+  margin: 0 auto 0 auto;
+}
+
 #flex_container_3 {
   font-family: PostNoBillsColomboBold;
   display: inline-grid;
@@ -47,6 +52,11 @@
   grid-column-start: 1;
   grid-column-end: 4;
   border-radius: 5%;
+}
+
+#flex_container_3 img {
+  max-width: 20%;
+  max-height: 10px;
 }
 
 .grid-container {

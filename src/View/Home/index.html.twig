@@ -21,29 +21,29 @@
 
 {% for post in postsList %}
 
-    <a class = "cardContainer" href="/post/show?id={{ post.id }}">
-            {% include 'cardImageSelect.html.twig' %}
-                <div class = "cardInfoContainer">
-                    <div class = "cardTopContainer">
-                        {% include 'cardWearIcon.html.twig' %}
-                        <p class = "cardTitle">{{ post.title}}</p>
-                    </div>
-                    <p class ="cardDescription">{{ post.description }}</p>
-                        <div class = "cardFooterContainerLeft">
-                            <img class = "cardIconLocation" src = "assets/images/icon_location.png">
-                            <p class = "cardFooterInfos">{{post.city}}</p>
-                        </div>
-                        <div class ="cardFooterContainerRight">
-                            <img class = "cardIconCalendar" src = "assets/images/icon_calendar.png">
-                            <p class = "cardFooterInfos">{{ post.creation_date }}</p>
-                        </div>
+    <a class="cardContainer" href="/post/show?id={{ post.id }}" >
+        {% include 'cardImageSelect.html.twig' %}
+            <div class="cardInfoContainer" >
+                <div class="cardTopContainer" >
+                    {% include 'cardWearIcon.html.twig' %}
+                    <p class="cardTitle" >{{ post.title }}</p>
                 </div>
+                <p class="cardDescription" >{{ post.description }}</p>
+                <div class="cardFooterContainerLeft" >
+                    <img class="cardIconLocation" src="/assets/images/icon_location.png" >
+                    <p class = "cardFooterInfos">{{ post.city }}</p>
+                </div>
+                <div class ="cardFooterContainerRight">
+                    <img class="cardIconCalendar" src="/assets/images/icon_calendar.png" >
+                    <p class="cardFooterInfos" >{{ post.creation_date }}</p>
+                </div>
+            </div>
     </a>
 
     {% else %}
 
         <li>Nothing to display :</li>
-        <a href="/post/add">Be the first one to post !</a>
+        <a href="/post/add" >Be the first one to post !</a>
 
 {% endfor %}
 
