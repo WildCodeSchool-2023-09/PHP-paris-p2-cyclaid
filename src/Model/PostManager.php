@@ -62,16 +62,4 @@ class PostManager extends AbstractManager
             return false;
         }
     }
-
-    public function selectAll(string $orderBy = '', string $direction = 'ASC'): array
-    {
-        $query = 'SELECT * FROM ' . static::TABLE .
-            ' LEFT JOIN post_picture ON post.id = post_id 
-            LEFT JOIN user ON user.id = user_id';
-        if ($orderBy) {
-            $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
-        }
-
-        return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
-    }
 }

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\PostManager;
+use App\Model\PostPictureManager;
 
 class PostController extends AbstractController
 {
@@ -17,10 +18,12 @@ class PostController extends AbstractController
     public const BRAND_MAX = 8;
     public array $errors = [];
     private PostManager $postManager;
+    private PostPictureManager $postPictureManager;
 
     public function __construct()
     {
         $this->postManager = new PostManager();
+        $this->postPictureManager = new PostPictureManager();
         parent::__construct();
     }
 
@@ -120,17 +123,22 @@ class PostController extends AbstractController
 
     public function show(int $id): string
     {
-        $post = $this->postManager->selectOneById($id);
-        return $this->twig->render('Post/show.html.twig', ['post' => $post]);
+        return $this->twig->render('Piece/piece.html.twig', [
+            'post' => $this->postManager->selectOneById($id),
+            'images' => $this->postPictureManager->selectByPostId($id)
+        ]);
     }
 
     public function index()
     {
         $postsList = $this->postManager->selectAll();
 
-        foreach ($postsList as $index => $index) {
-            $postsList[$index]['fileexist'] = file_exists('uploads/' . $postsList[$index]['picture']);
+        foreach ($postsList as $key => $post) {
+            $postsList[$key]['picture'] = $this->postPictureManager->selectOnePictureByPostId($post['id']);
         }
-        return $this->twig->render('Home/index.html.twig', ['postsList' => $postsList]);
+
+        return $this->twig->render('Home/index.html.twig', [
+            'postsList' => $postsList
+        ]);
     }
 }
