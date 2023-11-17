@@ -3,6 +3,10 @@
 
 {% block content %}
 
+{% block nav %}
+    {{ parent()}}
+{% endblock %}
+
     <h1 class="title">Cycl'aid</h1>
 
 {% block searchBar %}
