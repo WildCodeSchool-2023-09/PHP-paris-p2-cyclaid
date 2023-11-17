@@ -1,0 +1,32 @@
+{% block nav %}
+
+<link rel="stylesheet" href="/assets/css/navbar.css">
+
+    <nav>
+            <ul class = "navbar">
+                <li class = "navImage">
+                    <a href="/home"><img class = "navButtons" src="assets/images/icon_home.png"></a>
+                </li>
+                <li class = "navImage">
+                    <a href="#"><img class = "navButtons" src="assets/images/icon_search.png"></a>
+                </li>
+                <li id = "navPostButton">
+                    <a id="navPost" href="/post/add">POST YOUR PART</a>
+                </li>
+                <li class = "navImage">
+                    <a href="#"><img class = "navButtons" src="assets/images/icon_tuto.png"></a>
+                </li>
+                <li class = "navImage">
+                    <img id="connect" class = "navButtons" src="assets/images/icon_user_profile.png">
+                </li>
+            </ul>
+    </nav>
+    <div id="to-connect">
+        <a href="/user/login" >LOGIN</a>
+        <a href="/user/signin" >SIGN IN</a>
+    </div>
+    <div id="to-deconnect">
+        <a href="/user/profile" >PROFILE</a>
+        <a href="/user/logout" >LOG OUT</a>
+    </div>
+{% endblock %}

@@ -47,7 +47,7 @@ class PostController extends AbstractController
                 }
             }
         }
-        return $this->twig->render('Part\_form.html.twig', [
+        return $this->twig->render('Post\_form.html.twig', [
             'errors' => $this->errors
         ]);
     }
@@ -127,6 +127,10 @@ class PostController extends AbstractController
     public function index()
     {
         $postsList = $this->postManager->selectAll();
+
+        foreach ($postsList as $index => $index) {
+            $postsList[$index]['fileexist'] = file_exists('uploads/' . $postsList[$index]['picture']);
+        }
         return $this->twig->render('Home/index.html.twig', ['postsList' => $postsList]);
     }
 }

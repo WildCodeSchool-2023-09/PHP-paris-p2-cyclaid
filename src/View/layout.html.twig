@@ -6,47 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/assets/images/favicon.png">
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/global.css">
     {% block stylesheet %}{% endblock %}
 </head>
 
 <body>
 
 {% block content %}
+
+    {% block nav %}
+
+        {% include 'navbar.html.twig' %}
+   
+    {% endblock %}
+
+    {% block javascript %}{% endblock %}
     
-{% block nav %}
-    <link rel="stylesheet" href="/assets/css/navbar.css">
-        <nav>
-            <ul class = "navbar">
-                <li class = "navImage">
-                    <a href="/home"><img class = "navButtons" src="/assets/images/icone_home.png"></a>
-                </li>
-                <li class = "navImage">
-                    <a href="#"><img class = "navButtons" src="/assets/images/icone_search.png"></a>
-                </li>
-                <li id = "navPostButton">
-                    <a id="navPost" href="/part/add">POST YOUR PART</a>
-                </li>
-                <li class = "navImage">
-                    <a href="#"><img class = "navButtons" src="/assets/images/icone_tuto.png"></a>
-                </li>
-                <li class = "navImage">
-                    <img id="connect" class = "navButtons" src="/assets/images/icone_user_profil.png">
-                </li>
-            </ul>
-        </nav>
-        <div id="to-connect">
-            <a href="/user/login" >LOGIN</a>
-            <a href="/user/signin" >SIGN IN</a>
-        </div>
-        <div id="to-deconnect">
-            <a href="/user/profile" >PROFILE</a>
-            <a href="/user/logout" >LOG OUT</a>
-        </div>
-
-{% endblock %}
-
-{% block javascript %}{% endblock %}
 {% endblock %}
 
 {% if user is empty %}
