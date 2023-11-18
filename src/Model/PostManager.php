@@ -62,4 +62,20 @@ class PostManager extends AbstractManager
             return false;
         }
     }
+
+    public function selectOnePostById(int $id): array|false
+    {
+        $query = "SELECT p.id, p.title, p.reference, p.creation_date, p.description, p.wear_status, p.user_id, ";
+        $query .= "b.label AS brand, c.label AS category FROM " . self::TABLE . " AS p ";
+        $query .= "INNER JOIN brand AS b ON b.id=p.brand_id ";
+        $query .= "INNER JOIN category AS c ON c.id=p.category_id WHERE p.id=:id;";
+
+        $statement = $this->pdo->prepare($query);
+
+        $statement->bindValue(':id', $id, PDO::PARAM_INT);
+
+        $statement->execute();
+
+        return $statement->fetch(PDO::FETCH_ASSOC);
+    }
 }

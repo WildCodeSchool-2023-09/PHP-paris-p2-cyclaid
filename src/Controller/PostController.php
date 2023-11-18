@@ -123,9 +123,9 @@ class PostController extends AbstractController
 
     public function show(int $id): string
     {
-        return $this->twig->render('Piece/piece.html.twig', [
-            'post' => $this->postManager->selectOneById($id),
-            'images' => $this->postPictureManager->selectByPostId($id)
+        return $this->twig->render('Post/post.html.twig', [
+            'post' => $this->postManager->selectOnePostById($id),
+            'pictures' => $this->postPictureManager->selectByPostId($id)
         ]);
     }
 
