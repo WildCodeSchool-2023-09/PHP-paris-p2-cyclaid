@@ -34,7 +34,7 @@ class PostPictureManager extends AbstractManager
         return $statement->fetchAll(\PDO::FETCH_ASSOC);
     }
 
-    public function selectOnePictureByPostId(int $id): string
+    public function selectOnePictureByPostId(int $id)
     {
         $query = 'SELECT pp.picture FROM ' . self::TABLE . ' AS pp ';
         $query .= 'INNER JOIN post AS p ON p.id=pp.post_id WHERE pp.post_id=:id;';
@@ -47,6 +47,6 @@ class PostPictureManager extends AbstractManager
 
         $result = $statement->fetch(\PDO::FETCH_ASSOC);
 
-        return $result['picture'];
+        // return $result['picture'];
     }
 }

@@ -1,75 +1,68 @@
 {% extends 'layout.html.twig' %}
+
 {% block stylesheet %}
 	<link rel="stylesheet" href="/assets/css/piece.css">
 {% endblock %}
 
 {% block content %}
+
 	{% block nav %}
-
 		{% include 'navbar.html.twig' %}
-   
 	{% endblock %}
-	<section id="post" >
-		<div id="flex_container_1">
-			<div id='date'>
-				<p><img id="icon_calendar" src="/assets/images/icon_calendar.png"/>{{ post['creation_date'] }}</p>
+
+<section id="post" >
+	<div id="flex_container_1">
+		<div id='date'>
+			<p><img id="icon_calendar" src="/assets/images/icon_calendar.png"/>{{ post['creation_date'] }}</p>
+		</div>
+		<div id="id_post">
+			<p>AD id : {{ post['id'] }}</p>
+		</div>
+	</div>
+	<div id="flex_container_2">
+		<div>
+			<img src="/uploads/{{ images[0]['picture'] }}" alt="image_1" id="picture_1">
+		</div>
+	</div>
+	<div id="flex_container_3">
+			<div class="grid-container-pictures">
+				<div class="grid-item-picture" id="grid_picture_1"><img src="/uploads/{{ images[1]['picture'] }}" alt="image_2" id="picture_2"></div>
+				<div class="grid-item-picture" id="grid_picture_2"><img src="/uploads/{{ images[2]['picture'] }}" alt="image_3" id="picture_3"></div>
+				<div class="grid-item-picture" id="grid_picture_3"><img src="/uploads/{{ images[3]['picture'] }}" alt="image_4" id="picture_4"></div>  
 			</div>
-			<div id="id_post">
-				<p>AD id : {{ post['id'] }}</p>
+	</div>
+	<div id="flex_container_4">
+		<div id="information">
+			<div class="grid-container">
+				<div class="grid-item" id="grid_item_1">{{ post['user_id'] }}</div>
+				<div class="grid-item">{{ post['wear_status'] }}</div>
+				<div class="grid-item" id="grid_item_2">{{ post['category_id'] }}</div>
+				<div class="grid-item" id="grid_item_3">{{ post['brand_id'] }}</div>  
+				<div class="grid-item">{{ post['reference'] }}</div>
+				<div class="grid-item" id="grid_item_4">{{ post['location'] }}</div>		
 			</div>
 		</div>
-
-		<div id="flex_container_2">
-			<div>
-				<img src="/uploads/{{ images[0]['picture'] }}" alt="image_1">
-			</div>
+	</div>
+	<div id="flex_container_5">
+		<div id="title">
+			<p>{{ post['title'] }}</p>
 		</div>
-
-		<div id="flex_container_3">
-				<div>
-					<img src="/uploads/{{ images[1]['picture'] }}" alt="image_2">
-					<img src="/uploads/{{ images[2]['picture'] }}" alt="image_3">
-					<img src="/uploads/{{ images[3]['picture'] }}" alt="image_4">
+	</div>
+	<div id="flex_container_6">
+		<div>
+			<p id="description">{{ post['description'] }}</p>
+		</div>
+	</div>
+	<div id="cta_view_part">
+		<div class="popup" id="popupTrigger">GET THE PART!
+			<span class="popuptext" id="myPopup">
+				<div id="background_text_popup">Thanks for your interest for this part ! The owner will contact you soon ! One token will be deducted from your account.
+					<a href="/" id="ctaGet">SEND MY REQUEST</a>
 				</div>
+			</span>
 		</div>
-
-		<div id="flex_container_4">
-			<div id="information">
-				<div class="grid-container">
-					<div class="grid-item" id="grid_item_1">{{ post['user_id'] }}</div>
-					<div class="grid-item">{{ post['wear_status'] }}</div>
-					<div class="grid-item" id="grid_item_2">{{ post['category_id'] }}</div>
-					<div class="grid-item" id="grid_item_3">{{ post['brand_id'] }}</div>  
-					<div class="grid-item">{{ post['reference'] }}</div>
-					<div class="grid-item" id="grid_item_4">{{ post['location'] }}</div>		
-				</div>
-			</div>
-		</div>
-
-		<div id="flex_container_5">
-			<div id="title">
-				<p>{{ post['title'] }}</p>
-			</div>
-		</div>
-
-
-		<div id="flex_container_6">
-			<div id="description">
-				<p>{{ post['description'] }}</p>
-			</div>
-		</div>
-
-		<div id="cta_view_part">
-			<div class="popup" id="popupTrigger">GET THE PART!
-				<span class="popuptext" id="myPopup">
-					<div id="background_text_popup">Thanks for your interest for this part ! The owner will contact you soon ! One token will be deducted from your account.
-						<a href="/" id="ctaGet">SEND MY REQUEST</a>
-					</div>
-				</span>
-			</div>
-		</div>
-	</section>
-
-	<footer id="footer"></footer>
+	</div>
+</section>
+<footer id="footer"></footer>
 {% block javascript %}<script src="/assets/js/piece.js"></script>{% endblock %}
 {% endblock %}
