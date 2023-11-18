@@ -45,7 +45,7 @@ class PostPictureManager extends AbstractManager
 
         $statement->execute();
 
-        $result = $statement->fetch(\PDO::FETCH_ASSOC);
+        $statement->fetch(\PDO::FETCH_ASSOC);
 
         // return $result['picture'];
     }
