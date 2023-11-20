@@ -66,7 +66,9 @@
             <div class="popup" id="popupTrigger">GET THE PART!
                 <span class="popuptext" id="myPopup">
                     <div id="background_text_popup">Thanks for your interest for this part ! The owner will contact you soon ! One token will be deducted from your account.
-                        <a href="/" id="ctaGet">SEND MY REQUEST</a>
+                        <div class="secPopup" id="Second">
+                            <span id="ctaGet">SEND MY REQUEST</span>
+                        </div>
                     </div>
                 </span>
             </div>
@@ -74,6 +76,6 @@
     </section>
     <footer id="footer"></footer>
 
-    {% block javascript %}<script src="/assets/js/piece.js"></script>{% endblock %}
+    {% block javascript %}<script src="/assets/js/piece.js"> <script src="/assets/js/request.js"></script>{% endblock %}
 
 {% endblock %}
