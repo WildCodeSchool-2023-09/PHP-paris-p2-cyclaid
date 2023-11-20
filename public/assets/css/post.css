@@ -70,6 +70,7 @@ section#post {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #5553;
 }
 
 #picture-displayed {
@@ -95,12 +96,15 @@ section#post {
 .grid-item {
     background-color: rgba(255, 255, 255, 0.8);
     border: 1.3px solid rgba(0, 0, 0, 0.8);
-    font-size: 30px;
+    font-size: 24px;
     text-align: center;
     font-family: PostNoBillsColomboBold;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 45px;
+    white-space: nowrap;
+    overflow: scroll;
 }
 
 #grid_item_1 {
@@ -122,6 +126,13 @@ section#post {
 #wear_status img {
     max-width: 2.5rem;
     max-height: 2.5rem;
+}
+
+#icon_user_grid {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.1rem;
 }
 
 #title {
