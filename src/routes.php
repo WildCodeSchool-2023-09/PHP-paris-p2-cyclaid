@@ -10,4 +10,5 @@ return [
     '' => ['PostController', 'index', ['postsList']],
     'post/show' => ['PostController', 'show', ['id']],
     'post/add' => ['PostController', 'add'],
+    'categories/index' => ['PostController', 'categoryIndex', ['categories']],
 ];

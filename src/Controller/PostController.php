@@ -133,4 +133,10 @@ class PostController extends AbstractController
         }
         return $this->twig->render('Home/index.html.twig', ['postsList' => $postsList]);
     }
+
+    public function categoryIndex()
+    {
+        $categories = PostManager::CATEGORY;
+        return $this->twig->render('/categoryIndex.html.twig', ['categories' => $categories]);
+    }
 }

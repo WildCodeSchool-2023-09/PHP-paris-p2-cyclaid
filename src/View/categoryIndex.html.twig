@@ -1,0 +1,42 @@
+{% extends 'layout.html.twig' %}
+
+
+{% block content %}
+
+{% block nav %}
+
+{% include 'navbar.html.twig' %}
+   
+{% endblock %}
+
+        <h1 class="title">Cycl'aid</h1>
+
+{% block searchBar %}
+
+{% include 'searchbar.html.twig' %}
+    
+{% endblock %}
+
+<link rel="stylesheet" href="/assets/css/categoryindex.css">
+
+<div id = "categoriesContainer">
+
+{% for category in categories %}
+
+    <a class = "categoryContainer" href="/post/show?id={{ post.id }}">
+        <div id = "categoryLabel" style="background-image: url('/assets/images/categories/{{category}}.jfif')"> {{category}}</div>
+        {# <img class ='category' src ="/assets/images/categories/{{category}}.jfif" alt = "{{category}}"> #}
+    </a>
+
+{% endfor %}
+
+</div>
+
+<div id= "footerBlank"></div>
+
+<div>
+    <a href="/post/add" id="ctaPost">POST YOUR PART</a>
+</div>
+<footer id="footer"></footer>
+
+{% endblock %}
