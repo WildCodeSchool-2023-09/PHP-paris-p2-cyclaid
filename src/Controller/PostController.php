@@ -126,7 +126,11 @@ class PostController extends AbstractController
 
     public function index()
     {
-        $postsList = $this->postManager->index();
+        $postsList = $this->postManager->selectAll();
+
+        foreach ($postsList as $index => $index) {
+            $postsList[$index]['fileexist'] = file_exists('uploads/' . $postsList[$index]['picture']);
+        }
         return $this->twig->render('Home/index.html.twig', ['postsList' => $postsList]);
     }
 

@@ -1,4 +1,4 @@
-{% if post.picture %}
+{% if post.picture and post.fileexist %}
     <img class = "cardImage" src = "/uploads/{{post.picture}}">
 {% else %}
     <img class = "cardImage" src = "assets/images/icon_no_image.webp">

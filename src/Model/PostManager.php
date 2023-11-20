@@ -63,7 +63,6 @@ class PostManager extends AbstractManager
         }
     }
 
-
     public function search()
     {
         $keywords = $_GET["keywords"];
