@@ -11,4 +11,5 @@ return [
     'post/show' => ['PostController', 'show', ['id']],
     'post/add' => ['PostController', 'add'],
     'categories/index' => ['PostController', 'categoryIndex', ['categories']],
+    'category/results' => ['PostController', 'categoryShowAllPosts', ['category']],
 ];

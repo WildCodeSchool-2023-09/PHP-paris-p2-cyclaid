@@ -23,8 +23,8 @@
 
 {% for category in categories %}
 
-    <a class = "categoryContainer" href="/post/show?id={{ post.id }}">
-        <div id = "categoryLabel" style="background-image: url('/assets/images/categories/{{category}}.jfif')">{{category}}</div>
+    <a class = "categoryContainer" href="/../category/results?category={{ category.id }}">
+        <div id = "categoryLabel" style="background-image: url('/assets/images/categories/{{category.label}}.jfif')">{{category.label}}</div>
     </a>
 
 {% endfor %}
