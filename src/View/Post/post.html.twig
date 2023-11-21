@@ -30,52 +30,56 @@
         </div>
         <div id="picture_2">
             {% if pictures[1]['picture'] is defined %}
-		    <img id="picture" src="/uploads/{{ pictures[1]['picture'] }}" alt="image_2">
+		    <img id="subpicture_1" class="picture" src="/uploads/{{ pictures[1]['picture'] }}" alt="image_2">
             {% else %}
-            <img id="picture" src="/assets/images/icon_no_image.webp" alt="image_1">
+            <img class="picture" src="/assets/images/icon_no_image.webp" alt="image_1">
             {% endif %}
         </div>
         <div id="picture_3">
             {% if pictures[2]['picture'] is defined %}
-		    <img id="picture" src="/uploads/{{ pictures[2]['picture'] }}" alt="image_3">
+		    <img class="picture" src="/uploads/{{ pictures[2]['picture'] }}" alt="image_3">
             {% else %}
-            <img id="picture" src="/assets/images/icon_no_image.webp" alt="image_1">
+            <img class="picture" src="/assets/images/icon_no_image.webp" alt="image_1">
             {% endif %}
         </div>
         <div id="picture_4">
             {% if pictures[3]['picture'] is defined %}
-		    <img id="picture" src="/uploads/{{ pictures[3]['picture'] }}" alt="image_4">
+		    <img class="picture" src="/uploads/{{ pictures[3]['picture'] }}" alt="image_4">
             {% else %}
-            <img id="picture" src="/assets/images/icon_no_image.webp" alt="image_1">
+            <img class="picture" src="/assets/images/icon_no_image.webp" alt="image_1">
             {% endif %}
         </div>
 
         <div id="flex_container_4">
-			<div class="grid-item" id="grid_item_1"><img id="icon_user_grid" src="/assets/images/icon_user_profil_post.png">{{ post['user_id'] }}</div>
+			<div class="grid-item" id="grid_item_1"><img id="icon_user_grid" src="/assets/images/icon_user_profil_post.png">
+                <p>{{ post['user_id'] }}</p>
+            </div>
 			<div class="grid-item" id="wear_status">{% include 'cardWearIcon.html.twig' %}</div>
-			<div class="grid-item" id="grid_item_2">{{ post['category'] }}</div>
-			<div class="grid-item" id="grid_item_3">{{ post['brand'] }}</div>
-			<div class="grid-item">{{ post['reference'] }}</div>
-			<div class="grid-item" id="grid_item_4">{{ post['location'] }}</div>
+			<div class="grid-item" id="grid_item_2">
+                <p>{{ post['category'] }}</p>
+            </div>
+			<div class="grid-item" id="grid_item_3">
+                <p>{{ post['brand'] }}</p>
+            </div>
+			<div class="grid-item">
+                <p>{{ post['reference'] }}</p>
+            </div>
+			<div class="grid-item" id="grid_item_4">
+                <p>{{ post['location'] }}</p>
+            </div>
 	    </div>
 
 		<p id="title">{{ post['title'] }}</p>
         <p id="description">{{ post['description'] }}</p>
 
-        <div id="cta_view_part">
-            <div class="popup" id="popupTrigger">GET THE PART!
-                <span class="popuptext" id="myPopup">
-                    <div id="background_text_popup">Thanks for your interest for this part ! The owner will contact you soon ! One token will be deducted from your account.
-                        <div class="secPopup" id="Second">
-                            <span id="ctaGet">SEND MY REQUEST</span>
-                        </div>
-                    </div>
-                </span>
-            </div>
-        </div>
+        <div id="cta_view_part">GET THE PART!</div>
     </section>
+    <div id="popup" class="hidden">
+            <p>Thanks for your interest for this part ! The owner will contact you soon ! One token will be deducted from your account.</p>
+            <a id="ctaGet" href="/">SEND MY REQUEST</a>
+        </div>
     <footer id="footer"></footer>
 
-    {% block javascript %}<script src="/assets/js/piece.js"> <script src="/assets/js/request.js"></script>{% endblock %}
+    {% block javascript %}<script src="/assets/js/post.js"> <script src="/assets/js/request.js"></script>{% endblock %}
 
 {% endblock %}
