@@ -87,9 +87,9 @@ class PostManager extends AbstractManager
 
     public function selectAllCategoryPosts(string $category, string $orderBy = '', string $direction = 'ASC'): array
     {
-        // $category_id = 'category_' . $category;
         $query = "SELECT * FROM " . static::TABLE .
-            ' JOIN category ON category.id = post.category_id
+            ' JOIN post_picture ON post_picture.post_id = post.id
+             JOIN category ON category.id = post.category_id
             WHERE category.id = ' . $category . ';';
         if ($orderBy) {
             $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
