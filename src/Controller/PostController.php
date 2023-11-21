@@ -46,7 +46,7 @@ class PostController extends AbstractController
                     move_uploaded_file($_FILES['file']['tmp_name'][$i], $uploadFile);
                 }
                 if ($this->postManager->insert($data, $pictures)) {
-                    header('Location: /');
+                    header('Location: /post/index');
                 }
             }
         }
@@ -136,9 +136,6 @@ class PostController extends AbstractController
         foreach ($postsList as $key => $post) {
             $postsList[$key]['picture'] = $this->postPictureManager->selectOnePictureByPostId($post['id']);
         }
-
-        return $this->twig->render('Home/index.html.twig', [
-            'postsList' => $postsList
-        ]);
+        return $this->twig->render('Post/index.html.twig', ['postsList' => $postsList]);
     }
 }
