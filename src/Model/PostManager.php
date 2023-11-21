@@ -85,15 +85,11 @@ class PostManager extends AbstractManager
         return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function selectAllCategoryPosts(string $category, string $orderBy = '', string $direction = 'ASC'): array
+    public function selectAllCategoryPosts(string $category): array
     {
         $query = "SELECT * FROM " . static::TABLE .
-            ' JOIN post_picture ON post_picture.post_id = post.id
-             JOIN category ON category.id = post.category_id
+            ' JOIN category ON category.id = post.category_id
             WHERE category.id = ' . $category . ';';
-        if ($orderBy) {
-            $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
-        }
         return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
     }
 }
