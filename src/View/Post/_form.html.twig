@@ -3,7 +3,9 @@
     <link rel="stylesheet" href="/assets/css/add_post.css">
 {% endblock %}
 {% block content %}
-<nav class="navbar fixed-top bg-body-tertiary" id="navbar_add_form">GIVE TO THE COMMUNITY</nav>
+{% block nav %}
+    {% include 'navbar.html.twig' %}
+{% endblock %}
 <div class="row">
     <div class="title_logo" id="logo">
         <h1>Cycl'aid</h1>
