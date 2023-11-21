@@ -41,7 +41,7 @@ class PostManager extends AbstractManager
     {
         $query = "INSERT INTO " . self::TABLE . " (title, reference, creation_date, description, ";
         $query .= "wear_status, user_id, brand_id, category_id) ";
-        $query .= " VALUES (:title, :reference, NOW(), :description, :wear, 1, :category_id, :brand_id);";
+        $query .= " VALUES (:title, :reference, NOW(), :description, :wear, 1, :brand_id, :category_id);";
         $statement = $this->pdo->prepare($query);
         $statement->bindValue(':title', $data['title']);
         $statement->bindValue(':reference', $data['reference']);
