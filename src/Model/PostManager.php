@@ -63,15 +63,19 @@ class PostManager extends AbstractManager
         }
     }
 
-    public function selectAll(string $orderBy = '', string $direction = 'ASC'): array
+    public function selectOnePostById(int $id): array|false
     {
-        $query = 'SELECT * FROM ' . static::TABLE .
-            ' LEFT JOIN post_picture ON post.id = post_id 
-            LEFT JOIN user ON user.id = user_id';
-        if ($orderBy) {
-            $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
-        }
+        $query = "SELECT p.id, p.title, p.reference, p.creation_date, p.description, p.wear_status, p.user_id, ";
+        $query .= "b.label AS brand, c.label AS category FROM " . self::TABLE . " AS p ";
+        $query .= "INNER JOIN brand AS b ON b.id=p.brand_id ";
+        $query .= "INNER JOIN category AS c ON c.id=p.category_id WHERE p.id=:id;";
 
-        return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
+        $statement = $this->pdo->prepare($query);
+
+        $statement->bindValue(':id', $id, PDO::PARAM_INT);
+
+        $statement->execute();
+
+        return $statement->fetch(PDO::FETCH_ASSOC);
     }
 }

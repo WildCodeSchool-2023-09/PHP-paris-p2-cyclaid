@@ -19,4 +19,38 @@ class PostPictureManager extends AbstractManager
 
         return(int)$this->pdo->lastinsertid();
     }
+
+    public function selectByPostId(int $id): array
+    {
+        $query = 'SELECT pp.id, pp.picture, pp.post_id FROM ' . self::TABLE . ' AS pp ';
+        $query .= 'INNER JOIN post AS p ON p.id=pp.post_id WHERE pp.post_id=:id;';
+
+        $statement = $this->pdo->prepare($query);
+
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+
+        $statement->execute();
+
+        return $statement->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public function selectOnePictureByPostId(int $id): ?string
+    {
+        $query = 'SELECT pp.picture FROM ' . self::TABLE . ' AS pp ';
+        $query .= 'INNER JOIN post AS p ON p.id=pp.post_id WHERE pp.post_id=:id;';
+
+        $statement = $this->pdo->prepare($query);
+
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+
+        $statement->execute();
+
+        $result = $statement->fetch(\PDO::FETCH_ASSOC);
+
+        if ($result) {
+            return $result['picture'];
+        } else {
+            return null;
+        }
+    }
 }

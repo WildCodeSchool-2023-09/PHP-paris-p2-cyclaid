@@ -22,6 +22,8 @@
   --box-shadow: rgba(0, 0, 0, 0.25);
   --border-color: black;
   --search-primary-color: #315F0A;
+  --background-color-cta-home: #BDC2BB;
+
 }
 
 @font-face {
