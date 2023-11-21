@@ -6,9 +6,9 @@ use App\Model\PieceManager;
 use App\Model\PiecePictureManager;
 use PDO;
 
-class PieceController extends AbstractController 
+class PieceController extends AbstractController
 {
- public function show(int $id): string
+    public function show(int $id): string
     {
         $pieceManager = new PieceManager();
         $piecePictureManager = new PiecePictureManager();
