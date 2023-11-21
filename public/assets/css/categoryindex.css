@@ -1,0 +1,76 @@
+#categoriesContainer{
+    display : flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 94%;
+    height: 80%;
+    margin-top: 8%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.categoryContainer{
+    height : 150px;
+    width: 85px;
+
+    margin-right: 8px;
+    margin-bottom: 8px;
+
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--stroke-primary-color);
+
+    text-decoration: none;
+    text-align: center;
+    text-justify: auto;
+}
+
+#categoryLabel{
+    display: flex;
+    color: #D69A00;
+    font-family: PostNoBillsColomboExtraBold;
+    text-shadow: 1px 1px 0px rgba(1, 1, 1);
+    filter: blur(0.3px);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-position-x: center;
+    background-position-y: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 150px;
+}
+
+#footerBlank{
+    height: 70px;
+}
+
+#ctaPost {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    
+    margin: auto;
+    margin-top: 10%;
+    width: 50%;
+    height: 2rem;
+
+    border: 1px solid var(--border-color);
+    border-radius: var(--button-primary-corner-radius);
+    box-shadow: 1px 1px 5px var(--box-shadow);
+    position: fixed;
+    bottom: 1.2rem;
+    left: 0;
+    right: 0;
+    background-color: #FCA311;
+    text-align: center;
+    text-decoration: none;
+    color: var(--font-text-color-cta);
+    font-size: 1.2rem;
+    text-shadow: 0.2px 0.2px 1px var(--text-shadow);
+    font-family: PostNoBillsColomboBold;
+}

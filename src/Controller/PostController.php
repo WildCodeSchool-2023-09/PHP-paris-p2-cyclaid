@@ -138,4 +138,16 @@ class PostController extends AbstractController
         }
         return $this->twig->render('Post/index.html.twig', ['postsList' => $postsList]);
     }
+
+    public function categoryIndex()
+    {
+        $categories = $this->postManager->selectAllcategories();
+        return $this->twig->render('Category/categoryIndex.html.twig', ['categories' => $categories]);
+    }
+
+    public function categoryShowAllPosts(string $category): string
+    {
+        $postsList = $this->postManager->selectAllCategoryPosts($category);
+        return $this->twig->render('Home/index.html.twig', ['postsList' => $postsList]);
+    }
 }
