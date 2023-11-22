@@ -140,4 +140,34 @@ class PostController extends AbstractController
         }
         return $this->twig->render('Post/index.html.twig', ['postsList' => $postsList]);
     }
+
+    public function categoryIndex()
+    {
+        $categories = $this->postManager->selectAllcategories();
+        return $this->twig->render('Category/categoryIndex.html.twig', ['categories' => $categories]);
+    }
+
+    public function categoryShowAllPosts(string $category): string
+    {
+        $postsList = $this->postManager->selectAllCategoryPosts($category);
+
+        foreach ($postsList as $key => $post) {
+            $postsList[$key]['picture'] = $this->postPictureManager->selectOnePictureByPostId($post['id']);
+        }
+
+        return $this->twig->render('Post/index.html.twig', ['postsList' => $postsList]);
+    }
+
+    public function search(string $keywords)
+    {
+        $words = explode(" ", $keywords);
+        $words = array_map('trim', $words);
+        $postsList = $this->postManager->search($words);
+
+        foreach ($postsList as $key => $post) {
+            $postsList[$key]['picture'] = $this->postPictureManager->selectOnePictureByPostId($post['id']);
+        }
+
+        return $this->twig->render('Post/index.html.twig', ['postsList' => $postsList]);
+    }
 }

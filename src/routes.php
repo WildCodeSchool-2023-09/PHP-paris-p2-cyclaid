@@ -16,4 +16,7 @@ return [
     'user/profile' => ['UserController', 'profile'],
     'user/logout' => ['UserController', 'logout'],
     'user/getPart' => ['UserController', 'getPart', ['post_id', 'user_id']],
+    'post/search' => ['PostController', 'search', ['keywords']],
+    'categories/index' => ['PostController', 'categoryIndex', ['categories']],
+    'category/results' => ['PostController', 'categoryShowAllPosts', ['category']],
 ];

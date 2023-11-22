@@ -92,4 +92,42 @@ class PostManager extends AbstractManager
 
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function selectAllcategories()
+    {
+        $query = 'SELECT * FROM category;';
+        return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function selectAllCategoryPosts(string $category): array
+    {
+        $query = "SELECT post.*, category.label FROM " . static::TABLE .
+            ' JOIN category ON category.id = post.category_id
+            WHERE category.id = ' . $category . ';';
+
+
+        return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function search(array $words)
+    {
+        $count = 0;
+        $wordcount = count($words);
+        $query = "SELECT * FROM " . static::TABLE . "";
+
+        if ($wordcount > 0) {
+            $count = 0;
+            $query .= " WHERE";
+            foreach ($words as $word) {
+                $query .= " title LIKE '%" . $word . "%' OR description LIKE '%" . $word . "%'";
+                $count = $count + 1;
+                if ($count < $wordcount) {
+                    $query .= " OR";
+                }
+            }
+        }
+
+        $query .= ";";
+        return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
