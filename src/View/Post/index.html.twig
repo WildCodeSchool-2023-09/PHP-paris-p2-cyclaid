@@ -3,55 +3,56 @@
 
 {% block content %}
 
-{% block nav %}
+	{% block nav %}
 
-{% include 'navbar.html.twig' %}
-   
-{% endblock %}
+		{% include 'navbar.html.twig' %}
 
-        <h1 class="title">Cycl'aid</h1>
+	{% endblock %}
 
-{% block searchBar %}
+	<h1 class="title">Cycl'aid</h1>
 
-{% include 'searchbar.html.twig' %}
-    
-{% endblock %}
+	{% block searchBar %}
 
-<link rel="stylesheet" href="/assets/css/postindex.css">
+		{% include 'searchbar.html.twig' %}
 
-{% for post in postsList %}
+	{% endblock %}
 
-    <a class="cardContainer" href="/post/show?id={{ post.id }}" >
-        {% include 'cardImageSelect.html.twig' %}
-            <div class="cardInfoContainer" >
-                <div class="cardTopContainer" >
-                    {% include 'cardWearIcon.html.twig' %}
-                    <p class="cardTitle" >{{ post.title }}</p>
-                </div>
-                <p class="cardDescription" >{{ post.description }}</p>
-                <div class="cardFooterContainerLeft" >
-                    <img class="cardIconLocation" src="/assets/images/icon_location.png" >
-                    <p class = "cardFooterInfos">{{ post.city }}</p>
-                </div>
-                <div class ="cardFooterContainerRight">
-                    <img class="cardIconCalendar" src="/assets/images/icon_calendar.png" >
-                    <p class="cardFooterInfos" >{{ post.creation_date }}</p>
-                </div>
-            </div>
-    </a>
+	<link rel="stylesheet" href="/assets/css/postindex.css">
 
-    {% else %}
 
-        <li>Nothing to display :</li>
-        <a href="/post/add" >Be the first one to post !</a>
+	{% for post in postsList %}
 
-{% endfor %}
+		<a class="cardContainer" href="/post/show?id={{ post.id }}">
+			{% include 'cardImageSelect.html.twig' %}
+			<div class="cardInfoContainer">
+				<div class="cardTopContainer">
+					{% include 'cardWearIcon.html.twig' %}
+					<p class="cardTitle">{{ post.title }}</p>
+				</div>
+				<p class="cardDescription">{{ post.description }}</p>
+				<div class="cardFooterContainerLeft">
+					<img class="cardIconLocation" src="/assets/images/icon_location.png">
+					<p class="cardFooterInfos">{{ post.city }}</p>
+				</div>
+				<div class="cardFooterContainerRight">
+					<img class="cardIconCalendar" src="/assets/images/icon_calendar.png">
+					<p class="cardFooterInfos">{{ post.creation_date }}</p>
+				</div>
+			</div>
+		</a>
 
-<div id= "footerBlank"></div>
+	{% else %}
 
-<div>
-    <a href="/post/add" id="ctaPost">POST YOUR PART</a>
-</div>
-<footer id="footer"></footer>
+		<li>Nothing to display :</li>
+		<a href="/post/add">Be the first one to post !</a>
+
+	{% endfor %}
+
+	<div id="footerBlank"></div>
+
+	<div>
+		<a href="/post/add" id="ctaPost">POST YOUR PART</a>
+	</div>
+	<footer id="footer"></footer>
 
 {% endblock %}

@@ -12,7 +12,7 @@ For this one, just a simple example where users can choose one of their database
 1. Clone the repo from Github.
 2. Run `composer install`.
 3. Create _config/db.php_ from _config/db.php.dist_ file and add your DB parameters. Don't delete the _.dist_ file, it must be kept.
-
+   ## The DB_name is : 'cyclaid'.
 ```php
 define('APP_DB_HOST', 'your_db_host');
 define('APP_DB_NAME', 'your_db_name');
@@ -31,49 +31,43 @@ If you develop on Windows, you should edit you git configuration to change your 
 
 `git config --global core.autocrlf true`
 
-## Example
+## Accessible URLs
 
-An example (a basic list of items) is provided (you can load the _simple-mvc.sql_ file in a test database). The accessible URLs are :
+The accessible URLs are :
 
 -   Home page at [localhost:8000/](localhost:8000/)
--   Items list at [localhost:8000/items](localhost:8000/items)
--   Item details [localhost:8000/items/show?id=:id](localhost:8000/item/show?id=2)
--   Item edit [localhost:8000/items/edit?id=:id](localhost:8000/items/edit?id=2)
--   Item add [localhost:8000/items/add](localhost:8000/items/add)
--   Item deletion [localhost:8000/items/delete?id=:id](localhost:8000/items/delete?id=2)
+-   Post category [localhost:8000/categories/index](localhost:8000/categories/index)
+-   Post category filter list [localhost:8000/category/results](localhost:8000/category/results)
+-   Post index [localhost:8000/post/index](localhost:8000/post/index)
+-   Post show details [localhost:8000//post/show?id=](localhost:8000/post/show?id=)
+-   Item add [localhost:8000/post/add](localhost:8000/post/add)
+
 
 You can find all these routes declared in the file `src/routes.php`. This is the very same file where you'll add your own new routes to the application.
 
-## How does URL routing work ?
+## User Journey
 
-![simple_MVC.png](.tours/simple_MVC.png)
+Hello dear user and welcome to the Cycl'aid community. To start your amzingly incredible journey with us, you'lle have to understand how the website works. 
 
-## Ask for a tour !
+Thank god, you're at the right place for that.
 
-<img src="./.tours/photo-1632178151697-fd971baa906f.jpg" alt="Guided tour" width="150"/>
+The website works on a token exchange system : if you want to get a free spare part to improve and/r fix your bike, you'lle have to give one as well.
 
-We prepare a little guided tour to start with the simple-MVC.
+Once you give a part, you get a token wich can be exchanged for another spare part. and the cycle goes on ! 
 
-To take it, you need to install the `Code Tour` extension for Visual Studio Code : [Code Tour](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.codetour)
+Once you've created your account, you'll get a free token.
 
-It will give access to a new menu on your IDE where you'll find the different tours about the simple-MVC. Click on play to start one :
+To get a part, you can search for it via the searchbar or via the categories by clicking on the magnifying glass. If you want to see all the available parts you just have to click on the book.
 
-![menu](.tours/code_tour_menu.png)
+Once you clicked on the part card, you'll see a button to get it at the button of the screen, be careful, clicking on it will cost you a token after the last validation wich would have appeared on your screen.
 
-## Run it on docker
+To get a new token, you'lle have to post a part. In order to accomplish that you can fill out the form accessible via the "post your part" button, located either on the navbar or at the bottom of most of the pages.
 
-If you don't know what is docker, skip this chapter. ;)
+Fill out the form, be aware of the following rules concerning images :
 
-Otherwise, you probably see, this project is ready to use with docker.
+-the only accepted formats are JPEG, JPG, PNG, WEBP.
+-the maximum size of all the files should not exceed 10 Mbits.
+-the maximum amount of pictures per post is four.
+-if you want to post multiples pictures, you have to post them all at once.
 
-To build the image, go into the project directory and in your CLI type:
-
-```
-docker build -t simple-mvc-container .
-```
-
-then, run it to open it on your localhot :
-
-```
-docker run -i -t --name simple-mvc  -p 80:80 simple-mvc-container
-```
+enjoy !

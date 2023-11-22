@@ -41,7 +41,7 @@ class PostManager extends AbstractManager
     {
         $query = "INSERT INTO " . self::TABLE . " (title, reference, creation_date, description, ";
         $query .= "wear_status, user_id, brand_id, category_id) ";
-        $query .= " VALUES (:title, :reference, NOW(), :description, :wear, 1, :category_id, :brand_id);";
+        $query .= " VALUES (:title, :reference, NOW(), :description, :wear, 1, :brand_id, :category_id);";
         $statement = $this->pdo->prepare($query);
         $statement->bindValue(':title', $data['title']);
         $statement->bindValue(':reference', $data['reference']);
@@ -85,15 +85,13 @@ class PostManager extends AbstractManager
         return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function selectAllCategoryPosts(string $category, string $orderBy = '', string $direction = 'ASC'): array
+    public function selectAllCategoryPosts(string $category): array
     {
-        $query = "SELECT * FROM " . static::TABLE .
-            ' JOIN post_picture ON post_picture.post_id = post.id
-             JOIN category ON category.id = post.category_id
+        $query = "SELECT post.*, category.label FROM " . static::TABLE .
+            ' JOIN category ON category.id = post.category_id
             WHERE category.id = ' . $category . ';';
-        if ($orderBy) {
-            $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
-        }
+
+
         return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
     }
 }

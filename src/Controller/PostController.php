@@ -148,6 +148,11 @@ class PostController extends AbstractController
     public function categoryShowAllPosts(string $category): string
     {
         $postsList = $this->postManager->selectAllCategoryPosts($category);
+
+        foreach ($postsList as $key => $post) {
+            $postsList[$key]['picture'] = $this->postPictureManager->selectOnePictureByPostId($post['id']);
+        }
+
         return $this->twig->render('Post/index.html.twig', ['postsList' => $postsList]);
     }
 }
