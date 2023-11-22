@@ -38,6 +38,8 @@ class UserController extends AbstractController
 
         foreach ($postsUser as $key => $post) {
             $postsUser[$key]['picture'] = $this->postPictureManager->selectOnePictureByPostId($post['id']);
+            $postUser = $this->userManager->selectOneById($post['user_id']);
+            $postsUser[$key]['location'] = $postUser['city'] . ' ' . $postUser['postal_code'];
         }
         return $this->twig->render('User/profile.html.twig', [
             'postsList' => $postsUser

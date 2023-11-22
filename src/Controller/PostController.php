@@ -137,6 +137,8 @@ class PostController extends AbstractController
 
         foreach ($postsList as $key => $post) {
             $postsList[$key]['picture'] = $this->postPictureManager->selectOnePictureByPostId($post['id']);
+            $postUser = $this->userManager->selectOneById($post['user_id']);
+            $postsList[$key]['location'] = $postUser['city'] . ' ' . $postUser['postal_code'];
         }
         return $this->twig->render('Post/index.html.twig', ['postsList' => $postsList]);
     }
@@ -153,6 +155,8 @@ class PostController extends AbstractController
 
         foreach ($postsList as $key => $post) {
             $postsList[$key]['picture'] = $this->postPictureManager->selectOnePictureByPostId($post['id']);
+            $postUser = $this->userManager->selectOneById($post['user_id']);
+            $postsList[$key]['location'] = $postUser['city'] . ' ' . $postUser['postal_code'];
         }
 
         return $this->twig->render('Post/index.html.twig', ['postsList' => $postsList]);
@@ -166,6 +170,8 @@ class PostController extends AbstractController
 
         foreach ($postsList as $key => $post) {
             $postsList[$key]['picture'] = $this->postPictureManager->selectOnePictureByPostId($post['id']);
+            $postUser = $this->userManager->selectOneById($post['user_id']);
+            $postsList[$key]['location'] = $postUser['city'] . ' ' . $postUser['postal_code'];
         }
 
         return $this->twig->render('Post/index.html.twig', ['postsList' => $postsList]);
