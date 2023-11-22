@@ -87,9 +87,11 @@ class PostManager extends AbstractManager
 
     public function selectAllCategoryPosts(string $category): array
     {
-        $query = "SELECT * FROM " . static::TABLE .
+        $query = "SELECT post.*, category.label FROM " . static::TABLE .
             ' JOIN category ON category.id = post.category_id
             WHERE category.id = ' . $category . ';';
+
+
         return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
     }
 }
