@@ -10,6 +10,7 @@
     <div class="title_logo" id="logo">
         <h1>Cycl'aid</h1>
     </div>
+    {% if user is not empty %}
     <div class="col-md-4 col-md-offset-6">
         <section id="form_add">
             <form name="addPartForm" action="" method="post" enctype="multipart/form-data">
@@ -89,6 +90,14 @@
             </form>
         </section>
     </div>
+    {% else %}
+    <div class="col-md-4 col-md-offset-6">
+        <section id="need-to-connect">
+            <p>You need to be connected to add a part !</p>
+            <a id="cta_form_add_give" href="/user/login">LOGIN</a>
+        </section>
+    </div>
+    {% endif %}
 </div>
 <footer id="footer"></footer>
 <script src="/assets/js/form.js"></script>

@@ -39,4 +39,15 @@ class UserManager extends AbstractManager
 
         return (int)$this->pdo->lastinsertid();
     }
+
+    public function modifyCoin(int $id, string $operator): void
+    {
+        $query = "UPDATE " . self::TABLE . " SET coin = coin " . $operator . " 1 WHERE id=:id";
+
+        $statement = $this->pdo->prepare($query);
+
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+
+        $statement->execute();
+    }
 }

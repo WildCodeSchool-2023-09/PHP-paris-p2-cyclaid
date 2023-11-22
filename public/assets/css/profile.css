@@ -19,6 +19,8 @@ img#profile {
     border-radius: 50%;
     width: 6rem;
     height: 6rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 div#name-coin {
@@ -64,7 +66,6 @@ div#sections h2 {
     text-align: center;
     border: 2px solid var(--stroke-primary-color);
     margin: 0 0.5rem 0 0.5rem;
-    background-color: var(--background-card-color);
 }
 
 div#section {
@@ -72,8 +73,14 @@ div#section {
     background-color: var(--background-card-color);
     width: (100% - 4px);
     min-height: 29rem;
+    margin-bottom: 2.177rem;
+    padding-bottom: 1rem;
 }
 
-h2#my-bike:hover, h2#my-posts:hover, h2#my-wishes:hover {
+h2#my-posts {
     background-color: var(--background-select-section);
+}
+
+h2#my-bike, h2#my-wishes {
+    background-color: var(--background-card-color);
 }

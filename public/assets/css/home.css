@@ -52,7 +52,8 @@ h1 {
     font-weight: 800;
     line-height: normal;
     top: 41%;
-    left: 22%;
+    left: 30%;
+    width: 65%;
     background: rgba(0, 0, 0, 0.70);
     filter: blur(0.3px);
     border-radius: 7.3%;

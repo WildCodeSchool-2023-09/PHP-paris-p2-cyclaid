@@ -15,4 +15,5 @@ return [
     'user/login' => ['UserController', 'login'],
     'user/profile' => ['UserController', 'profile'],
     'user/logout' => ['UserController', 'logout'],
+    'user/getPart' => ['UserController', 'getPart', ['post_id', 'user_id']],
 ];

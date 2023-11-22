@@ -178,3 +178,33 @@ p.cardDescription{
     font-family: PostNoBillsColomboBold;
 }
 
+#nothing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#nothing p {
+    text-align: center;
+    font-family: PostNoBillsColomboBold;
+    width: 80%;
+    font-size: 2rem;
+    text-shadow: 0.2px 0.2px 1px var(--text-shadow);
+    margin-top: 2rem;
+}
+
+#nothing a {
+    text-align: center;
+    font-family: PostNoBillsColomboBold;
+    text-decoration: none;
+    border: 1px solid var(--border-color);
+    border-radius: var(--button-primary-corner-radius);
+    font-size: 2rem;
+    text-shadow: 0.2px 0.2px 1px var(--text-shadow);
+    color: var(--font-text-color-cta);
+    background-color: var(--background-color-cta);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-top: 2rem;
+}

@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Controller\AbstractController;
+use App\Model\PostManager;
+use App\Model\PostPictureManager;
 
 class UserController extends AbstractController
 {
@@ -12,7 +14,17 @@ class UserController extends AbstractController
     public const MAX_LENGTH_CITY = 150;
     public const MAX_LENGTH_EMAIL = 255;
     public const MAX_LENGTH_PASSWORD = 255;
+    public const PATH_TO_PICTURES = '/uploads/';
     public array $errors = [];
+    private PostManager $postManager;
+    private PostPictureManager $postPictureManager;
+
+    public function __construct()
+    {
+        $this->postManager = new PostManager();
+        $this->postPictureManager = new PostPictureManager();
+        parent::__construct();
+    }
 
     public function logout()
     {
@@ -22,7 +34,14 @@ class UserController extends AbstractController
 
     public function profile(): string
     {
-        return $this->twig->render('User/profile.html.twig');
+        $postsUser = $this->postManager->selectAllByUserId($_SESSION['user_id']);
+
+        foreach ($postsUser as $key => $post) {
+            $postsUser[$key]['picture'] = $this->postPictureManager->selectOnePictureByPostId($post['id']);
+        }
+        return $this->twig->render('User/profile.html.twig', [
+            'postsList' => $postsUser
+        ]);
     }
 
     public function login(): string
@@ -141,5 +160,20 @@ class UserController extends AbstractController
             }
         }
         return empty($this->errors);
+    }
+
+    public function getPart(int $postId, int $userId)
+    {
+        $this->postManager->delete($postId);
+
+        $pictureFiles = $this->postPictureManager->selectByPostId($postId);
+        foreach ($pictureFiles as $file) {
+            unlink(self::PATH_TO_PICTURES . $file['picture']);
+        }
+
+        $this->postPictureManager->deleteByPostId($postId);
+        $this->userManager->modifyCoin($_SESSION['user_id'], '-');
+        $this->userManager->modifyCoin($userId, '+');
+        header('Location: /user/profile');
     }
 }
