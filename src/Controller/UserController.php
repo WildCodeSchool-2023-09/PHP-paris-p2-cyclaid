@@ -168,7 +168,10 @@ class UserController extends AbstractController
 
         $pictureFiles = $this->postPictureManager->selectByPostId($postId);
         foreach ($pictureFiles as $file) {
-            unlink(self::PATH_TO_PICTURES . $file['picture']);
+            $fileWithPath = $_SERVER['DOCUMENT_ROOT'] . self::PATH_TO_PICTURES . $file['picture'];
+            if (file_exists($fileWithPath)) {
+                unlink($fileWithPath);
+            }
         }
 
         $this->postPictureManager->deleteByPostId($postId);

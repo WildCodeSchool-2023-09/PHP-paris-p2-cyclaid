@@ -62,7 +62,7 @@
 
         <div id="flex_container_4">
 			<div class="grid-item" id="grid_item_1"><img id="icon_user_grid" src="/assets/images/icon_user_profil_post.png">
-                <p>{{ user['firstname'] ~ ' ' ~ user['lastname'] }}</p>
+                <p>{{ user_post['firstname'] ~ ' ' ~ user_post['lastname'] }}</p>
             </div>
 			<div class="grid-item" id="wear_status">{% include 'cardWearIcon.html.twig' %}</div>
 			<div class="grid-item" id="grid_item_2">
@@ -75,7 +75,7 @@
                 <p>{{ post['reference'] }}</p>
             </div>
 			<div class="grid-item" id="grid_item_4">
-                <p>{{ user['city'] ~ ' ' ~ user['postal_code'] }}</p>
+                <p>{{ user_post['city'] ~ ' ' ~ user_post['postal_code'] }}</p>
             </div>
 	    </div>
 
