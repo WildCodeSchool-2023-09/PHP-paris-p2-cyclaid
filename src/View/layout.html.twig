@@ -14,10 +14,21 @@
 
 {% block content %}
 
+    {% block nav %}
+
+        {% include 'navbar.html.twig' %}
+   
+    {% endblock %}
+
     {% block javascript %}{% endblock %}
     
 {% endblock %}
+
+{% if user is empty %}
+    <script type="text/javascript" src="/assets/js/isNotLog.js"></script>
+{% else %}
+    <script type="text/javascript" src="/assets/js/isLog.js"></script>
+{% endif %}
+
 </body>
 </html>
-
-

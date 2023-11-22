@@ -16,10 +16,17 @@
                 <li class="navImage">
                     <a href="/post/index"><img class="navButtons" src="/assets/images/icon_tuto.png"></a>
                 </li>
-                <li class="navImage">
-                    <a href="#"><img class="navButtons" src="/assets/images/icon_user_profile.png"></a>
-
+                <li class = "navImage">
+                    <img id="connect" class = "navButtons" src="/assets/images/icon_user_profile.png">
                 </li>
             </ul>
     </nav>
+    <div id="to-connect">
+        <a href="/user/login" >LOGIN</a>
+        <a href="/user/signin" >SIGN IN</a>
+    </div>
+    <div id="to-deconnect">
+        <a href="/user/profile" >PROFILE</a>
+        <a href="/user/logout" >LOG OUT</a>
+    </div>
 {% endblock %}
