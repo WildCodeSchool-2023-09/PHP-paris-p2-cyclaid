@@ -12,7 +12,7 @@ abstract class AbstractManager
 {
     protected PDO $pdo;
 
-    public const TABLE = '';
+    public const TABLE = 'post';
 
     public function __construct()
     {
@@ -30,7 +30,7 @@ abstract class AbstractManager
             $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
         }
 
-        return $this->pdo->query($query)->fetchAll();
+        return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /**
@@ -40,7 +40,7 @@ abstract class AbstractManager
     {
         // prepared request
         $statement = $this->pdo->prepare("SELECT * FROM " . static::TABLE . " WHERE id=:id");
-        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->bindValue('id', $id, PDO::PARAM_INT);
         $statement->execute();
 
         return $statement->fetch();
@@ -53,7 +53,7 @@ abstract class AbstractManager
     {
         // prepared request
         $statement = $this->pdo->prepare("DELETE FROM " . static::TABLE . " WHERE id=:id");
-        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->bindValue('id', $id, PDO::PARAM_INT);
         $statement->execute();
     }
 }

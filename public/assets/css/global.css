@@ -1,0 +1,76 @@
+:root {
+  --background-color: #e6e6e6;
+  --background-form-input:#F4E8E8;
+  --background-card-color: #d9d9d9;
+  --header-footer-color: #152905;
+  --font-text-color:red;
+  --font-navbar-color: #dfa68c;
+  --font-title-primary-color: #133352;
+  --font-text-color: #000000;
+  --font-form-input-color:#524D4D;
+  --font-button-primary-color: #ffffff;
+  --font-button-secondary-color: #1c3606;
+  --stroke-primary-color: #234408;
+  --stroke-secondary-color: #4d5737;
+  --filter-drop-down-menu-color: #c4e1b7;
+  --button-primary-corner-radius: 0.5rem;
+  --button-secondary-corner-radius: 5%;
+  --background-color-cta:#208A24;
+  --font-text-color-cta:white;
+  --text-shadow:rgba(0, 0, 0, 0.25);
+  --box-shadow: rgba(0, 0, 0, 0.25);
+  --border-color: black;
+  --search-primary-color: #315F0A;
+  --background-color-cta-home: #BDC2BB;
+
+}
+
+@font-face {
+    font-family: PostNoBillsColomboBold;
+    src: url('../fonts/postnobillscolombo-bold.ttf');
+}
+
+@font-face {
+    font-family: PostNoBillsColomboExtraBold;
+    src: url('../fonts/postnobillscolombo-extrabold.ttf');
+}
+
+@font-face {
+    font-family: PostNoBillsColomboLight;
+    src: url('../fonts/postnobillscolombo-light.ttf');
+}
+
+@font-face {
+    font-family: PostNoBillsColomboMedium;
+    src: url('../fonts/postnobillscolombo-light.ttf');
+}
+
+@font-face {
+    font-family: PostNoBillsColomboRegular;
+    src: url('../fonts/postnobillscolombo-regular.ttf');
+}
+
+@font-face {
+    font-family: PostNoBillsColomboSemiBold;
+    src: url('../fonts/postnobillscolombo-semibold.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+  background-color: var(--background-color);
+}
+
+#footer {
+    height: 2.177rem;
+    width: 100%;
+    position: fixed;
+    bottom: 0rem;
+    left: 0;
+    right: 0;
+    background-color: var(--header-footer-color);
+}
+

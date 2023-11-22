@@ -1,0 +1,31 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/home.css">
+{% endblock %}
+
+{% block content %}
+
+{% block nav %}
+    {% include 'navbar.html.twig' %}
+{% endblock %}
+
+<h1 class="title">Cycl'aid</h1>
+<div id="background_home_page_field">
+    <img src="/../assets/images/background_home.jpg" alt="bike on a road" id="background_home_page"/>
+        <div id="text_home_1">
+                <span>RIDE & IMPROVE YOUR BIKES TOGETHER</span>
+            </div>
+            <div id="text_home_2">
+                <span>GIVE A PART => GET A TOKEN GIVE A TOKEN => GET A PART</span>
+            </div>
+            <div id="text_home_3">
+                <span>RIDE AGAIN WITH YOUR NEW PART</span>
+            </div>
+        </div>
+<div>
+    <a href="/post/index" id="ctaShow">SHOW OUR STOCK</a>
+</div>
+<footer id="footer"></footer>
+
+{% endblock %}

@@ -17,47 +17,116 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `simple-mvc`
+-- Base de données :  `cyclaid`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `item`
---
-
-CREATE TABLE `item` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Contenu de la table `item`
---
-
-INSERT INTO `item` (`id`, `title`) VALUES
-(1, 'Stuff'),
-(2, 'Doodads');
-
---
--- Index pour les tables exportées
+-- Structure des tables
 --
 
 --
--- Index pour la table `item`
---
-ALTER TABLE `item`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT pour les tables exportées
+-- Structure de la table `user`
 --
 
+CREATE TABLE `user` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `firstname` VARCHAR(100) NOT NULL,
+  `lastname` VARCHAR(100) NOT NULL,
+  `city` VARCHAR(150) NOT NULL,
+  `postal_code` CHAR(5) NOT NULL,
+  `email_address` VARCHAR(255) NOT NULL,
+  `profile_picture` VARCHAR(255) NULL,
+  `coin` INT DEFAULT 0
+);
+
 --
--- AUTO_INCREMENT pour la table `item`
+-- Structure de la table `transaction`
 --
-ALTER TABLE `item`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+CREATE TABLE `transaction` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `is_taken` BOOLEAN DEFAULT false,
+  `created_at` DATE NOT NULL,
+  `updated_at` DATE NULL,
+  `post_id` INT NOT NULL,
+  `taker_id` INT NOT NULL
+);
+
+--
+-- Structure de la table `post`
+--
+
+CREATE TABLE `post` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `title` VARCHAR(150) NOT NULL,
+  `reference` VARCHAR(255) NOT NULL,
+  `creation_date` DATE NOT NULL,
+  `description` TEXT,
+  `wear_status` VARCHAR(20) NOT NULL,
+  `user_id` INT NOT NULL,
+  `brand_id` INT NOT NULL,
+  `category_id` INT NOT NULL
+);
+
+--
+-- Structure de la table `post_picture`
+--
+
+CREATE TABLE `post_picture` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `post_id` INT NOT NULL,
+  `picture` VARCHAR(255) NOT NULL
+);
+
+--
+-- Structure de la table `category`
+--
+
+CREATE TABLE `category` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `label` VARCHAR(150) NOT NULL
+);
+
+--
+-- Structure de la table `brand`
+--
+
+CREATE TABLE `brand` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `label` VARCHAR(100) NOT NULL
+);
+
+--
+-- Insertion de valeurs dans les tables
+--
+
+--
+-- Insertion des catégories dans la table `category`
+--
+
+INSERT INTO `category` (`label`) VALUES
+('Accessories'),
+('Brakes'),
+('Cables and sheaths'),
+('Frames'),
+('Saddles'),
+('Tools'),
+('Fork and steering'),
+('Wheels and tires'),
+('Transmission');
+
+--
+-- Insertion des marques de vélos dans la table `brand`
+--
+
+INSERT INTO `brand` (`label`) VALUES
+('Shimano'),
+('Hutchinson'),
+('Brooks'),
+('Continental'),
+('Schwalbe'),
+('Magura'),
+('Brompton'),
+('Other');
