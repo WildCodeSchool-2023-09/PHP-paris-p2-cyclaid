@@ -19,9 +19,7 @@
 
 	<link rel="stylesheet" href="/assets/css/postindex.css">
 
-
-	{% for post in postsList %}
-
+{% for post in postsList %}
 		<a class="cardContainer" href="/post/show?id={{ post.id }}">
 			{% include 'cardImageSelect.html.twig' %}
 			<div class="cardInfoContainer">
@@ -46,7 +44,7 @@
 		<li>Nothing to display :</li>
 		<a href="/post/add">Be the first one to post !</a>
 
-	{% endfor %}
+{% endfor %}
 
 	<div id="footerBlank"></div>
 

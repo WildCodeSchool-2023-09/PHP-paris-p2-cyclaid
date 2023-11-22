@@ -94,4 +94,26 @@ class PostManager extends AbstractManager
 
         return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function search(array $words)
+    {
+        $count = 0;
+        $wordcount = count($words);
+        $query = "SELECT * FROM " . static::TABLE . "";
+
+        if ($wordcount > 0) {
+            $count = 0;
+            $query .= " WHERE";
+            foreach ($words as $word) {
+                $query .= " title LIKE '%" . $word . "%' OR description LIKE '%" . $word . "%'";
+                $count = $count + 1;
+                if ($count < $wordcount) {
+                    $query .= " OR";
+                }
+            }
+        }
+
+        $query .= ";";
+        return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

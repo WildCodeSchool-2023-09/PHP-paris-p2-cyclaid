@@ -2,13 +2,13 @@
 
 <link rel="stylesheet" href="/assets/css/searchbar.css">
 
-<div id="searchbarContainer">
-    <div id="searchInputContainer">
-        <input placeholder="Type your search...">
-        <div id="separationBar">|</div>
-        <button id="searchFilterButton"><img id="searchFilterImage" src="/assets/images/icon_filters.png"></button>
+<form action ="/post/search"   method = "get" id ="searchbarContainer">
+    <div id = "searchInputContainer">
+        <input type ="text" name="keywords" placeholder="Type your search...">
+        <div id ="separationBar">|</div>
+        <button id="searchFilterButton"><img id ="searchFilterImage" src="/assets/images/icon_filters.png"></button>
     </div>
-    <button id="search">SEARCH</button>
-</div>
+    <button type = "submit" id = "search">SEARCH</button>
+</form>
 
 {% endblock %}
