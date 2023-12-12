@@ -123,9 +123,11 @@ class PostController extends AbstractController
 
     public function show(int $id): string
     {
+        $post = $this->postManager->selectOnePostById($id);
         return $this->twig->render('Post/post.html.twig', [
             'post' => $this->postManager->selectOnePostById($id),
-            'pictures' => $this->postPictureManager->selectByPostId($id)
+            'pictures' => $this->postPictureManager->selectByPostId($id),
+            'user_post' => $this->userManager->selectOneById($post['user_id'])
         ]);
     }
 
@@ -135,6 +137,8 @@ class PostController extends AbstractController
 
         foreach ($postsList as $key => $post) {
             $postsList[$key]['picture'] = $this->postPictureManager->selectOnePictureByPostId($post['id']);
+            $postUser = $this->userManager->selectOneById($post['user_id']);
+            $postsList[$key]['location'] = $postUser['city'] . ' ' . $postUser['postal_code'];
         }
         return $this->twig->render('Post/index.html.twig', ['postsList' => $postsList]);
     }
@@ -151,6 +155,23 @@ class PostController extends AbstractController
 
         foreach ($postsList as $key => $post) {
             $postsList[$key]['picture'] = $this->postPictureManager->selectOnePictureByPostId($post['id']);
+            $postUser = $this->userManager->selectOneById($post['user_id']);
+            $postsList[$key]['location'] = $postUser['city'] . ' ' . $postUser['postal_code'];
+        }
+
+        return $this->twig->render('Post/index.html.twig', ['postsList' => $postsList]);
+    }
+
+    public function search(string $keywords)
+    {
+        $words = explode(" ", $keywords);
+        $words = array_map('trim', $words);
+        $postsList = $this->postManager->search($words);
+
+        foreach ($postsList as $key => $post) {
+            $postsList[$key]['picture'] = $this->postPictureManager->selectOnePictureByPostId($post['id']);
+            $postUser = $this->userManager->selectOneById($post['user_id']);
+            $postsList[$key]['location'] = $postUser['city'] . ' ' . $postUser['postal_code'];
         }
 
         return $this->twig->render('Post/index.html.twig', ['postsList' => $postsList]);

@@ -1,0 +1,86 @@
+.title_logo {
+    text-align: center;
+    width: 100%;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-family: PostNoBillsColomboExtraBold;
+}
+
+section#profile div#profile-picture {
+    border-radius: 50%;
+    border: 1px solid var(--stroke-primary-color);
+    width: 6rem;
+    height: 6rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img#profile {
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#name-coin {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+h1#name {
+    grid-column: 2 / 3;
+    font-family: PostNoBillsColomboBold;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+div#coin {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+p#coin-number {
+    grid-column: 3 / 4;
+    font-family: PostNoBillsColomboSemiBold;
+    margin-right: 0.2rem;
+    margin-top: 0.5rem;
+    font-size: 1.5rem;
+}
+
+img#coin {
+    grid-column: 3 / 4;
+    height: 1.5rem;
+    margin-right: 1rem;
+}
+
+div#sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 1rem;
+}
+
+div#sections h2 {
+    font-family: PostNoBillsColomboBold;
+    text-align: center;
+    border: 2px solid var(--stroke-primary-color);
+    margin: 0 0.5rem 0 0.5rem;
+}
+
+div#section {
+    border: 2px solid var(--stroke-primary-color);
+    background-color: var(--background-card-color);
+    width: (100% - 4px);
+    min-height: 29rem;
+    margin-bottom: 2.177rem;
+    padding-bottom: 1rem;
+}
+
+h2#my-posts {
+    background-color: var(--background-select-section);
+}
+
+h2#my-bike, h2#my-wishes {
+    background-color: var(--background-card-color);
+}

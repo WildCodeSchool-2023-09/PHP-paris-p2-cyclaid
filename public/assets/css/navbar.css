@@ -81,4 +81,28 @@
   #postInfoId{
       text-align: right;
   }
+
+#to-connect, #to-deconnect {
+  border-radius: var(--button-secondary-corner-radius);
+  background-color: var(--background-select-section);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  margin-left: 78%;
+  margin-right: 2%;
+  position: absolute;
+  z-index: 1;
+}
+
+#to-connect a, #to-deconnect a {
+  font-family: PostNoBillsColomboSemiBold;
+  color: var(--font-text-color);
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+#to-connect a:hover, #to-deconnect a:hover {
+  color: var(--font-text-color-cta);
+}
   

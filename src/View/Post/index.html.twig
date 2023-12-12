@@ -19,9 +19,7 @@
 
 	<link rel="stylesheet" href="/assets/css/postindex.css">
 
-
-	{% for post in postsList %}
-
+{% for post in postsList %}
 		<a class="cardContainer" href="/post/show?id={{ post.id }}">
 			{% include 'cardImageSelect.html.twig' %}
 			<div class="cardInfoContainer">
@@ -32,7 +30,7 @@
 				<p class="cardDescription">{{ post.description }}</p>
 				<div class="cardFooterContainerLeft">
 					<img class="cardIconLocation" src="/assets/images/icon_location.png">
-					<p class="cardFooterInfos">{{ post.city }}</p>
+					<p class="cardFooterInfos">{{ post.location }}</p>
 				</div>
 				<div class="cardFooterContainerRight">
 					<img class="cardIconCalendar" src="/assets/images/icon_calendar.png">
@@ -41,12 +39,14 @@
 			</div>
 		</a>
 
-	{% else %}
+{% else %}
 
-		<li>Nothing to display :</li>
-		<a href="/post/add">Be the first one to post !</a>
+    <div id="nothing">
+        <p>Nothing to display :</p>
+        <a href="/post/add" >Be the first one to post !</a>
+    </div>
 
-	{% endfor %}
+{% endfor %}
 
 	<div id="footerBlank"></div>
 

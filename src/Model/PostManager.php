@@ -41,12 +41,13 @@ class PostManager extends AbstractManager
     {
         $query = "INSERT INTO " . self::TABLE . " (title, reference, creation_date, description, ";
         $query .= "wear_status, user_id, brand_id, category_id) ";
-        $query .= " VALUES (:title, :reference, NOW(), :description, :wear, 1, :brand_id, :category_id);";
+        $query .= " VALUES (:title, :reference, NOW(), :description, :wear, :user_id, :brand_id, :category_id);";
         $statement = $this->pdo->prepare($query);
         $statement->bindValue(':title', $data['title']);
         $statement->bindValue(':reference', $data['reference']);
         $statement->bindValue(':description', $data['description']);
         $statement->bindValue(':wear', $data['wear']);
+        $statement->bindValue(':user_id', $_SESSION['user_id'], PDO::PARAM_INT);
         $statement->bindValue(':brand_id', $data['brand']);
         $statement->bindValue(':category_id', $data['category']);
         $statement->execute();
@@ -79,6 +80,19 @@ class PostManager extends AbstractManager
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
 
+    public function selectAllByUserId(int $id): array|false
+    {
+        $query = "SELECT * FROM " . self::TABLE . " WHERE user_id=:id;";
+
+        $statement = $this->pdo->prepare($query);
+
+        $statement->bindValue(':id', $id, PDO::PARAM_INT);
+
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function selectAllcategories()
     {
         $query = 'SELECT * FROM category;';
@@ -92,6 +106,28 @@ class PostManager extends AbstractManager
             WHERE category.id = ' . $category . ';';
 
 
+        return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function search(array $words)
+    {
+        $count = 0;
+        $wordcount = count($words);
+        $query = "SELECT * FROM " . static::TABLE . "";
+
+        if ($wordcount > 0) {
+            $count = 0;
+            $query .= " WHERE";
+            foreach ($words as $word) {
+                $query .= " title LIKE '%" . $word . "%' OR description LIKE '%" . $word . "%'";
+                $count = $count + 1;
+                if ($count < $wordcount) {
+                    $query .= " OR";
+                }
+            }
+        }
+
+        $query .= ";";
         return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
     }
 }

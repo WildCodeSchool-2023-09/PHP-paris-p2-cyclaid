@@ -53,4 +53,13 @@ class PostPictureManager extends AbstractManager
             return null;
         }
     }
+
+    public function deleteByPostId(int $id): void
+    {
+        $query = "DELETE FROM " . self::TABLE . " WHERE post_id=:id";
+
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+    }
 }

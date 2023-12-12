@@ -11,6 +11,12 @@ return [
     'post/index' => ['PostController', 'index', ['postsList']],
     'post/show' => ['PostController', 'show', ['id']],
     'post/add' => ['PostController', 'add'],
+    'user/signin' => ['UserController', 'signIn'],
+    'user/login' => ['UserController', 'login'],
+    'user/profile' => ['UserController', 'profile'],
+    'user/logout' => ['UserController', 'logout'],
+    'user/getPart' => ['UserController', 'getPart', ['post_id', 'user_id']],
+    'post/search' => ['PostController', 'search', ['keywords']],
     'categories/index' => ['PostController', 'categoryIndex', ['categories']],
     'category/results' => ['PostController', 'categoryShowAllPosts', ['category']],
 ];
